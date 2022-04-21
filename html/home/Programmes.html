@@ -113,6 +113,7 @@ Data structure needed
     align-items: center;
     position: relative;
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    cursor: pointer;
   }
 
   .section-programmes .accordion-header::before {
@@ -155,25 +156,8 @@ Data structure needed
   .section-programmes .accordion-content .content-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 15px;
   }
-
-  /* .section-programmes .accordion-content .content-card {
-    padding: 40px;
-    position: relative;
-    box-shadow: 0 0 30px rgba(0,0,0,0.1);
-    background-color: white;
-  } */
-
-  /* .section-programmes .accordion-content .content-card::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background-color: var(--gurulab-orange);
-  } */
 
   .section-programmes .accordion-content .content-card .content-card-item > * {
     margin: 0;
@@ -185,6 +169,16 @@ Data structure needed
     position: relative;
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
     background-color: white;
+    font-weight: 500;
+    cursor: default;
+  }
+
+  .section-programmes .accordion-content .content-card .category-item {
+    color: var(--gurulab-orange);
+  }
+
+  .section-programmes .accordion-content .content-card .feature-item {
+    color: var(--gurulab-teal);
   }
 
   .section-programmes .accordion-content .content-card .content-card-item:not(:last-child) {
@@ -201,13 +195,17 @@ Data structure needed
     background-color: var(--gurulab-orange);
   }
 
+  .section-programmes .accordion-content .content-card .feature-item::before {
+    background-color: var(--gurulab-teal);
+  }
+
   .section-programmes .accordion-content .content-cards .content-card-item i {
-    margin-right: 1.5rem;
+    margin-right: 15px;
   }
 
   .section-programmes .accordion-content .pricing .packages ul {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 15px;
     grid-template-columns: 1fr 1fr 1fr;
     height: 250px;
   }
