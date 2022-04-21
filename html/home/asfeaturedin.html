@@ -1,0 +1,150 @@
+<div class="media-partners">
+  <!-- <button class="slider-button" id="slider-left"><i class="fas fa-chevron-left"></i></button> -->
+  <div class="slider-wrapper">
+    <div class="slider">
+      <div class="item"><img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f44450b6d51a228cdd59fd/1643398224390/businesstoday.png">
+      </div>
+      <div class="item"><img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f44456a9cdd040200eb677/1643398230460/dagangnews.png">
+      </div>
+      <div class="item"><img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f4445a1f1cf5346afb3968/1643398234689/e27.png">
+      </div>
+      <div class="item"><img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f4445e0eaeae65a5701eb2/1643398239019/orientaldailynews.jpg">
+      </div>
+      <div class="item"><img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f44462c88f86207f663098/1643398242538/sme.png">
+      </div>
+      <div class="item"><img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f44465eaf48743df8dcb59/1643398245749/techinasia.png">
+      </div>
+      <div class="item"><img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f3d535cd62dd59dd633b02/1643369781830/Sinchew.png">
+      </div>
+      <div class="item"><img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6203ec3647c556785c7135cd/1644424246123/The+Star.png">
+      </div>
+    </div>
+  </div>
+  <!-- <button class="slider-button" id="slider-right"><i class="fas fa-chevron-right"></i></button> -->
+</div>
+
+<style>
+  .media-partners {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .media-partners .slider-wrapper {
+    width: 100%;
+  }
+
+  .media-partners .slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .media-partners .item {
+    filter: grayscale(100%);
+    background: #FAFAFA;
+    padding: 40px;
+    transition: all 0.3s ease-in-out;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    object-fit: contain;
+    /* box-shadow: 0 0 30px rgba(0,0,0,.1); */
+  }
+
+  .media-partners .item:hover {
+    transition: all 0.3s ease-in-out;
+    /* box-shadow: 0 0 30px rgba(244,136,71,.1); */
+  }
+
+  .media-partners .slider-button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--gurulab-body);
+    transition: all 0.1s ease;
+    /* position: absolute;
+      bottom: 40%; */
+  }
+
+  /* #slider-left {
+      left: -40px;
+    }
+  
+    #slider-right {
+      right: -40px;
+    } */
+
+  .media-partners .slider-button:hover {
+    color: var(--gurulab-orange);
+    transition: all 0.1s ease;
+  }
+
+  @media only screen and (max-width: 1350px) {
+    .media-partners .slider-wrapper {
+      width: 85%;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .media-partners .slider-wrapper {
+      width: 75%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .media-partners .slider-wrapper {
+      width: 65%;
+    }
+  }
+</style>
+
+<script>
+  $(document).ready(function () {
+    $(".media-partners .slider").slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      dots: false,
+      arrows: false,
+      pauseOnHover: false,
+      swipeToSlide: false,
+      responsive: [
+        {
+          breakpoint: 1350,
+          settings: {
+            slidesToShow: 3
+          }
+        }, {
+          breakpoint: 1000,
+          settings: {
+            slidesToShow: 2
+          }
+        }, {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+
+    // $("#slider-left").click(function () {
+    //   $(".media-partners .slider").slick("slickPrev");
+    // });
+
+    // $("#slider-right").click(function () {
+    //   $(".media-partners .slider").slick("slickNext");
+    // });
+  });
+</script>
