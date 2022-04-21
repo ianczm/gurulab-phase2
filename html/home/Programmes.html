@@ -27,38 +27,38 @@ Data structure needed
         <div class="dropdown-icon"><i class="fa-solid fa-chevron-down"></i></div>
       </div>
       <div class="accordion-content">
-        <h3>Programme Details</h3>
-        <div class="category">
-          <ul>
-            <li class="category-item">
-              <i class="fa-solid fa-address-book"></i>
-              <p>1.5 hours per week</p>
-            </li>
-            <li class="category-item">
-              <i class="fa-solid fa-address-book"></i>
-              <p>Ages 10 - 20</p>
-            </li>
-            <li class="category-item">
-              <i class="fa-solid fa-address-book"></i>
-              <p>Pre-intermediate - Advanced English Learners (A2 to C1)</p>
-            </li>
-          </ul>
-        </div>
+        <h4>Programme Details</h4>
         <div class="body">
-          <div class="body-desc">
-            <p>A well-balanced programme designed for learners who aim to build strong foundations in all skills - speaking, writing, reading and listening, which are tested in PT3, SPM, UEC and IGCSE (2nd Language).</p>
-          </div>
-          <div class="features">
+          <p>A well-balanced programme designed for learners who aim to build strong foundations in all skills - speaking, writing, reading and listening, which are tested in PT3, SPM, UEC and IGCSE (2nd Language).</p>
+        </div>
+        <div class="content-cards">
+          <div class="content-card categories">
             <ul>
-              <li class="feature-item">
+              <li class="content-card-item category-item">
+                <i class="fa-solid fa-address-book"></i>
+                <p>1.5 hours per week</p>
+              </li>
+              <li class="content-card-item category-item">
+                <i class="fa-solid fa-address-book"></i>
+                <p>Ages 10 - 20</p>
+              </li>
+              <li class="content-card-item category-item">
+                <i class="fa-solid fa-address-book"></i>
+                <p>Pre-intermediate - Advanced English Learners (A2 to C1)</p>
+              </li>
+            </ul>
+          </div>
+          <div class="content-card features">
+            <ul>
+              <li class="content-card-item feature-item">
                 <i class="fa-solid fa-circle-check"></i>
                 <p>Detailed feedback on writing and speaking practices</p>
               </li>
-              <li class="feature-item">
+              <li class="content-card-item feature-item">
                 <i class="fa-solid fa-circle-check"></i>
                 <p>Personalised practices based on feedback</p>
               </li>
-              <li class="feature-item">
+              <li class="content-card-item feature-item">
                 <i class="fa-solid fa-circle-check"></i>
                 <p>Engaging learning experience with quizzes, engaging visuals and materials</p>
               </li>
@@ -66,7 +66,7 @@ Data structure needed
           </div>
         </div>
         <div class="pricing">
-          <h3>Our Pricing</h3>
+          <h4>Our Pricing</h4>
           <div class="packages">
             <ul>
               <li class="package-item">
@@ -139,25 +139,74 @@ Data structure needed
     font-size: 1.25rem;
   }
 
+  .section-programmes .accordion-content * {
+    margin: 0;
+  }
+
   .section-programmes .accordion-content {
     padding: 40px;
     background: white;
   }
 
-  .section-programmes .accordion-content .category .category-item > *,
-  .section-programmes .accordion-content .features .feature-item > * {
+  .section-programmes .accordion-content .content-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  .section-programmes .accordion-content .content-card {
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    background-color: white;
+  }
+
+  .section-programmes .accordion-content .content-card::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--gurulab-orange);
+  }
+
+  .section-programmes .accordion-content .content-card .content-card-item > * {
     margin: 0;
   }
 
-  .section-programmes .accordion-content .category .category-item,
-  .section-programmes .accordion-content .features .feature-item {
+  .section-programmes .accordion-content .content-card .content-card-item {
     display: flex;
   }
 
-  .section-programmes .accordion-content .category .category-item i,
-  .section-programmes .accordion-content .features .feature-item i {
+  .section-programmes .accordion-content .content-cards .content-card-item i {
     margin-right: 1.5rem;
   }
+
+  .section-programmes .accordion-content .pricing .packages ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .section-programmes .accordion-content .pricing .packages .package-item {
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    background-color: white;
+  }
+
+  .section-programmes .accordion-content .pricing .packages .package-item::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--gurulab-orange);
+  }
+
+
 </style>
 
 <script>
