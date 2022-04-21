@@ -1,0 +1,134 @@
+<div class="section section-cta">
+  <div class="cta card">
+    <div class="image">
+      <img
+        src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fe89814831b06d9d3b222/1650452632114/personal.png">
+    </div>
+    <div class="text">
+      <h3 class="title">Sign Up</h3>
+      <h4 class="subtitle">Step 1</h4>
+      <p>Fill up our sign-up form.</p>
+    </div>
+  </div>
+  <div class="cta card">
+    <div class="image">
+      <img
+        src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fe89e201c011151cf95a3/1650452638269/interview+%281%29.png">
+    </div>
+    <div class="text">
+      <h3 class="title">FREE Consultation</h3>
+      <h4 class="subtitle">Step 2</h4>
+      <p>Our Education Consultant will understand your child’s needs and provide recommendations.</p>
+    </div>
+  </div>
+  <div class="cta card">
+    <div class="image">
+      <img
+        src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fe8a08e98243575bb10e7/1650452640638/checked.png">
+    </div>
+    <div class="text">
+      <h3 class="title">Onboarding</h3>
+      <h4 class="subtitle">Step 3</h4>
+      <p>Our Student Support team will ensure you get onboarded to our platform.</p>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .section-cta {
+    display: grid;
+    grid-gap: 15px;
+    /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+  }
+
+  /* Card */
+
+  .cta.card {
+    background: white;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(244, 136, 71, 0.1);
+    /*display: flex;*/
+    display: block;
+    align-items: center;
+    background-color: white;
+    transition: background 0.2s ease;
+  }
+
+  /*  .cta.card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 3px;
+      background-color: var(--gurulab-orange);
+    }*/
+
+  /* Margins */
+
+  .cta .text>* {
+    margin: 0;
+    cursor: default;
+  }
+
+  /* Images */
+
+  .cta .image img {
+    width: 100px;
+    min-width: 75px;
+  }
+
+  .cta .image {
+    margin-bottom: 1.5rem;
+    margin-right: 0;
+  }
+
+  /*.cta .image {
+      margin-bottom: 0;
+      margin-right: 40px;
+    }*/
+
+  /* Text and Copy */
+
+  .cta .title {
+    color: var(--gurulab-orange);
+    margin-bottom: 0.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .cta .subtitle {
+    color: black;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .cta p {
+    color: black;
+    transition: color 0.2s ease;
+  }
+
+  /* Hover */
+
+  .cta.card:hover {
+    background-color: #FFF4ED;
+    transition: background 0.2s ease;
+  }
+
+  /* Desktop Friendly */
+  @media only screen and (min-width: 768px) {
+    .section-cta {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .cta .image {
+      margin-bottom: 1.5rem;
+      margin-right: 0;
+    }
+
+    .cta.card {
+      display: block;
+    }
+  }
+</style>

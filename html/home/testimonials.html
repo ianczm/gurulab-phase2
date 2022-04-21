@@ -1,0 +1,99 @@
+<div class="section section-testimonials">
+  <div class="container">
+    <div class="content">
+      <div class="image">
+        <img
+          src="https://images.unsplash.com/photo-1543270122-f7a11ad44f3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80">
+      </div>
+      <div class="text">
+        <h3 class="title">A in SPM English and Full Government Scholarship to France</h3>
+        <div class="divider"></div>
+        <p class="testimonial">
+          My son didn’t get an A in his PT3 English and was very disappointed about it. English is his strongest
+          language but he was never taught how to apply grammar skills properly in school so he made a lot of mistakes.
+          But after two years of hard work with the help of his Tutor who is now with GuruLab, he finally got an A in
+          his SPM English. One of the essays he wrote in Form 5 was even published in the school magazine. But the best
+          achievement was when he won a full government scholarship to study in France. He was initially worried that he
+          wouldn’t get it because of his weak speaking skills but his Tutor from GuruLab helped him and he managed to
+          build the confidence to shine during the interviews.
+        </p>
+        <h4 class="sender">Lily (Parent)</h4>
+      </div>
+    </div>
+    <div class="nav">
+      <button id="testimonial-nav-left"><i class="fa-solid fa-chevron-left"></i></button>
+      <button id="testimonial-nav-right"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-testimonials .container {
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(244, 136, 71, 0.2);
+    /*background-color: var(--gurulab-orange);*/
+    /*border-radius: 40px;*/
+  }
+
+  .section-testimonials .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    background-color: var(--gurulab-orange);
+  }
+
+  .section-testimonials .image img {
+    min-width: 250px;
+    width: 300px;
+    display: block;
+    aspect-ratio: 1;
+    object-fit: cover;
+    /*border-radius: 20px;*/
+  }
+
+  .section-testimonials .content {
+    display: flex;
+    align-items: center;
+  }
+
+  .section-testimonials .content .text>* {
+    /*color: white;*/
+    margin: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-testimonials .content .text .sender {
+    color: var(--gurulab-orange);
+  }
+
+  .section-testimonials .content .divider {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+  }
+
+  .section-testimonials .nav {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+  }
+
+  .section-testimonials .nav button {
+    background: none;
+    border: 2px var(--gurulab-orange) solid;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    color: var(--gurulab-orange);
+    transition: background-color 0.2s ease;
+  }
+
+  .section-testimonials .nav button::hover {
+    background-color: var(--gurulab-orange);
+    transition: background-color 0.2s ease;
+  }
+</style>
