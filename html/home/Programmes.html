@@ -65,8 +65,8 @@ Data structure needed
             </ul>
           </div>
         </div>
+        <h4>Our Pricing</h4>
         <div class="pricing">
-          <h4>Our Pricing</h4>
           <div class="packages">
             <ul>
               <li class="package-item">
@@ -143,6 +143,10 @@ Data structure needed
     margin: 0;
   }
 
+  .section-programmes .accordion-content > * {
+    margin-bottom: 1.5rem;
+  }
+
   .section-programmes .accordion-content {
     padding: 40px;
     background: white;
@@ -154,14 +158,14 @@ Data structure needed
     grid-gap: 20px;
   }
 
-  .section-programmes .accordion-content .content-card {
+  /* .section-programmes .accordion-content .content-card {
     padding: 40px;
     position: relative;
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
     background-color: white;
-  }
+  } */
 
-  .section-programmes .accordion-content .content-card::before {
+  /* .section-programmes .accordion-content .content-card::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -169,7 +173,7 @@ Data structure needed
     right: 0;
     height: 3px;
     background-color: var(--gurulab-orange);
-  }
+  } */
 
   .section-programmes .accordion-content .content-card .content-card-item > * {
     margin: 0;
@@ -177,6 +181,24 @@ Data structure needed
 
   .section-programmes .accordion-content .content-card .content-card-item {
     display: flex;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    background-color: white;
+  }
+
+  .section-programmes .accordion-content .content-card .content-card-item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  .section-programmes .accordion-content .content-card .content-card-item::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    width: 3px;
+    background-color: var(--gurulab-orange);
   }
 
   .section-programmes .accordion-content .content-cards .content-card-item i {
@@ -194,7 +216,8 @@ Data structure needed
     background-color: white;
     padding: 40px;
     position: relative;
-    box-shadow: 0 0 30px rgba(244, 136, 71, 0.1);
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    /* box-shadow: 0 0 30px rgba(244, 136, 71, 0.1); */
     transition: background-color 0.2s ease;
     cursor: default;
   }
