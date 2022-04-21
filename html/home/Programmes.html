@@ -95,6 +95,83 @@ Data structure needed
         </div>
       </div>
     </div>
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <div class="desc">
+          <h3 class="title">English Essentials</h3>
+          <p class="subtitle">Suitable for all; Builds strong foundation in all skills – writing speaking, reading & listening</p>
+        </div>
+        <div class="dropdown-icon"><i class="fa-solid fa-chevron-down"></i></div>
+      </div>
+      <div class="accordion-content">
+        <h4>Programme Details</h4>
+        <div class="body">
+          <p>A well-balanced programme designed for learners who aim to build strong foundations in all skills - speaking, writing, reading and listening, which are tested in PT3, SPM, UEC and IGCSE (2nd Language).</p>
+        </div>
+        <div class="content-cards">
+          <div class="content-card categories">
+            <ul>
+              <li class="content-card-item category-item">
+                <i class="fa-solid fa-address-book"></i>
+                <p>1.5 hours per week</p>
+              </li>
+              <li class="content-card-item category-item">
+                <i class="fa-solid fa-address-book"></i>
+                <p>Ages 10 - 20</p>
+              </li>
+              <li class="content-card-item category-item">
+                <i class="fa-solid fa-address-book"></i>
+                <p>Pre-intermediate - Advanced English Learners (A2 to C1)</p>
+              </li>
+            </ul>
+          </div>
+          <div class="content-card features">
+            <ul>
+              <li class="content-card-item feature-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <p>Detailed feedback on writing and speaking practices</p>
+              </li>
+              <li class="content-card-item feature-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <p>Personalised practices based on feedback</p>
+              </li>
+              <li class="content-card-item feature-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <p>Engaging learning experience with quizzes, engaging visuals and materials</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <h4>Our Pricing</h4>
+        <div class="pricing">
+          <div class="packages">
+            <ul>
+              <li class="package-item">
+                <!-- <button><i class="fa-solid fa-cart-shopping"></i></button> -->
+                <button><i class="fa-solid fa-chevron-right"></i></button>
+                <h4 class="title">Monthly Package</h4>
+                <h1 class="price">RM 90</h1>
+                <p class="price-monthly"></p>
+              </li>
+              <li class="package-item">
+                <!-- <button><i class="fa-solid fa-cart-shopping"></i></button> -->
+                <button><i class="fa-solid fa-chevron-right"></i></button>
+                <h4 class="title">3-Month Package</h4>
+                <h1 class="price">RM 240</h1>
+                <p class="price-monthly">RM 80 / Month</p>
+              </li>
+              <li class="package-item">
+                <!-- <button><i class="fa-solid fa-cart-shopping"></i></button> -->
+                <button><i class="fa-solid fa-chevron-right"></i></button>
+                <h4 class="title">12-Month Package</h4>
+                <h1 class="price">RM 840</h1>
+                <p class="price-monthly">RM 70 / Month</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -103,10 +180,6 @@ Data structure needed
     list-style: none;
     padding: 0;
   }
-
-  /* .section-programmes .accordion-item {
-    box-shadow: 0 0 30px rgba(0,0,0,0.1);
-  } */
 
   .section-programmes .accordion-header {
     padding: 40px;
@@ -150,7 +223,8 @@ Data structure needed
     transition: transform 0.2s ease;
   }
   
-  .section-programmes .accordion-header:hover .dropdown-icon i {
+  .section-programmes .accordion-header:hover .dropdown-icon i,
+  .section-programmes .accordion-header.active .dropdown-icon i {
     transform: rotate(0deg);
     transition: transform 0.2s ease;
   }
@@ -336,5 +410,12 @@ Data structure needed
 </style>
 
 <script>
+
+$(".section-programmes .accordion-item .accordion-content").hide();
+
+$(".section-programmes .accordion-item .accordion-header").click(function() {
+  $(this).toggleClass("active");
+  $(this).parent().children(".accordion-content").slideToggle(200, "swing");
+})
 
 </script>
