@@ -118,7 +118,13 @@
     border-radius: 100%;
     border: 2px solid white;
     color: white;
-    background: none;
+    background-color: rgba(255,255,255,0);
+  }
+
+  .section-testimonials .nav .button-group button:hover {
+    color: var(--gurulab-orange);
+    background-color: white;
+    transition: color 0.2s ease, background-color 0.2s ease;
   }
 
   @media only screen and (max-width: 768px) {
@@ -158,7 +164,7 @@
   const contents = [];
   contents[0] = {
     picture: "https://st3.depositphotos.com/1010683/19125/i/600/depositphotos_191251860-stock-photo-young-asian-woman-smiling.jpg",
-    picpos: "object-position: 32% 50%;",
+    picpos: "object-position: 30% 50%;",
     name: "Lily",
     class: "Parent",
     title: "A in SPM English and Full Government Scholarship to France",
@@ -172,7 +178,7 @@
   }
   contents[1] = {
     picture: "https://media.istockphoto.com/photos/profile-of-young-womans-face-picture-id1137851574?k=20&m=1137851574&s=612x612&w=0&h=vdDs2XWP_oZJ4X64orwl6hPLrjfDbkyEB0jhIDmpGtY=",
-    picpos: "object-position: 50% 50%;",
+    picpos: "object-position: 20% 0%;",
     name: "Xiao Hui",
     class: "Parent",
     title: "More than any Online English Tuition",
@@ -184,7 +190,7 @@
   }
   contents[2] = {
     picture: "https://media.istockphoto.com/photos/young-adult-malaysian-man-portrait-in-studio-picture-id972144358?k=20&m=972144358&s=612x612&w=0&h=bp98hd_3GuJjserfAXZ7kFoFYJFnzrpkd8kNW6BV0ko=",
-    picpos: "object-position: 50% 50%;",
+    picpos: "object-position: 20% 50%;",
     name: "Fikri",
     class: "Student",
     title: "Not Just an English Class",
