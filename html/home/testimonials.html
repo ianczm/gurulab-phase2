@@ -45,6 +45,7 @@
   .section-testimonials .content {
     display: flex;
     align-items: center;
+    margin-bottom: calc(2rem + 30px);
   }
 
   .section-testimonials .content .profile {
@@ -83,10 +84,6 @@
     text-transform: uppercase;
     font-weight: 600;
     font-size: 1rem;
-  }
-
-  .section-testimonials .content {
-    margin-bottom: calc(2rem + 30px);
   }
 
   .section-testimonials .content .body .section-title {
@@ -129,5 +126,37 @@
     border: 2px solid white;
     color: white;
     background: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    .section-testimonials .container {
+      padding: 20px;
+    }
+
+    .section-testimonials .content {
+      display: block;
+      margin-bottom: calc(2rem + 50px);
+    }
+
+    .section-testimonials .content .profile {
+      display: flex;
+      margin-bottom: 2rem;
+    }
+
+    .section-testimonials .content .profile .profile-picture {
+      margin-right: 2rem;
+      width: 100px;
+      height: 100px;
+    }
+
+    .section-testimonials .content .profile .profile-details > * {
+      text-align: left;
+    }
+
+    .section-testimonials .nav {
+      padding: 15px 20px;
+    }
+
   }
 </style>
