@@ -190,22 +190,53 @@ Data structure needed
   }
 
   .section-programmes .accordion-content .pricing .packages .package-item {
+    background-color: white;
     padding: 40px;
     position: relative;
-    box-shadow: 0 0 30px rgba(0,0,0,0.1);
-    background-color: white;
+    box-shadow: 0 0 30px rgba(244, 136, 71, 0.1);
+    transition: background-color 0.2s ease;
+    cursor: default;
+  }
+
+  .section-programmes .accordion-content .pricing .packages .package-item:hover {
+    background-color: #FFFBF9;
+    transition: background-color 0.2s ease;
   }
 
   .section-programmes .accordion-content .pricing .packages .package-item::before {
     content: "";
     position: absolute;
-    bottom: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     height: 3px;
-    background-color: var(--gurulab-orange);
+    background: var(--gurulab-orange);
   }
 
+  .section-programmes .accordion-content .pricing .packages .package-item .title {
+    text-transform: uppercase;
+    color: black;
+    font-size: 1rem;
+  }
+
+  .section-programmes .accordion-content .pricing .packages .package-item .price {
+    color: var(--gurulab-orange);
+    font-size: 2.5rem;
+  }
+
+  .section-programmes .accordion-content .pricing .packages .package-item button {
+    padding: 20px 30px;
+    background: none;
+    border-radius: 100px;
+    border: 1px solid var(--gurulab-orange);
+    color: var(--gurulab-orange);
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    display: block;
+    cursor: pointer;
+  }
 
 </style>
 
