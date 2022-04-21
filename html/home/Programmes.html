@@ -70,22 +70,25 @@ Data structure needed
           <div class="packages">
             <ul>
               <li class="package-item">
+                <!-- <button><i class="fa-solid fa-cart-shopping"></i></button> -->
+                <button><i class="fa-solid fa-chevron-right"></i></button>
                 <h4 class="title">Monthly Package</h4>
                 <h1 class="price">RM 90</h1>
                 <p class="price-monthly"></p>
-                <button>Enrol Me Now!</button>
               </li>
               <li class="package-item">
+                <!-- <button><i class="fa-solid fa-cart-shopping"></i></button> -->
+                <button><i class="fa-solid fa-chevron-right"></i></button>
                 <h4 class="title">3-Month Package</h4>
                 <h1 class="price">RM 240</h1>
                 <p class="price-monthly">RM 80 / Month</p>
-                <button>Enrol Me Now!</button>
               </li>
               <li class="package-item">
+                <!-- <button><i class="fa-solid fa-cart-shopping"></i></button> -->
+                <button><i class="fa-solid fa-chevron-right"></i></button>
                 <h4 class="title">12-Month Package</h4>
                 <h1 class="price">RM 840</h1>
                 <p class="price-monthly">RM 70 / Month</p>
-                <button>Enrol Me Now!</button>
               </li>
             </ul>
           </div>
@@ -101,19 +104,24 @@ Data structure needed
     padding: 0;
   }
 
-  .section-programmes .accordion-item {
+  /* .section-programmes .accordion-item {
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
-  }
+  } */
 
   .section-programmes .accordion-header {
     padding: 40px;
-    background: white;
+    /* background: white; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    box-shadow: 0 0 0px rgba(0,0,0,0.2);
     cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .section-programmes .accordion-header * {
+    transition: color 0.2s ease;
   }
 
   .section-programmes .accordion-header::before {
@@ -138,6 +146,26 @@ Data structure needed
   .section-programmes .accordion-header .dropdown-icon i {
     color: var(--gurulab-orange);
     font-size: 1.25rem;
+    transform: rotate(-90deg);
+    transition: transform 0.2s ease;
+  }
+  
+  .section-programmes .accordion-header:hover .dropdown-icon i {
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+  }
+
+  .section-programmes .accordion-header.active,
+  .section-programmes .accordion-header:hover {
+    background: var(--gurulab-orange);
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .section-programmes .accordion-header.active *,
+  .section-programmes .accordion-header:hover * {
+    color: white !important;
+    transition: color 0.2s ease;
   }
 
   .section-programmes .accordion-content * {
@@ -151,6 +179,7 @@ Data structure needed
   .section-programmes .accordion-content {
     padding: 40px;
     background: white;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
   }
 
   .section-programmes .accordion-content .content-cards {
@@ -171,14 +200,27 @@ Data structure needed
     background-color: white;
     font-weight: 500;
     cursor: default;
+    transition: color 0.2s ease, background-color 0.2s ease;
   }
 
   .section-programmes .accordion-content .content-card .category-item {
     color: var(--gurulab-orange);
   }
+  
+  .section-programmes .accordion-content .content-card .category-item:hover {
+    color: white;
+    background-color: var(--gurulab-orange);
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
 
   .section-programmes .accordion-content .content-card .feature-item {
     color: var(--gurulab-teal);
+  }
+  
+  .section-programmes .accordion-content .content-card .feature-item:hover {
+    color: white;
+    background-color: var(--gurulab-teal);
+    transition: color 0.2s ease, background-color 0.2s ease;
   }
 
   .section-programmes .accordion-content .content-card .content-card-item:not(:last-child) {
@@ -207,31 +249,34 @@ Data structure needed
     display: grid;
     grid-gap: 15px;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 250px;
+    /* height: 250px; */
   }
 
   .section-programmes .accordion-content .pricing .packages .package-item {
     background-color: white;
     padding: 40px;
+    padding-left: 80px;
     position: relative;
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
     /* box-shadow: 0 0 30px rgba(244, 136, 71, 0.1); */
-    transition: background-color 0.2s ease;
-    cursor: default;
+    transition: background-color 0.2s ease, padding 0.2s ease;
+    cursor: pointer;
+    z-index: 0;
   }
 
   .section-programmes .accordion-content .pricing .packages .package-item:hover {
     background-color: #FFFBF9;
-    transition: background-color 0.2s ease;
+    padding-left: 40px;
+    transition: background-color 0.2s ease, padding 0.2s ease;
   }
 
   .section-programmes .accordion-content .pricing .packages .package-item::before {
     content: "";
     position: absolute;
     left: 0;
-    right: 0;
     bottom: 0;
-    height: 3px;
+    top: 0;
+    width: 3px;
     background: var(--gurulab-orange);
   }
 
@@ -239,25 +284,53 @@ Data structure needed
     text-transform: uppercase;
     color: black;
     font-size: 1rem;
+    position: relative;
+    z-index: 1;
   }
 
   .section-programmes .accordion-content .pricing .packages .package-item .price {
     color: var(--gurulab-orange);
     font-size: 2.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-programmes .accordion-content .pricing .packages .package-item .price-monthly {
+    position: relative;
+    z-index: 1;
   }
 
   .section-programmes .accordion-content .pricing .packages .package-item button {
-    padding: 20px 30px;
-    background: none;
-    border-radius: 100px;
-    border: 1px solid var(--gurulab-orange);
-    color: var(--gurulab-orange);
+    background: var(--gurulab-orange);
+    border: none;
+    color: white;
     position: absolute;
-    bottom: 40px;
-    left: 40px;
-    right: 40px;
+    bottom: 0;
+    top: 0;
+    left: 0;
     display: block;
     cursor: pointer;
+    width: 40px;
+    padding: 0;
+    text-align: right;
+    padding-right: 15px;
+    transition: width 0.2s ease, padding 0.2s ease;
+    z-index: 0;
+  }
+
+  .section-programmes .accordion-content .pricing .packages .package-item > * {
+    transition: color 0.2s ease;
+  }
+
+  .section-programmes .accordion-content .pricing .packages .package-item:hover > * {
+    color: white;
+    transition: color 0.2s ease;
+  }
+
+  .section-programmes .accordion-content .pricing .packages .package-item:hover button {
+    width: 100%;
+    padding-right: 40px;
+    transition: width 0.2s ease, padding 0.2s ease;
   }
 
 </style>
