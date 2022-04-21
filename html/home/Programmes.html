@@ -1,0 +1,253 @@
+<div class="section section-programmes">
+  <div class="container">
+    <div class="nav">
+      <ul>
+        <li class="nav-btn active">
+          <h4 class="title">English Essentials</h4>
+          <!-- <p class="desc">Suitable for all; Builds strong foundation in all skills – writing, speaking, reading and listening.</p> -->
+        </li>
+        <li class="nav-btn">
+          <h4 class="title">Writing Masterclass</h4>
+          <!-- <p class="desc">Designed for learners with strong foundation; Takes your writing skills to the next level.</p> -->
+        </li>
+      </ul>
+    </div>
+    <div class="body">
+      <h3>English Essentials</h3>
+      <div class="category">
+        <ul>
+          <li class="category-item">
+            <div class="category-icon"><i class="fa-solid fa-address-book"></i></div>
+            <p class="desc">1.5 hours per week</p>
+          </li>
+          <li class="category-item">
+            <div class="category-icon"><i class="fa-solid fa-address-book"></i></div>
+            <p class="desc">Ages 10-20</p>
+          </li>
+          <li class="category-item">
+            <div class="category-icon"><i class="fa-solid fa-address-book"></i></div>
+            <p class="desc">Pre-intermediate – Advanced English Learners (A2 to C1)</p>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="body-hero">
+        <img src="https://images.unsplash.com/photo-1558443957-d056622df610?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80">
+      </div> -->
+      <div class="desc-check-flex">
+        <p class="body-desc">A well-balanced programme designed for learners who aim to build strong foundations in all skills - speaking, writing, reading and listening, which are tested in PT3, SPM, UEC and IGCSE (2nd Language).</p>
+        <div class="check">
+          <ul>
+            <li class="check-item">
+              <div class="check-icon"><i class="fa-solid fa-circle-check"></i></div>
+              <p class="desc">Detailed feedback on writing and speaking practices</p>
+            </li>
+            <li class="check-item">
+              <div class="check-icon"><i class="fa-solid fa-circle-check"></i></div>
+              <p class="desc">Personalised practices based on feedback</p>
+            </li>
+            <li class="check-item">
+              <div class="check-icon"><i class="fa-solid fa-circle-check"></i></div>
+              <p class="desc">Engaging learning experience with quizzes, engaging visuals and materials</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="package">
+        <h3>Our Pricing</h3>
+        <ul>
+          <li class="package-item">
+            <h4 class="title">Monthly Package</h4>
+            <h1 class="price">RM 90</h1>
+            <p class="price-monthly"></p>
+            <button>Enrol me Now!</button>
+          </li>
+          <li class="package-item">
+            <h4 class="title">3-Month Package</h4>
+            <h1 class="price">RM 240</h1>
+            <p class="price-monthly">RM 80 / Month</p>
+            <button>Enrol me Now!</button>
+          </li>
+          <li class="package-item">
+            <h4 class="title">12-Month Package</h4>
+            <h1 class="price">RM 840</h1>
+            <p class="price-monthly">RM 70 / Month</p>
+            <button>Enrol me Now!</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+<style>
+
+  .section-programmes ul {
+    list-style: none;
+  }
+
+  .section-programmes * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .section-programmes .container {
+    /*background-color: #FFF4ED;*/
+    background: linear-gradient(180deg, rgba(255,250,246,1) 0%, rgba(255,239,229,1) 100%);
+    padding: 100px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(244, 136, 71, 0.05);
+  }
+
+  .section-programmes .container > *:not(last-child) {
+    margin-bottom: 4.5rem;
+  }
+
+  .section-programmes .container .body > *:not(.package) {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-programmes .nav ul {
+    /* Need to center properly */
+    display: inline-flex;
+  }
+
+  .section-programmes .nav ul > *:not(last-child) {
+    margin-right: 25px;
+  }
+
+  .section-programmes .nav .nav-btn.active {
+    display: block;
+    position: relative;
+  }
+
+  .section-programmes .nav .nav-btn.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 3px;
+    background-color: var(--gurulab-orange);
+  }
+
+  /*.section-programmes .body {
+    text-align: left;
+  }*/
+
+  .section-programmes .body .category .category-item {
+    display: inline-flex;
+  }
+
+  .section-programmes .body .category .category-item:not(last-child) {
+    margin-right: 25px;
+  }
+
+  .section-programmes .body .category .category-item .category-icon {
+    margin-right: 15px;
+  }
+
+  .section-programmes .body .body-hero {
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+  }
+
+  .section-programmes .body .body-hero img {
+    aspect-ratio: 5 / 2;
+    object-fit: cover;
+  }
+
+  .section-programmes .body .desc-check-flex {
+    /*display: flex;*/
+    text-align: left;
+  }
+
+  .section-programmes .body .desc-check-flex .body-desc {
+    font-size: 1.2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-programmes .body .desc-check-flex .check .check-item {
+    display: flex;
+  }
+
+  .section-programmes .body .desc-check-flex .check .check-item:not(last-child) {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .section-programmes .body .desc-check-flex .check .check-item .check-icon {
+    margin-right: 15px;
+  }
+
+  .section-programmes .body .package h3 {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-programmes .body .package ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    height: 250px;
+  }
+
+  .section-programmes .body .package .package-item {
+    background-color: white;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(244, 136, 71, 0.1);
+    transition: background-color 0.2s ease;
+    cursor: default;
+  }
+
+  .section-programmes .body .package .package-item:hover {
+    background-color: #FFFBF9;
+    transition: background-color 0.2s ease;
+  }
+
+  .section-programmes .body .package .package-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: var(--gurulab-orange);
+  }
+
+  .section-programmes .body .package .package-item .title {
+    text-transform: uppercase;
+    color: black;
+    font-size: 1rem;
+  }
+
+  .section-programmes .body .package .package-item .price {
+    color: var(--gurulab-orange);
+    font-size: 2.5rem;
+  }
+
+  .section-programmes .body .package .package-item button {
+    padding: 20px 30px;
+    background: none;
+    border-radius: 100px;
+    border: 1px solid var(--gurulab-orange);
+    color: var(--gurulab-orange);
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    display: block;
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .section-programmes .body .desc-check-flex {
+      display: grid;
+      grid-template-columns: 4fr 3fr;
+      grid-gap: 50px;
+    }
+  }
+
+</style>
