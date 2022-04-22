@@ -340,7 +340,7 @@ https:/*static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f3d535cd62dd
     box-shadow: 0 0 30px rgba(0,0,0,.05);
   }
   
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 800px) {
     #page-section-61f2282ada1e7410b2f14173, #page-section-6221e3f6d8a1333ebea6df98, #page-section-6221f898b6bcec08e85e8df6, #page-section-6221fbf9a80b6e4d05be0104, #page-section-623b2dce93a6ff4523f31f04 {
       padding: 20px 40px;
     }
@@ -388,8 +388,8 @@ https:/*static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f3d535cd62dd
   /* Remove "As Featured On" on mobile screens */
 
   @media only screen and (max-width: 800px) {
-    #yui_3_17_2_1_1650626266365_584,
-    #yui_3_17_2_1_1650626266365_585 {
+    #yui_3_17_2_1_1650627095478_574,
+    #yui_3_17_2_1_1650627095478_575 {
       display: none;
     }
   }
