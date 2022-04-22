@@ -382,3 +382,14 @@ https:/*static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f3d535cd62dd
   #yui_3_17_2_1_1646394298407_327 a, #yui_3_17_2_1_1646394767837_327 a {
     background: rgba(255, 255, 255, 0.75) !important;
   }
+
+  /* Home Page 2 */
+
+  /* Remove "As Featured On" on mobile screens */
+
+  @media only screen and (max-width: 800px) {
+    #yui_3_17_2_1_1650626266365_584,
+    #yui_3_17_2_1_1650626266365_585 {
+      display: none;
+    }
+  }
