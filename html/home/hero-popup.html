@@ -1,0 +1,101 @@
+<div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn" data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary" id="hero-popup-button" style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
+    <a href="" class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element" data-initialized="true">
+        Book Free Consultation
+    </a>
+</div>
+
+<div class="section hero-popup-section">
+    <div class="form-popup-background"></div>
+    <div class="form-container">
+        <div class="form-header">
+            <h3>GuruLab</h3>
+            <h3 class="form-title">Book Free Consultation</h3>
+            <p class="form-desc">Description here.</p>
+        </div>
+        <div class="divider"></div>
+        <form action="">
+            <!-- Personal Details -->
+            <div class="form-element">
+                <label for="consultation-name">Your Name</label>
+                <input type="text" id="consultation-name" name="consultation-name">
+            </div>
+            <div class="form-element">
+                <label for="consultation-name">Mobile Number</label>
+                <input type="tel" id="consultation-tel" name="consultation-tel">
+            </div>
+            <!-- Self-Assessment Questions -->
+            <div class="form-element">
+                <label for="consultation-sa-1">SA1</label>
+                <input type="text" id="consultation-sa-1" name="consultation-sa-1">
+            </div>
+            <div class="form-element">
+                <label for="consultation-sa-2">SA2</label>
+                <input type="text" id="consultation-sa-2" name="consultation-sa-2">
+            </div>
+            <!-- Submit -->
+            <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn" data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary" id="hero-popup-button" style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
+                <input id="consultation-submit" class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element" type="submit">
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .section.hero-popup-section {
+        position: relative;
+        z-index: 10;
+    }
+
+    .hero-popup-section .form-container {
+        background: rgba(255,255,255,1);
+        box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        /* backdrop-filter: blur(25px); */
+        border-radius: 40px;
+        padding: 60px;
+        position: fixed;
+        top: 50vh;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        display: none;
+    }
+
+    .hero-popup-section .form-popup-background {
+        content: "";
+        background-color: rgba(0,0,0,0.5);
+        position: fixed;
+        z-index: 9;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: none;
+    }
+
+    .hero-popup-section .form-container * {
+        margin: 0;
+    }
+
+    .hero-popup-section .form-container .form-title {
+        margin-bottom: 1rem;
+        color: var(--gurulab-orange);
+    }
+
+    .hero-popup-section .form-container .form-desc {
+        margin-bottom: 2rem;
+    }
+
+    .hero-popup-section .form-container .divider {
+        height: 1px;
+        background-color: black;
+        margin-bottom: 2rem;
+    }
+
+    .hero-popup-section .form-container .form-element:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    .hero-popup-section .form-container .form-element > * {
+        display: block;
+    }
+</style>
