@@ -1,48 +1,67 @@
 <div class="section section-tutor">
-  <div class="tutor card">
-    <div class="image">
-      <img
-        src="https://st3.depositphotos.com/1010683/19125/i/600/depositphotos_191251860-stock-photo-young-asian-woman-smiling.jpg">
+  <div class="tutor cards-container">
+    <div class="tutor card" nav-idx="1">
+      <div class="image">
+        <img
+          src="https://st3.depositphotos.com/1010683/19125/i/600/depositphotos_191251860-stock-photo-young-asian-woman-smiling.jpg">
+      </div>
+      <div class="text">
+        <h3 class="title">Rheena Lee</h3>
+        <h4 class="subtitle">BA English graduate from top UK university, former PT3 English marker.</h4>
+        <p>“Tailors lessons and activities to learners’ needs”</p>
+        <p>“Encourages curiosity and equips students to think critically”</p>
+      </div>
     </div>
-    <div class="text">
-      <h3 class="title">Rheena Lee</h3>
-      <h4 class="subtitle">BA English graduate from top UK university, former PT3 English marker.</h4>
-      <p>“Tailors lessons and activities to learners’ needs”</p>
-      <p>“Encourages curiosity and equips students to think critically”</p>
+    <div class="tutor card" nav-idx="2">
+      <div class="image">
+        <img
+          src="https://media.istockphoto.com/photos/profile-of-young-womans-face-picture-id1137851574?k=20&m=1137851574&s=612x612&w=0&h=vdDs2XWP_oZJ4X64orwl6hPLrjfDbkyEB0jhIDmpGtY=">
+      </div>
+      <div class="text">
+        <h3 class="title">Emily Neoh</h3>
+        <h4 class="subtitle">Top private school English teacher, author of English MUET, SPM and PT3 workbooks, led students to win international essay competitions.</h4>
+        <p>“Relevant, clear, systematic and fun”</p>
+        <p>“Gives useful feedback to intervene and support learning”</p>
+      </div>
+    </div>
+    <div class="tutor card" nav-idx="3">
+      <div class="image">
+        <img
+          src="https://cdn.tatlerasia.com/tatlerasia/i/2022/03/07122054-donnie-yen-cover_cover_1499x843.jpeg">
+      </div>
+      <div class="text">
+        <h3 class="title">Jarod Yong</h3>
+        <h4 class="subtitle">12 years teaching experience in the US and Malaysia, with experience marking and building PT3 and SPM papers.</h4>
+        <p>Really helpful classes that I never wanna miss any”</p>
+        <p>“Challenges me to join essay competitions”</p>
+      </div>
     </div>
   </div>
-  <div class="tutor card">
-    <div class="image">
-      <img
-        src="https://media.istockphoto.com/photos/profile-of-young-womans-face-picture-id1137851574?k=20&m=1137851574&s=612x612&w=0&h=vdDs2XWP_oZJ4X64orwl6hPLrjfDbkyEB0jhIDmpGtY=">
-    </div>
-    <div class="text">
-      <h3 class="title">Emily Neoh</h3>
-      <h4 class="subtitle">Top private school English teacher, author of English MUET, SPM and PT3 workbooks, led students to win international essay competitions.</h4>
-      <p>“Relevant, clear, systematic and fun”</p>
-      <p>“Gives useful feedback to intervene and support learning”</p>
-    </div>
-  </div>
-  <div class="tutor card">
-    <div class="image">
-      <img
-        src="https://cdn.tatlerasia.com/tatlerasia/i/2022/03/07122054-donnie-yen-cover_cover_1499x843.jpeg">
-    </div>
-    <div class="text">
-      <h3 class="title">Jarod Yong</h3>
-      <h4 class="subtitle">12 years teaching experience in the US and Malaysia, with experience marking and building PT3 and SPM papers.</h4>
-      <p>Really helpful classes that I never wanna miss any”</p>
-      <p>“Challenges me to join essay competitions”</p>
-    </div>
+  <div class="tutor-cards-scroll-nav">
+    <div class="tutor-cards-scroll-nav-dots" nav-idx="1"></div>
+    <div class="tutor-cards-scroll-nav-dots" nav-idx="2"></div>
+    <div class="tutor-cards-scroll-nav-dots" nav-idx="3"></div>
   </div>
 </div>
   
   
 <style>
-  .section-tutor {
+  .tutor.cards-container {
+    overflow-x: scroll;
+    scroll-snap-type: inline mandatory;
     display: grid;
     grid-gap: 15px;
-    /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+    grid-auto-flow: column;
+    /* grid-auto-columns: calc(33% - 10px); */
+    grid-auto-columns: calc(100%);
+  }
+
+  .tutor.cards-container {
+    scrollbar-width: none;
+  }
+
+  .tutor.cards-container::-webkit-scrollbar {
+    display: none;
   }
 
   /* Card */
@@ -57,6 +76,7 @@
     align-items: center;
     background-color: white;
     transition: background 0.2s ease;
+    scroll-snap-align: center;
   }
 
   .tutor.card::before {
@@ -92,12 +112,7 @@
     margin-right: 0;
   }
 
-  /*.tutor .image {
-      margin-bottom: 0;
-      margin-right: 40px;
-    }*/
-
-  /* Text and Copy */
+  /* Typesetting */
 
   .tutor .title {
     color: var(--gurulab-orange);
@@ -120,45 +135,56 @@
     transition: color 0.2s ease;
   }
 
-  /* Hover */
+  /* Scroll Nav Dots */
+  .tutor-cards-scroll-nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 5px;
+    justify-content: center;
+    margin-top: 1rem;
+  }
 
-  /* .tutor.card:hover {
-    background-color: #FFF4ED;
-    transition: background 0.2s ease;
-  } */
-
-  /*   .tutor.card:hover .title {
-      color: white;
-      transition: color 0.2s ease;
-    }
+  .tutor-cards-scroll-nav-dots {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: rgba(244, 136, 71, 0);
+    transition: background-color 0.2s ease;
+    border: 2px solid var(--gurulab-orange);
+  }
   
-    .tutor.card:hover .subtitle {
-      color: white;
-      transition: color 0.2s ease;
-    }
-  
-    .tutor.card:hover p {
-      color: white;
-      transition: color 0.2s ease;
-    } */
+  .tutor-cards-scroll-nav-dots.active {
+    background-color: rgba(244, 136, 71, 1);
+    transition: background-color 0.2s ease;
+  }
 
-  /* Desktop Friendly */
-  @media only screen and (min-width: 800px) {
-    .section-tutor {
+  @media only screen and (min-width: 1025px) {
+    .tutor.cards-container {
+      overflow-x: hidden;
+      scroll-snap-type: none;
       grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .tutor .image {
-      margin-bottom: 1.5rem;
-      margin-right: 0;
-    }
-
-    .tutor.card {
-      display: block;
+    .tutor-cards-scroll-nav {
+      display: none;
     }
   }
 </style>
 
 <script>
-  
+  const tutorcards = document.querySelectorAll(".tutor.card");
+  const tutorsNavObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let navidx = entry.target.getAttribute("nav-idx");
+        $(".tutor-cards-scroll-nav-dots").removeClass("active");
+        $(`.tutor-cards-scroll-nav-dots[nav-idx=${navidx}]`).addClass("active");
+      }
+    });
+  }, {
+    threshold: 0.9
+  });
+  tutorcards.forEach((tutorcard) => {
+    tutorsNavObserver.observe(tutorcard);
+  })
 </script>
