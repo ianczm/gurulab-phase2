@@ -68,8 +68,8 @@ Data structure needed
         <h4>Our Pricing</h4>
         <div class="pricing">
           <div class="packages">
-            <ul>
-              <li class="package-item">
+            <ul class="package-item-container package-item-container--1">
+              <li class="package-item" nav-idx="1">
                 <h4 class="title">Monthly Package</h4>
                 <h1 class="price">RM 90</h1>
                 <p class="price-monthly"></p>
@@ -82,7 +82,7 @@ Data structure needed
                 <!-- <button><i class="fa-solid fa-chevron-right"></i></button> -->
                 <!-- <button>Enrol me now!</button> -->
               </li>
-              <li class="package-item">
+              <li class="package-item" nav-idx="2">
                 <h4 class="title">3-Month Package</h4>
                 <h1 class="price">RM 240</h1>
                 <p class="price-monthly">RM 80 / Month</p>
@@ -95,7 +95,7 @@ Data structure needed
                 <!-- <button><i class="fa-solid fa-chevron-right"></i></button> -->
                 <!-- <button>Enrol me now!</button> -->
               </li>
-              <li class="package-item">
+              <li class="package-item" nav-idx="3">
                 <h4 class="title">12-Month Package</h4>
                 <h1 class="price">RM 840</h1>
                 <p class="price-monthly">RM 70 / Month</p>
@@ -109,6 +109,11 @@ Data structure needed
                 <!-- <button>Enrol me now!</button> -->
               </li>
             </ul>
+          </div>
+          <div class="package-item-scroll-nav package-item-scroll-nav--1">
+            <div class="package-item-scroll-nav-dots" nav-idx="1"></div>
+            <div class="package-item-scroll-nav-dots" nav-idx="2"></div>
+            <div class="package-item-scroll-nav-dots" nav-idx="3"></div>
           </div>
         </div>
       </div>
@@ -163,8 +168,8 @@ Data structure needed
         <h4>Our Pricing</h4>
         <div class="pricing">
           <div class="packages">
-            <ul>
-              <li class="package-item">
+            <ul class="package-item-container package-item-container--2">
+              <li class="package-item" nav-idx="1">
                 <h4 class="title">Monthly Package</h4>
                 <h1 class="price">RM 90</h1>
                 <p class="price-monthly"></p>
@@ -177,7 +182,7 @@ Data structure needed
                   </a>
                 </div>
               </li>
-              <li class="package-item">
+              <li class="package-item" nav-idx="2">
                 <h4 class="title">3-Month Package</h4>
                 <h1 class="price">RM 240</h1>
                 <p class="price-monthly">RM 80 / Month</p>
@@ -190,7 +195,7 @@ Data structure needed
                   </a>
                 </div>
               </li>
-              <li class="package-item">
+              <li class="package-item" nav-idx="3">
                 <h4 class="title">12-Month Package</h4>
                 <h1 class="price">RM 840</h1>
                 <p class="price-monthly">RM 70 / Month</p>
@@ -204,6 +209,11 @@ Data structure needed
                 </div>
               </li>
             </ul>
+          </div>
+          <div class="package-item-scroll-nav package-item-scroll-nav--2">
+            <div class="package-item-scroll-nav-dots" nav-idx="1"></div>
+            <div class="package-item-scroll-nav-dots" nav-idx="2"></div>
+            <div class="package-item-scroll-nav-dots" nav-idx="3"></div>
           </div>
         </div>
       </div>
@@ -250,6 +260,10 @@ Data structure needed
   .section-programmes .accordion-header .desc .title {
     color: var(--gurulab-orange);
     margin-bottom: 0.25rem;
+  }
+
+  .section-programmes .accordion-header .dropdown-icon {
+    margin-left: 15px;
   }
 
   .section-programmes .accordion-header .dropdown-icon i {
@@ -355,11 +369,21 @@ Data structure needed
     margin-right: 15px;
   }
 
-  .section-programmes .accordion-content .pricing .packages ul {
+  .section-programmes .accordion-content .pricing .packages .package-item-container {
+    overflow-x: scroll;
+    scroll-snap-type: inline mandatory;
     display: grid;
     grid-gap: 15px;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* height: 250px; */
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100%);
+  }
+
+  .section-programmes .accordion-content .pricing .packages .package-item-container {
+    scrollbar-width: none;
+  }
+
+  .section-programmes .accordion-content .pricing .packages .package-item-container::-webkit-scrollbar {
+    display: none;
   }
 
   .section-programmes .accordion-content .pricing .packages .package-item {
@@ -370,6 +394,7 @@ Data structure needed
     /* box-shadow: 0 0 30px rgba(244, 136, 71, 0.1); */
     transition: background-color 0.2s ease, padding 0.2s ease;
     z-index: 0;
+    scroll-snap-align: center;
   }
 
   .section-programmes .accordion-content .pricing .packages .package-item::before {
@@ -406,6 +431,29 @@ Data structure needed
     margin-top: 1.5rem;
   }
 
+  /* Scroll Nav Dots */
+  .package-item-scroll-nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 5px;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .package-item-scroll-nav-dots {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: rgba(244, 136, 71, 0);
+    transition: background-color 0.2s ease;
+    border: 2px solid var(--gurulab-orange);
+  }
+  
+  .package-item-scroll-nav-dots.active {
+    background-color: rgba(244, 136, 71, 1);
+    transition: background-color 0.2s ease;
+  }
+
   @media only screen and (max-width: 1024px) {
 
     .section-programmes .accordion-header {
@@ -425,15 +473,61 @@ Data structure needed
     }
   }
 
+  @media only screen and (min-width: 1025px) {
+    .package-item-container {
+      overflow-x: hidden;
+      scroll-snap-type: none;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .package-item-scroll-nav {
+      display: none;
+    }
+  }
 </style>
 
 <script>
 
-$(".section-programmes .accordion-item .accordion-content").hide();
+  $(".section-programmes .accordion-item .accordion-content").hide();
 
-$(".section-programmes .accordion-item .accordion-header").click(function() {
-  $(this).toggleClass("active");
-  $(this).parent().children(".accordion-content").slideToggle(200, "swing");
-})
+  $(".section-programmes .accordion-item .accordion-header").click(function() {
+    $(this).toggleClass("active");
+    $(this).parent().children(".accordion-content").slideToggle(200, "swing");
+  })
+
+  const packageEEitem = document.querySelectorAll(".package-item-container--1 .package-item");
+  console.log(packageEEitem);
+  const packagesEENavObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let navidx = entry.target.getAttribute("nav-idx");
+        console.log($(".package-item-scroll-nav--1 .package-item-scroll-nav-dots"));
+        $(".package-item-scroll-nav--1 .package-item-scroll-nav-dots").removeClass("active");
+        $(`.package-item-scroll-nav--1 .package-item-scroll-nav-dots[nav-idx=${navidx}]`).addClass("active");
+      }
+    });
+  }, {
+    threshold: 0.9
+  });
+  packageEEitem.forEach((packagecard) => {
+    packagesEENavObserver.observe(packagecard);
+  })
+
+  const packageWMitem = document.querySelectorAll(".package-item-container--2 .package-item");
+  console.log(packageWMitem);
+  const packagesWMNavObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let navidx = entry.target.getAttribute("nav-idx");
+        $(".package-item-scroll-nav--2 .package-item-scroll-nav-dots").removeClass("active");
+        $(`.package-item-scroll-nav--2 .package-item-scroll-nav-dots[nav-idx=${navidx}]`).addClass("active");
+      }
+    });
+  }, {
+    threshold: 0.9
+  });
+  packageWMitem.forEach((packagecard) => {
+    packagesWMNavObserver.observe(packagecard);
+  })
 
 </script>
