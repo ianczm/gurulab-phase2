@@ -1,6 +1,6 @@
 <div class="section section-usp">
   <div class="usp cards-container">
-    <div class="usp card">
+    <div class="usp card" nav-idx="1">
       <div class="image">
         <img
           src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd2301892c05f44aa0280/1650446896635/analytics.png">
@@ -12,7 +12,7 @@
           at the price of a group class by leveraging pioneering technology and data analytics.</p>
       </div>
     </div>
-    <div class="usp card">
+    <div class="usp card" nav-idx="2">
       <div class="image">
         <img
           src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd1d146e57130b9592f33/1650446801119/trophy.png">
@@ -24,7 +24,7 @@
           start and reaches each milestone confidently with the right class.</p>
       </div>
     </div>
-    <div class="usp card">
+    <div class="usp card" nav-idx="3">
       <div class="image">
         <img
           src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png">
@@ -38,9 +38,9 @@
     </div>
   </div>
   <div class="usp-cards-scroll-nav">
-    <div class="usp-cards-scroll-nav-dots active"></div>
-    <div class="usp-cards-scroll-nav-dots"></div>
-    <div class="usp-cards-scroll-nav-dots"></div>
+    <div class="usp-cards-scroll-nav-dots active" nav-idx="1"></div>
+    <div class="usp-cards-scroll-nav-dots" nav-idx="2"></div>
+    <div class="usp-cards-scroll-nav-dots" nav-idx="3"></div>
   </div>
 </div>
 
@@ -55,7 +55,7 @@
     grid-gap: 15px;
     grid-auto-flow: column;
     /* grid-auto-columns: calc(33% - 10px); */
-    grid-auto-columns: calc(95%);
+    grid-auto-columns: calc(100%);
   }
 
   .usp.cards-container {
@@ -140,12 +140,30 @@
     height: 7px;
     border-radius: 100%;
     background-color: rgba(244, 136, 71, 0);
-    transition: background-color 0,2s ease;
+    transition: background-color 0.2s ease;
     border: 2px solid var(--gurulab-orange);
   }
   
   .usp-cards-scroll-nav-dots.active {
     background-color: rgba(244, 136, 71, 1);
-    transition: background-color 0,2s ease;
+    transition: background-color 0.2s ease;
   }
 </style>
+
+<script>
+  const uspcards = document.querySelectorAll(".usp.card");
+  const personalisatonNavObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let navidx = entry.target.getAttribute("nav-idx");
+        $(".usp-cards-scroll-nav-dots").removeClass("active");
+        $(`.usp-cards-scroll-nav-dots[nav-idx=${navidx}]`).addClass("active");
+      }
+    });
+  }, {
+    threshold: 0.9
+  });
+  uspcards.forEach((uspcard) => {
+    personalisatonNavObserver.observe(uspcard);
+  })
+</script>
