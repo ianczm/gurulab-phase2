@@ -42,12 +42,27 @@
 
 <style>
   .section-usp {
+  }
+  
+  /* Card */
+  
+  .usp.cards-container {
+    overflow-x: scroll;
+    scroll-snap-type: inline mandatory;
     display: grid;
     grid-gap: 15px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: column;
+    /* grid-auto-columns: calc(33% - 10px); */
+    grid-auto-columns: calc(95%);
   }
 
-  /* Card */
+  .usp.cards-container {
+    scrollbar-width: none;
+  }
+
+  .usp.cards-container::-webkit-scrollbar {
+    display: none;
+  }
 
   .usp.card {
     background: white;
@@ -58,6 +73,7 @@
     align-items: center;
     background-color: white;
     transition: background 0.2s ease;
+    scroll-snap-align: center;
   }
 
   .usp.card::before {
