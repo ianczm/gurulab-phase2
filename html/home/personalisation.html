@@ -37,6 +37,11 @@
       </div>
     </div>
   </div>
+  <div class="usp-cards-scroll-nav">
+    <div class="usp-cards-scroll-nav-dots active"></div>
+    <div class="usp-cards-scroll-nav-dots"></div>
+    <div class="usp-cards-scroll-nav-dots"></div>
+  </div>
 </div>
 
 
@@ -119,5 +124,28 @@
   .usp p {
     color: black;
     transition: color 0.2s ease;
+  }
+
+  /* Scroll Nav Dots */
+  .usp-cards-scroll-nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 5px;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .usp-cards-scroll-nav-dots {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: rgba(244, 136, 71, 0);
+    transition: background-color 0,2s ease;
+    border: 2px solid var(--gurulab-orange);
+  }
+  
+  .usp-cards-scroll-nav-dots.active {
+    background-color: rgba(244, 136, 71, 1);
+    transition: background-color 0,2s ease;
   }
 </style>
