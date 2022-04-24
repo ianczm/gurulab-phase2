@@ -1,48 +1,67 @@
 <div class="section section-cta">
-  <div class="cta card">
-    <div class="image">
-      <img
-        src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fe89814831b06d9d3b222/1650452632114/personal.png">
+  <div class="usp cards-container">
+    <div class="cta card" nav-idx="1">
+      <div class="image">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fe89814831b06d9d3b222/1650452632114/personal.png">
+      </div>
+      <div class="text">
+        <h3 class="title">Sign Up</h3>
+        <h4 class="subtitle">Step 1</h4>
+        <p>Fill up our sign-up form.</p>
+      </div>
     </div>
-    <div class="text">
-      <h3 class="title">Sign Up</h3>
-      <h4 class="subtitle">Step 1</h4>
-      <p>Fill up our sign-up form.</p>
+    <div class="cta card" nav-idx="2">
+      <div class="image">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fe89e201c011151cf95a3/1650452638269/interview+%281%29.png">
+      </div>
+      <div class="text">
+        <h3 class="title">FREE Consultation</h3>
+        <h4 class="subtitle">Step 2</h4>
+        <p>Our Education Consultant will understand your child’s needs and provide recommendations.</p>
+      </div>
+    </div>
+    <div class="cta card" nav-idx="3">
+      <div class="image">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fe8a08e98243575bb10e7/1650452640638/checked.png">
+      </div>
+      <div class="text">
+        <h3 class="title">Onboarding</h3>
+        <h4 class="subtitle">Step 3</h4>
+        <p>Our Student Support team will ensure you get onboarded to our platform.</p>
+      </div>
     </div>
   </div>
-  <div class="cta card">
-    <div class="image">
-      <img
-        src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fe89e201c011151cf95a3/1650452638269/interview+%281%29.png">
-    </div>
-    <div class="text">
-      <h3 class="title">FREE Consultation</h3>
-      <h4 class="subtitle">Step 2</h4>
-      <p>Our Education Consultant will understand your child’s needs and provide recommendations.</p>
-    </div>
-  </div>
-  <div class="cta card">
-    <div class="image">
-      <img
-        src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fe8a08e98243575bb10e7/1650452640638/checked.png">
-    </div>
-    <div class="text">
-      <h3 class="title">Onboarding</h3>
-      <h4 class="subtitle">Step 3</h4>
-      <p>Our Student Support team will ensure you get onboarded to our platform.</p>
-    </div>
+  <div class="cta-cards-scroll-nav">
+    <div class="cta-cards-scroll-nav-dots" nav-idx="1"></div>
+    <div class="cta-cards-scroll-nav-dots" nav-idx="2"></div>
+    <div class="cta-cards-scroll-nav-dots" nav-idx="3"></div>
   </div>
 </div>
 
 
 <style>
-  .section-cta {
+  /* Card */
+
+  .cta.cards-container {
+    overflow-x: scroll;
+    scroll-snap-type: inline mandatory;
     display: grid;
     grid-gap: 15px;
-    /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+    grid-auto-flow: column;
+    /* grid-auto-columns: calc(33% - 10px); */
+    grid-auto-columns: calc(100%);
   }
 
-  /* Card */
+  .cta.cards-container {
+    scrollbar-width: none;
+  }
+
+  .cta.cards-container::-webkit-scrollbar {
+    display: none;
+  }
 
   .cta.card {
     background: white;
@@ -54,17 +73,8 @@
     align-items: center;
     background-color: white;
     transition: background 0.2s ease;
+    scroll-snap-align: center;
   }
-
-  /*  .cta.card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 3px;
-      background-color: var(--gurulab-orange);
-    }*/
 
   /* Margins */
 
@@ -85,12 +95,7 @@
     margin-right: 0;
   }
 
-  /*.cta .image {
-      margin-bottom: 0;
-      margin-right: 40px;
-    }*/
-
-  /* Text and Copy */
+  /* Typesetting */
 
   .cta .title {
     color: var(--gurulab-orange);
@@ -109,26 +114,56 @@
     transition: color 0.2s ease;
   }
 
-  /* Hover */
+  /* Scroll Nav Dots */
+  .cta-cards-scroll-nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 5px;
+    justify-content: center;
+    margin-top: 1rem;
+  }
 
-  /* .cta.card:hover {
-    background-color: #FFF4ED;
-    transition: background 0.2s ease;
-  } */
+  .cta-cards-scroll-nav-dots {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.2s ease;
+    border: 2px solid white;
+  }
+  
+  .cta-cards-scroll-nav-dots.active {
+    background-color: rgba(255, 255, 255, 1);
+    transition: background-color 0.2s ease;
+  }
 
-  /* Desktop Friendly */
-  @media only screen and (min-width: 800px) {
-    .section-cta {
+  @media only screen and (min-width: 1025px) {
+    .cta.cards-container {
+      overflow-x: hidden;
+      scroll-snap-type: none;
       grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .cta .image {
-      margin-bottom: 1.5rem;
-      margin-right: 0;
-    }
-
-    .cta.card {
-      display: block;
+    .cta-cards-scroll-nav {
+      display: none;
     }
   }
 </style>
+
+<script>
+  const ctacards = document.querySelectorAll(".cta.card");
+  const nextstepsNavObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let navidx = entry.target.getAttribute("nav-idx");
+        $(".cta-cards-scroll-nav-dots").removeClass("active");
+        $(`.cta-cards-scroll-nav-dots[nav-idx=${navidx}]`).addClass("active");
+      }
+    });
+  }, {
+    threshold: 0.9
+  });
+  ctacards.forEach((ctacard) => {
+    nextstepsNavObserver.observe(ctacard);
+  })
+</script>
