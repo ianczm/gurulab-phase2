@@ -1,7 +1,10 @@
-<div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn" data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary" id="hero-popup-button" style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
-    <a href="" class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element" data-initialized="true">
+<div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn" data-animation-role="button"
+    data-alignment="left" data-button-size="medium" data-button-type="primary" id="hero-popup-button"
+    style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
+    <button class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
+        data-initialized="true">
         Book Free Consultation
-    </a>
+    </button>
 </div>
 
 <!-- <div class="section hero-popup-section disable-in-editor" id="hero-popup-section"> -->
@@ -15,43 +18,82 @@
             <p class="form-desc">Description here.</p>
         </div>
         <div class="divider"></div>
-        <form id="consultation-form" method="POST" action="https://script.google.com/macros/s/AKfycbz3iInurNfctCQeHd3uZS_on_LmvVwqV9pZ52sk02m6MZWlmYWJ-3AqFSL7V_PlH-Po/exec">
+        <form id="consultation-form" method="POST"
+            action="https://script.google.com/macros/s/AKfycbz3iInurNfctCQeHd3uZS_on_LmvVwqV9pZ52sk02m6MZWlmYWJ-3AqFSL7V_PlH-Po/exec">
             <!-- Personal Details -->
-            <div class="form-element">
-                <label for="consultation-name">Your Name *</label>
-                <!-- <p class="form-tip">Tip</p> -->
-                <input type="text" id="consultation-name" name="name" required>
+            <div class="form-page" nav-idx="1">
+                <div class="form-element">
+                    <label for="consultation-name">Your Name *</label>
+                    <!-- <p class="form-tip">Tip</p> -->
+                    <input type="text" id="consultation-name" name="name" required>
+                </div>
+                <div class="form-element">
+                    <label for="consultation-name">Mobile Number *</label>
+                    <p class="form-hint">e.g. +60178007460</p>
+                    <!-- <p class="form-tip">Tip</p> -->
+                    <input type="tel" id="consultation-tel" name="mobile" required>
+                </div>
+                <div class="form-btn-group">
+                    <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
+                    data-animation-role="button" data-alignment="left" data-button-size="medium"
+                    data-button-type="primary" package-id="wm-3"
+                    style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
+                        <button
+                            class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
+                            data-initialized="true">
+                            Next
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="form-element">
-                <label for="consultation-name">Mobile Number *</label>
-                <p class="form-hint">e.g. +60178007460</p>
-                <!-- <p class="form-tip">Tip</p> -->
-                <input type="tel" id="consultation-tel" name="mobile" required>
-            </div>
-            <!-- Self-Assessment Questions -->
-            <div class="form-element">
-                <label for="consultation-sa-1">SA1 *</label>
-                <!-- <p class="form-tip">Tip</p> -->
-                <input type="text" id="consultation-sa-1" name="sa1" required>
-            </div>
-            <div class="form-element">
-                <label for="consultation-sa-2">SA2 *</label>
-                <!-- <p class="form-tip">Tip</p> -->
-                <input type="text" id="consultation-sa-2" name="sa2" required>
-            </div>
-            <!-- Submit -->
-            <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn" data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary" package-id="wm-3" style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
-                <button type="submit" id="consultation-form-submit-btn" class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element" data-initialized="true">
-                  Submit
-                </button>
+            <div class="form-page" nav-idx="2">
+                <!-- Self-Assessment Questions -->
+                <div class="form-element">
+                    <label for="consultation-sa-1">SA1 *</label>
+                    <!-- <p class="form-tip">Tip</p> -->
+                    <input type="text" id="consultation-sa-1" name="sa1" required>
+                </div>
+                <div class="form-element">
+                    <label for="consultation-sa-2">SA2 *</label>
+                    <!-- <p class="form-tip">Tip</p> -->
+                    <input type="text" id="consultation-sa-2" name="sa2" required>
+                </div>
+                <!-- Submit -->
+                <div class="form-btn-group">
+                    <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
+                    data-animation-role="button" data-alignment="left" data-button-size="medium"
+                    data-button-type="primary" package-id="wm-3"
+                    style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
+                        <button
+                            class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
+                            data-initialized="true">
+                            Prev
+                        </button>
+                    </div>
+                    <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
+                    data-animation-role="button" data-alignment="left" data-button-size="medium"
+                    data-button-type="primary" package-id="wm-3"
+                    style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
+                        <button type="submit" id="consultation-form-submit-btn"
+                            class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
+                            data-initialized="true">
+                            Submit
+                        </button>
+                    </div>
+                </div>
             </div>
         </form>
         <div id="form-success">
             <p class="form-desc">Thank you, we will be in touch with you shortly!</p>
-            <div id="consultation-form-success-btn" class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn" data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary" package-id="wm-3" style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
-                <a class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element" data-initialized="true">
-                  Continue
-                </a>
+            <div id="consultation-form-success-btn"
+                class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
+                data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary"
+                package-id="wm-3"
+                style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
+                <button class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
+                    data-initialized="true">
+                    Continue
+                </button>
             </div>
         </div>
     </div>
@@ -64,8 +106,8 @@
     }
 
     .hero-popup-section .form-container {
-        background: rgba(255,255,255,1);
-        box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
         /* backdrop-filter: blur(25px); */
         border-radius: 40px;
         padding: 40px;
@@ -79,7 +121,7 @@
 
     .hero-popup-section .form-popup-background {
         content: "";
-        background-color: rgba(0,0,0,0.5);
+        background-color: rgba(0, 0, 0, 0.5);
         position: fixed;
         z-index: 9;
         top: 0;
@@ -131,11 +173,19 @@
         margin-bottom: 1.5rem;
     }
 
+    .hero-popup-section .form-container .form-btn-group {
+        display: flex;
+    }
+
+    .hero-popup-section .form-container .form-btn-group > *:not(:last-child) {
+        margin-right: 10px;
+    }
+
     .hero-popup-section .form-container .form-element:not(:last-child) {
         margin-bottom: 1.5rem;
     }
 
-    .hero-popup-section .form-container .form-element > * {
+    .hero-popup-section .form-container .form-element>* {
         display: block;
         width: 100%;
     }
@@ -158,7 +208,7 @@
         outline: 1px solid #CCCCCC;
         outline-offset: 0px;
         width: calc(100% - 30px);
-        box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
         transition: box-shadow 0.2s ease, outline 0.2s ease;
         font-size: 0.9rem;
     }
@@ -184,24 +234,24 @@
 <script>
     const formAnimationDuration = 100;
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#hero-popup-section").hide();
         $(".disable-in-editor").removeClass("disable-in-editor");
-    })
+    });
 
-    $("#hero-popup-button").click(function() {
+    $("#hero-popup-button").click(function () {
         $("#hero-popup-section").fadeIn(formAnimationDuration);
         $("#consultation-form").show();
         $("#form-success").hide();
         $("#consultation-form-submit-btn").text("Submit");
-    })
+    });
 
-    $("#consultation-form-bg, #hero-popup-close-btn, #consultation-form-success-btn").click(function() {
+    $("#consultation-form-bg, #hero-popup-close-btn, #consultation-form-success-btn").click(function () {
         $("#hero-popup-section").fadeOut(formAnimationDuration);
-    })
+    });
 
     const form = document.getElementById('consultation-form');
-    form.addEventListener("submit", function(e) {
+    form.addEventListener("submit", function (e) {
         e.preventDefault();
         const data = new FormData(form);
         const action = e.target.action;
@@ -209,10 +259,10 @@
         fetch(action, {
             method: 'POST',
             body: data,
-            })
-        .then(() => {
-            $("#consultation-form").hide();
-            $("#form-success").show();
         })
+            .then(() => {
+                $("#consultation-form").hide();
+                $("#form-success").show();
+            })
     });
 </script>
