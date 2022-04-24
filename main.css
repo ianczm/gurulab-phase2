@@ -387,9 +387,8 @@ https:/*static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f3d535cd62dd
 
   /* Remove "As Featured On" on mobile screens */
 
-  @media only screen and (max-width: 800px) {
-    #yui_3_17_2_1_1650627095478_574,
-    #yui_3_17_2_1_1650627095478_575 {
-      display: none;
+  @media only screen and (max-width: 1024px) {
+    .page-section[data-section-id="6261a528b7a7b114f60301c0"] {
+      display: none !important;
     }
   }
