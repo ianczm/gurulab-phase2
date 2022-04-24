@@ -38,11 +38,11 @@
                     data-animation-role="button" data-alignment="left" data-button-size="medium"
                     data-button-type="primary" package-id="wm-3"
                     style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
-                        <button
+                        <a id="consultation-form-next-page"
                             class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
                             data-initialized="true">
                             Next
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -64,11 +64,11 @@
                     data-animation-role="button" data-alignment="left" data-button-size="medium"
                     data-button-type="primary" package-id="wm-3"
                     style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
-                        <button
+                        <a id="consultation-form-prev-page"
                             class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
                             data-initialized="true">
                             Prev
-                        </button>
+                        </a>
                     </div>
                     <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
                     data-animation-role="button" data-alignment="left" data-button-size="medium"
@@ -90,10 +90,10 @@
                 data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary"
                 package-id="wm-3"
                 style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
-                <button class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
+                <a class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
                     data-initialized="true">
                     Continue
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -233,6 +233,7 @@
 
 <script>
     const formAnimationDuration = 100;
+    let consultationFormPage = 1;
 
     $(document).ready(function () {
         $("#hero-popup-section").hide();
@@ -242,6 +243,7 @@
     $("#hero-popup-button").click(function () {
         $("#hero-popup-section").fadeIn(formAnimationDuration);
         $("#consultation-form").show();
+        consultationFormSetPage(1);
         $("#form-success").hide();
         $("#consultation-form-submit-btn").text("Submit");
     });
@@ -249,6 +251,20 @@
     $("#consultation-form-bg, #hero-popup-close-btn, #consultation-form-success-btn").click(function () {
         $("#hero-popup-section").fadeOut(formAnimationDuration);
     });
+
+    $("#consultation-form-next-page").click(function() {
+        consultationFormSetPage(++consultationFormPage);
+    })
+
+    $("#consultation-form-prev-page").click(function() {
+        consultationFormSetPage(--consultationFormPage);
+    })
+
+    consultationFormSetPage = (page) => {
+        consultationFormPage = page;
+        $("#consultation-form .form-page").hide();
+        $(`#consultation-form .form-page[nav-idx=${page}]`).show();
+    }
 
     const form = document.getElementById('consultation-form');
     form.addEventListener("submit", function (e) {
@@ -260,9 +276,10 @@
             method: 'POST',
             body: data,
         })
-            .then(() => {
-                $("#consultation-form").hide();
-                $("#form-success").show();
-            })
+        .then(() => {
+            $("#consultation-form").hide();
+            $("#form-success").show();
+            $(".hero-popup-section .form-container .form-element > input").val("");
+        })
     });
 </script>
