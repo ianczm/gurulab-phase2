@@ -148,6 +148,18 @@
     background-color: rgba(244, 136, 71, 1);
     transition: background-color 0.2s ease;
   }
+
+  @media only screen and (min-width: 1025px) {
+    .usp.cards-container {
+      overflow-x: hidden;
+      scroll-snap-type: none;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .usp-cards-scroll-nav {
+      display: none;
+    }
+  }
 </style>
 
 <script>
