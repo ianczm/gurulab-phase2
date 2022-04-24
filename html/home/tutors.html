@@ -1,160 +1,164 @@
 <div class="section section-tutor">
-    <div class="tutor card">
-      <div class="image">
-        <img
-          src="https://st3.depositphotos.com/1010683/19125/i/600/depositphotos_191251860-stock-photo-young-asian-woman-smiling.jpg">
-      </div>
-      <div class="text">
-        <h3 class="title">Rheena Lee</h3>
-        <h4 class="subtitle">BA English graduate from top UK university, former PT3 English marker.</h4>
-        <p>“Tailors lessons and activities to learners’ needs”</p>
-        <p>“Encourages curiosity and equips students to think critically”</p>
-      </div>
+  <div class="tutor card">
+    <div class="image">
+      <img
+        src="https://st3.depositphotos.com/1010683/19125/i/600/depositphotos_191251860-stock-photo-young-asian-woman-smiling.jpg">
     </div>
-    <div class="tutor card">
-      <div class="image">
-        <img
-          src="https://media.istockphoto.com/photos/profile-of-young-womans-face-picture-id1137851574?k=20&m=1137851574&s=612x612&w=0&h=vdDs2XWP_oZJ4X64orwl6hPLrjfDbkyEB0jhIDmpGtY=">
-      </div>
-      <div class="text">
-        <h3 class="title">Emily Neoh</h3>
-        <h4 class="subtitle">Top private school English teacher, author of English MUET, SPM and PT3 workbooks, led students to win international essay competitions.</h4>
-        <p>“Relevant, clear, systematic and fun”</p>
-        <p>“Gives useful feedback to intervene and support learning”</p>
-      </div>
-    </div>
-    <div class="tutor card">
-      <div class="image">
-        <img
-          src="https://cdn.tatlerasia.com/tatlerasia/i/2022/03/07122054-donnie-yen-cover_cover_1499x843.jpeg">
-      </div>
-      <div class="text">
-        <h3 class="title">Jarod Yong</h3>
-        <h4 class="subtitle">12 years teaching experience in the US and Malaysia, with experience marking and building PT3 and SPM papers.</h4>
-        <p>Really helpful classes that I never wanna miss any”</p>
-        <p>“Challenges me to join essay competitions”</p>
-      </div>
+    <div class="text">
+      <h3 class="title">Rheena Lee</h3>
+      <h4 class="subtitle">BA English graduate from top UK university, former PT3 English marker.</h4>
+      <p>“Tailors lessons and activities to learners’ needs”</p>
+      <p>“Encourages curiosity and equips students to think critically”</p>
     </div>
   </div>
+  <div class="tutor card">
+    <div class="image">
+      <img
+        src="https://media.istockphoto.com/photos/profile-of-young-womans-face-picture-id1137851574?k=20&m=1137851574&s=612x612&w=0&h=vdDs2XWP_oZJ4X64orwl6hPLrjfDbkyEB0jhIDmpGtY=">
+    </div>
+    <div class="text">
+      <h3 class="title">Emily Neoh</h3>
+      <h4 class="subtitle">Top private school English teacher, author of English MUET, SPM and PT3 workbooks, led students to win international essay competitions.</h4>
+      <p>“Relevant, clear, systematic and fun”</p>
+      <p>“Gives useful feedback to intervene and support learning”</p>
+    </div>
+  </div>
+  <div class="tutor card">
+    <div class="image">
+      <img
+        src="https://cdn.tatlerasia.com/tatlerasia/i/2022/03/07122054-donnie-yen-cover_cover_1499x843.jpeg">
+    </div>
+    <div class="text">
+      <h3 class="title">Jarod Yong</h3>
+      <h4 class="subtitle">12 years teaching experience in the US and Malaysia, with experience marking and building PT3 and SPM papers.</h4>
+      <p>Really helpful classes that I never wanna miss any”</p>
+      <p>“Challenges me to join essay competitions”</p>
+    </div>
+  </div>
+</div>
   
   
-  <style>
+<style>
+  .section-tutor {
+    display: grid;
+    grid-gap: 15px;
+    /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+  }
+
+  /* Card */
+
+  .tutor.card {
+    background: white;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(240, 231, 226, 0.1);
+    /*display: flex;*/
+    display: block;
+    align-items: center;
+    background-color: white;
+    transition: background 0.2s ease;
+  }
+
+  .tutor.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    background-color: var(--gurulab-orange);
+  }
+
+  /* Margins */
+
+  .tutor .text>* {
+    margin: 0;
+    cursor: default;
+  }
+
+  /* Images */
+
+  .tutor .image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+
+  .tutor .image {
+    margin-bottom: 1.5rem;
+    margin-right: 0;
+  }
+
+  /*.tutor .image {
+      margin-bottom: 0;
+      margin-right: 40px;
+    }*/
+
+  /* Text and Copy */
+
+  .tutor .title {
+    color: var(--gurulab-orange);
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .tutor .subtitle {
+    color: black;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .tutor p {
+    color: black;
+    transition: color 0.2s ease;
+  }
+
+  /* Hover */
+
+  /* .tutor.card:hover {
+    background-color: #FFF4ED;
+    transition: background 0.2s ease;
+  } */
+
+  /*   .tutor.card:hover .title {
+      color: white;
+      transition: color 0.2s ease;
+    }
+  
+    .tutor.card:hover .subtitle {
+      color: white;
+      transition: color 0.2s ease;
+    }
+  
+    .tutor.card:hover p {
+      color: white;
+      transition: color 0.2s ease;
+    } */
+
+  /* Desktop Friendly */
+  @media only screen and (min-width: 800px) {
     .section-tutor {
-      display: grid;
-      grid-gap: 15px;
-      /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+      grid-template-columns: 1fr 1fr 1fr;
     }
-  
-    /* Card */
-  
-    .tutor.card {
-      background: white;
-      padding: 40px;
-      position: relative;
-      box-shadow: 0 0 30px rgba(240, 231, 226, 0.1);
-      /*display: flex;*/
-      display: block;
-      align-items: center;
-      background-color: white;
-      transition: background 0.2s ease;
-    }
-  
-    .tutor.card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 3px;
-      background-color: var(--gurulab-orange);
-    }
-  
-    /* Margins */
-  
-    .tutor .text>* {
-      margin: 0;
-      cursor: default;
-    }
-  
-    /* Images */
-  
-    .tutor .image img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      aspect-ratio: 1;
-      border-radius: 100%;
-      overflow: hidden;
-    }
-  
+
     .tutor .image {
       margin-bottom: 1.5rem;
       margin-right: 0;
     }
-  
-    /*.tutor .image {
-        margin-bottom: 0;
-        margin-right: 40px;
-      }*/
-  
-    /* Text and Copy */
-  
-    .tutor .title {
-      color: var(--gurulab-orange);
-      text-transform: uppercase;
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      transition: color 0.2s ease;
+
+    .tutor.card {
+      display: block;
     }
+  }
+</style>
+
+<script>
   
-    .tutor .subtitle {
-      color: black;
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      transition: color 0.2s ease;
-    }
-  
-    .tutor p {
-      color: black;
-      transition: color 0.2s ease;
-    }
-  
-    /* Hover */
-  
-    /* .tutor.card:hover {
-      background-color: #FFF4ED;
-      transition: background 0.2s ease;
-    } */
-  
-    /*   .tutor.card:hover .title {
-        color: white;
-        transition: color 0.2s ease;
-      }
-    
-      .tutor.card:hover .subtitle {
-        color: white;
-        transition: color 0.2s ease;
-      }
-    
-      .tutor.card:hover p {
-        color: white;
-        transition: color 0.2s ease;
-      } */
-  
-    /* Desktop Friendly */
-    @media only screen and (min-width: 800px) {
-      .section-tutor {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-  
-      .tutor .image {
-        margin-bottom: 1.5rem;
-        margin-right: 0;
-      }
-  
-      .tutor.card {
-        display: block;
-      }
-    }
-  </style>
+</script>
