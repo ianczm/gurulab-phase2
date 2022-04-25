@@ -1,300 +1,301 @@
 <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn" data-animation-role="button"
-    data-alignment="left" data-button-size="medium" data-button-type="primary" id="hero-popup-button"
-    style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
-    <button class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
-        data-initialized="true">
-        Book Free Consultation
-    </button>
+  data-alignment="left" data-button-size="medium" data-button-type="primary" id="hero-popup-button"
+  style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
+  <button class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
+    data-initialized="true">
+    Book Free Consultation
+  </button>
 </div>
 
 <!-- <div class="section hero-popup-section disable-in-editor" id="hero-popup-section"> -->
 <div class="section hero-popup-section disable-in-editor" id="hero-popup-section">
-    <div class="form-popup-background" id="consultation-form-bg"></div>
-    <div class="form-container" id="consultation-form-container">
-        <div class="form-close-btn" id="hero-popup-close-btn"><i class="fa-solid fa-xmark"></i></div>
-        <div class="form-header">
-            <h3>GuruLab</h3>
-            <h3 class="form-title">Book Free Consultation</h3>
-            <p class="form-desc">Description here.</p>
-        </div>
-        <div class="divider"></div>
-        <form id="consultation-form" method="POST"
-            action="https://script.google.com/macros/s/AKfycbz3iInurNfctCQeHd3uZS_on_LmvVwqV9pZ52sk02m6MZWlmYWJ-3AqFSL7V_PlH-Po/exec">
-            <!-- Personal Details -->
-            <div class="form-page" nav-idx="1">
-                <div class="form-element">
-                    <label for="consultation-name">Your Name *</label>
-                    <!-- <p class="form-tip">Tip</p> -->
-                    <input type="text" id="consultation-name" name="name" required>
-                </div>
-                <div class="form-element">
-                    <label for="consultation-name">Mobile Number *</label>
-                    <p class="form-hint">e.g. +60178007460</p>
-                    <!-- <p class="form-tip">Tip</p> -->
-                    <input type="tel" id="consultation-tel" name="mobile" required>
-                </div>
-                <div class="form-btn-group">
-                    <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
-                    data-animation-role="button" data-alignment="left" data-button-size="medium"
-                    data-button-type="primary" package-id="wm-3"
-                    style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
-                        <a id="consultation-form-next-page"
-                            class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
-                            data-initialized="true">
-                            Next
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="form-page" nav-idx="2">
-                <!-- Self-Assessment Questions -->
-                <div class="form-element">
-                    <label for="consultation-sa-1">SA1 *</label>
-                    <!-- <p class="form-tip">Tip</p> -->
-                    <input type="text" id="consultation-sa-1" name="sa1" required>
-                </div>
-                <div class="form-element">
-                    <label for="consultation-sa-2">SA2 *</label>
-                    <!-- <p class="form-tip">Tip</p> -->
-                    <input type="text" id="consultation-sa-2" name="sa2" required>
-                </div>
-                <!-- Submit -->
-                <div class="form-btn-group">
-                    <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
-                    data-animation-role="button" data-alignment="left" data-button-size="medium"
-                    data-button-type="primary" package-id="wm-3"
-                    style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
-                        <a id="consultation-form-prev-page"
-                            class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
-                            data-initialized="true">
-                            Prev
-                        </a>
-                    </div>
-                    <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
-                    data-animation-role="button" data-alignment="left" data-button-size="medium"
-                    data-button-type="primary" package-id="wm-3"
-                    style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
-                        <button type="submit" id="consultation-form-submit-btn"
-                            class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
-                            data-initialized="true">
-                            Submit
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <div id="form-success">
-            <p class="form-desc">Thank you, we will be in touch with you shortly!</p>
-            <div id="consultation-form-success-btn"
-                class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
-                data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary"
-                package-id="wm-3"
-                style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
-                <a class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
-                    data-initialized="true">
-                    Continue
-                </a>
-            </div>
-        </div>
+  <div class="form-popup-background" id="consultation-form-bg"></div>
+  <div class="form-container" id="consultation-form-container">
+    <div class="form-close-btn" id="hero-popup-close-btn"><i class="fa-solid fa-xmark"></i></div>
+    <div class="form-header">
+      <h3>GuruLab</h3>
+      <h3 class="form-title">Book Free Consultation</h3>
+      <p class="form-desc">Description here.</p>
     </div>
+    <div class="divider"></div>
+    <form id="consultation-form" method="POST"
+      action="https://script.google.com/macros/s/AKfycbz3iInurNfctCQeHd3uZS_on_LmvVwqV9pZ52sk02m6MZWlmYWJ-3AqFSL7V_PlH-Po/exec">
+      <!-- Personal Details -->
+      <div class="form-page" nav-idx="1">
+        <div class="form-element">
+          <label for="consultation-name">Your Name *</label>
+          <!-- <p class="form-tip">Tip</p> -->
+          <input type="text" id="consultation-name" name="name" required>
+        </div>
+        <div class="form-element">
+          <label for="consultation-name">Mobile Number *</label>
+          <p class="form-hint">e.g. +60178007460</p>
+          <!-- <p class="form-tip">Tip</p> -->
+          <input type="tel" id="consultation-tel" name="mobile" required>
+        </div>
+        <div class="form-btn-group">
+          <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
+            data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary"
+            package-id="wm-3"
+            style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
+            <a id="consultation-form-next-page"
+              class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
+              data-initialized="true">
+              Next
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="form-page" nav-idx="2">
+        <!-- Self-Assessment Questions -->
+        <div class="form-element">
+          <label for="consultation-sa-1">SA1 *</label>
+          <!-- <p class="form-tip">Tip</p> -->
+          <input type="text" id="consultation-sa-1" name="sa1" required>
+        </div>
+        <div class="form-element">
+          <label for="consultation-sa-2">SA2 *</label>
+          <!-- <p class="form-tip">Tip</p> -->
+          <input type="text" id="consultation-sa-2" name="sa2" required>
+        </div>
+        <!-- Submit -->
+        <div class="form-btn-group">
+          <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
+            data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary"
+            package-id="wm-3"
+            style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
+            <a id="consultation-form-prev-page"
+              class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
+              data-initialized="true">
+              Prev
+            </a>
+          </div>
+          <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
+            data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary"
+            package-id="wm-3"
+            style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
+            <button type="submit" id="consultation-form-submit-btn"
+              class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
+              data-initialized="true">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div id="form-success">
+      <p class="form-desc">Thank you, we will be in touch with you shortly!</p>
+      <div id="consultation-form-success-btn"
+        class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
+        data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary"
+        package-id="wm-3"
+        style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
+        <a class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
+          data-initialized="true">
+          Continue
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
-    .section.hero-popup-section {
-        position: relative;
-        z-index: 10;
-    }
+  .section.hero-popup-section {
+    position: relative;
+    z-index: 10;
+  }
 
-    .hero-popup-section .form-container {
-        background: rgba(255, 255, 255, 1);
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-        /* backdrop-filter: blur(25px); */
-        border-radius: 40px;
-        padding: 40px;
-        position: fixed;
-        top: 55vh;
-        left: 50vw;
-        transform: translate(-50%, -50%);
-        z-index: 10;
-        /* display: none; */
-    }
+  .hero-popup-section .form-container {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    /* backdrop-filter: blur(25px); */
+    border-radius: 40px;
+    padding: 40px;
+    position: fixed;
+    top: 55vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    /* display: none; */
+  }
 
-    .hero-popup-section .form-popup-background {
-        content: "";
-        background-color: rgba(0, 0, 0, 0.5);
-        position: fixed;
-        z-index: 9;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        cursor: pointer;
-        /* display: none; */
-    }
+  .hero-popup-section .form-popup-background {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    /* display: none; */
+  }
 
-    .hero-popup-section .form-container * {
-        margin: 0;
-    }
+  .hero-popup-section .form-container * {
+    margin: 0;
+  }
 
-    .hero-popup-section .form-container .form-close-btn {
-        text-align: right;
-    }
+  .hero-popup-section .form-container .form-close-btn {
+    text-align: right;
+  }
 
-    .hero-popup-section .form-container .form-close-btn i {
-        padding: 10px;
-        margin: -10px;
-        font-size: 1.25rem;
-        transition: color 0.2s ease;
-        cursor: pointer;
-    }
+  .hero-popup-section .form-container .form-close-btn i {
+    padding: 10px;
+    margin: -10px;
+    font-size: 1.25rem;
+    transition: color 0.2s ease;
+    cursor: pointer;
+  }
 
-    .hero-popup-section .form-container .form-close-btn i:hover {
-        color: var(--gurulab-orange);
-        transition: color 0.2s ease;
-    }
+  .hero-popup-section .form-container .form-close-btn i:hover {
+    color: var(--gurulab-orange);
+    transition: color 0.2s ease;
+  }
 
-    .hero-popup-section .form-container h3 {
-        font-size: 2rem;
-    }
+  .hero-popup-section .form-container h3 {
+    font-size: 2rem;
+  }
 
-    .hero-popup-section .form-container .form-title {
-        margin-bottom: 1rem;
-        color: var(--gurulab-orange);
-    }
+  .hero-popup-section .form-container .form-title {
+    margin-bottom: 1rem;
+    color: var(--gurulab-orange);
+  }
 
-    .hero-popup-section .form-container .form-desc {
-        margin-bottom: 1.5rem;
-        font-size: 0.9rem;
-    }
+  .hero-popup-section .form-container .form-desc {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
 
-    .hero-popup-section .form-container .divider {
-        height: 1px;
-        background-color: black;
-        margin-bottom: 1.5rem;
-    }
+  .hero-popup-section .form-container .divider {
+    height: 1px;
+    background-color: black;
+    margin-bottom: 1.5rem;
+  }
 
-    .hero-popup-section .form-container .form-btn-group {
-        display: flex;
-    }
+  .hero-popup-section .form-container .form-btn-group {
+    display: flex;
+  }
 
-    .hero-popup-section .form-container .form-btn-group > *:not(:last-child) {
-        margin-right: 10px;
-    }
+  .hero-popup-section .form-container .form-btn-group>*:not(:last-child) {
+    margin-right: 10px;
+  }
 
-    .hero-popup-section .form-container .form-element:not(:last-child) {
-        margin-bottom: 1.5rem;
-    }
+  .hero-popup-section .form-container .form-element:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
 
-    .hero-popup-section .form-container .form-element>* {
-        display: block;
-        width: 100%;
-    }
+  .hero-popup-section .form-container .form-element>* {
+    display: block;
+    width: 100%;
+  }
 
-    .hero-popup-section .form-container .form-element label {
-        font-size: 0.9rem;
-        /* font-weight: 600; */
-    }
+  .hero-popup-section .form-container .form-element label {
+    font-size: 0.9rem;
+    /* font-weight: 600; */
+  }
 
-    .hero-popup-section .form-container .form-element p {
-        font-size: 0.9rem;
-        color: var(--gurulab-orange);
-    }
+  .hero-popup-section .form-container .form-element p {
+    font-size: 0.9rem;
+    color: var(--gurulab-orange);
+  }
 
-    .hero-popup-section .form-container .form-element input {
-        padding: 10px 15px;
-        margin-top: 0.25rem;
-        border-radius: 50px;
-        border: none;
-        outline: 1px solid #CCCCCC;
-        outline-offset: 0px;
-        width: calc(100% - 30px);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-        transition: box-shadow 0.2s ease, outline 0.2s ease;
-        font-size: 0.9rem;
-    }
+  .hero-popup-section .form-container .form-element input {
+    padding: 10px 15px;
+    margin-top: 0.25rem;
+    border-radius: 50px;
+    border: none;
+    outline: 1px solid #CCCCCC;
+    outline-offset: 0px;
+    width: calc(100% - 30px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease, outline 0.2s ease;
+    font-size: 0.9rem;
+  }
 
-    .hero-popup-section .form-container .form-element input:focus,
-    .hero-popup-section .form-container .form-element input:active {
-        border: none;
-        outline: 1px solid var(--gurulab-orange);
-        outline-offset: 0px;
-        box-shadow: 0 0 25px rgba(244, 136, 71, 0.25);
-        transition: box-shadow 0.2s ease, outline 0.2s ease;
-    }
+  .hero-popup-section .form-container .form-element input:focus,
+  .hero-popup-section .form-container .form-element input:active {
+    border: none;
+    outline: 1px solid var(--gurulab-orange);
+    outline-offset: 0px;
+    box-shadow: 0 0 25px rgba(244, 136, 71, 0.25);
+    transition: box-shadow 0.2s ease, outline 0.2s ease;
+  }
 
-    /* #consultation-submit {
+  /* #consultation-submit {
         text-align: center;
     } */
 
-    .disable-in-editor {
-        display: none;
+  .disable-in-editor {
+    display: none;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .hero-popup-section .form-container {
+      padding: 25px;
+      border-radius: 30px;
+      width: 80vw;
+      top: 55vh;
     }
 
-    @media only screen and (max-width: 800px) {
-        .hero-popup-section .form-container {
-            padding: 25px;
-            border-radius: 30px;
-            width: 80vw;
-            top: 55vh;
-        }
-        .hero-popup-section .form-container .form-close-btn i {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            /* transform: translate(-50%, -50%); */
-        }
+    .hero-popup-section .form-container .form-close-btn i {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      /* transform: translate(-50%, -50%); */
     }
+  }
 </style>
 
 <script>
-    const formAnimationDuration = 100;
-    let consultationFormPage = 1;
+  const formAnimationDuration = 100;
+  let consultationFormPage = 1;
 
-    $(document).ready(function () {
-        $("#hero-popup-section").hide();
-        $(".disable-in-editor").removeClass("disable-in-editor");
-    });
+  $(document).ready(function () {
+    $("#hero-popup-section").hide();
+    $(".disable-in-editor").removeClass("disable-in-editor");
+  });
 
-    $("#hero-popup-button").click(function () {
-        $("#hero-popup-section").fadeIn(formAnimationDuration);
-        $("#consultation-form").show();
-        consultationFormSetPage(1);
-        $("#form-success").hide();
-        $("#consultation-form-submit-btn").text("Submit");
-    });
+  $("#hero-popup-button").click(function () {
+    $("#hero-popup-section").fadeIn(formAnimationDuration);
+    $("#consultation-form").show();
+    consultationFormSetPage(1);
+    $("#form-success").hide();
+    $("#consultation-form-submit-btn").text("Submit");
+  });
 
-    $("#consultation-form-bg, #hero-popup-close-btn, #consultation-form-success-btn").click(function () {
-        $("#hero-popup-section").fadeOut(formAnimationDuration);
-    });
+  $("#consultation-form-bg, #hero-popup-close-btn, #consultation-form-success-btn").click(function () {
+    $("#hero-popup-section").fadeOut(formAnimationDuration);
+  });
 
-    $("#consultation-form-next-page").click(function() {
-        consultationFormSetPage(++consultationFormPage);
+  $("#consultation-form-next-page").click(function () {
+    consultationFormSetPage(++consultationFormPage);
+  })
+
+  $("#consultation-form-prev-page").click(function () {
+    consultationFormSetPage(--consultationFormPage);
+  })
+
+  consultationFormSetPage = (page) => {
+    consultationFormPage = page;
+    $("#consultation-form .form-page").hide();
+    $(`#consultation-form .form-page[nav-idx=${page}]`).show();
+  }
+
+  const form = document.getElementById('consultation-form');
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = e.target.action;
+    $("#consultation-form-submit-btn").text("Processing...");
+    fetch(action, {
+      method: 'POST',
+      body: data,
     })
-
-    $("#consultation-form-prev-page").click(function() {
-        consultationFormSetPage(--consultationFormPage);
-    })
-
-    consultationFormSetPage = (page) => {
-        consultationFormPage = page;
-        $("#consultation-form .form-page").hide();
-        $(`#consultation-form .form-page[nav-idx=${page}]`).show();
-    }
-
-    const form = document.getElementById('consultation-form');
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const data = new FormData(form);
-        const action = e.target.action;
-        $("#consultation-form-submit-btn").text("Processing...");
-        fetch(action, {
-            method: 'POST',
-            body: data,
-        })
-        .then(() => {
-            $("#consultation-form").hide();
-            $("#form-success").show();
-            $(".hero-popup-section .form-container .form-element > input").val("");
-        })
-    });
+      .then(() => {
+        $("#consultation-form").hide();
+        $("#form-success").show();
+        $(".hero-popup-section .form-container .form-element > input").val("");
+      })
+  });
 </script>
