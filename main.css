@@ -121,17 +121,6 @@ https:/*static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f3d535cd62dd
   overflow-x: hidden;
 } */
 
-/* Fonts */
-@import url('https://fonts.googleapis.com/css?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
-
-p, h1, h2, h3, h4, a, button, span, body, html {
-  font-family: 'Nunito', sans-serif !important;
-}
-
-.btn, .sqs-block-button-element {
-  font-weight: 600 !important;
-}
-
 /* Colors */
 
 :root {
