@@ -14,11 +14,21 @@
     </div>
     <div class="story-body">
       <div class="body-header">
-        <h2 class="header-title"><strong>Kai Song's</strong> Story</h2>
-        <h4 class="header-subtitle">
-          <span>Co-Founder</span>
-          <a class="profile-linkedin" href="https://www.linkedin.com/in/kaisongeer/" target="_blank">Connect on <i class="fa-brands fa-linkedin"></i></a>
-        </h4>
+        <div class="header-mobile-profile-picture">
+          <img
+            src="https://images.unsplash.com/photo-1616325629936-99a9013c29c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+            alt="profile-picture">
+        </div>
+        <div class="header-text">
+          <h2 class="header-title"><strong>Kai Song's</strong> Story</h2>
+          <h4 class="header-subtitle">
+            <span>Co-Founder</span>
+            <div class="profile-linkedin">
+              <a href="https://www.linkedin.com/in/kaisongeer/" target="_blank">Connect on <i
+                class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </h4>
+        </div>
       </div>
       <div class="divider"></div>
       <div class="body-text">
@@ -52,11 +62,21 @@
     </div>
     <div class="story-body">
       <div class="body-header">
-        <h2 class="header-title"><strong>Vicky's</strong> Story</h2>
-        <h4 class="header-subtitle">
-          <span>Co-Founder</span>
-          <a class="profile-linkedin" href="https://www.linkedin.com/in/vickytanwenhui/" target="_blank">Connect on <i class="fa-brands fa-linkedin"></i></a>
-        </h4>
+        <div class="header-mobile-profile-picture">
+          <img
+            src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            alt="profile-picture">
+        </div>
+        <div class="header-text">
+          <h2 class="header-title"><strong>Vicky's</strong> Story</h2>
+          <h4 class="header-subtitle">
+            <span>Co-Founder</span>
+            <div class="profile-linkedin">
+              <a href="https://www.linkedin.com/in/vickytanwenhui/" target="_blank">Connect on <i
+                class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </h4>
+        </div>
       </div>
       <div class="divider"></div>
       <div class="body-text">
@@ -67,12 +87,14 @@
           their teachers struggle to give everyone their undivided attention due to having a large number of students
           and immense workload.</p>
         <p><b>Since then, Vicky has been on a mission to make personalised English learning more accessible for all
-          students.</b> After completing her MSc in Education at Oxford University, she started an English learning centre,
+            students.</b> After completing her MSc in Education at Oxford University, she started an English learning
+          centre,
           Veritas Academy. She has helped public school students to get As in English examinations and even college
           students to secure scholarships. The teaching technique that works best for her students is giving detailed
           feedback to her students and tracking their progress in key areas across time so that she can tailor her
-          lessons to the students’ needs. <b>But there’s only so much one person can do, and this problem inspired her to
-          building GuruLab.</b></p>
+          lessons to the students’ needs. <b>But there’s only so much one person can do, and this problem inspired her
+            to
+            building GuruLab.</b></p>
       </div>
     </div>
   </div>
@@ -98,12 +120,12 @@
     z-index: 1;
     transform: translateY(-50%);
   }
-  
+
   .story-container.story-container--left-aligned .story-profile {
     left: unset;
     right: 1%;
   }
-  
+
   .story-container .story-profile .profile-picture img {
     display: block;
     width: 100%;
@@ -112,7 +134,7 @@
     transform: scale(1);
     transition: transform 0.2s ease;
   }
-  
+
   .story-container .story-profile .profile-picture img:hover {
     transform: scale(1.01);
     transition: transform 0.2s ease;
@@ -137,6 +159,28 @@
     text-transform: uppercase;
     font-weight: 600;
     font-size: 0.9rem;
+  }
+
+  .story-container .story-body .body-header {
+    display: flex;
+    margin-bottom: 1.5rem;
+    align-items: center;
+  }
+
+  .story-container .story-body .body-header >*:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .story-container .story-body .body-header .header-mobile-profile-picture {
+    display: none;
+  }
+
+  .story-container .story-body .body-header .header-mobile-profile-picture img {
+    width: 100px;
+    min-width: 75px;
+    object-fit: cover;
+    aspect-ratio: 1;
+    border-radius: 100%;
   }
 
   .story-container .story-body .body-header .header-subtitle .profile-linkedin i {
@@ -188,7 +232,11 @@
     /* color: #666666; */
     font-weight: 400;
     /* text-transform: uppercase; */
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .story-container .story-body .body-header .header-subtitle>* {
+    display: inline;
   }
 
   .story-container .story-body .body-header .header-subtitle>*:not(:last-child) {
@@ -212,5 +260,49 @@
     width: 40px;
     background-color: var(--gurulab-orange);
     margin-bottom: 1.5rem;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .story-container:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    
+    .story-container .story-body .body-header {
+      display: flex;
+    }
+
+    .story-container .story-body .body-header .header-title {
+      font-size: 1.5rem;
+    }
+
+    .story-container .story-body,
+    .story-container.story-container--left-aligned .story-body {
+      padding: 20px;
+      width: auto;
+    }
+
+    .story-container .story-profile {
+      display: none;
+    }
+
+    .story-container .story-body .body-header .header-mobile-profile-picture {
+      display: block;
+    }
+
+    .story-container .story-body .body-header .header-subtitle {
+      font-size: 1rem;
+    }
+
+    .story-container .story-body .body-header .header-subtitle>* {
+      display: block;
+    }
+
+    .story-container .story-body .body-header .header-subtitle>*:not(:last-child)::after {
+      display: none;
+    }
+
+    .story-container .story-body .body-header .header-subtitle .profile-linkedin i {
+      font-size: 1rem;
+    }
   }
 </style>
