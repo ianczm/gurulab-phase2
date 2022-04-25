@@ -1,0 +1,111 @@
+<div class="section section-newslogos">
+    <div class="news-container">
+        <ul class="news-grid">
+            <li class="news-item" news-item="thestar">
+                <a href=""><img src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae0b57094e52115b45f9/1650896396044/thestar.png" alt=""></a>
+            </li>
+            <li class="news-item" news-item="technode">
+                <a href=""><img src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae7b45ee9d0755454016/1650896507166/technode.png" alt=""></a>
+            </li>
+            <li class="news-item" news-item="techinasia">
+                <a href=""><img src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae7dbe929828d2018757/1650896509161/techinasia.png" alt=""></a>
+            </li>
+            <li class="news-item" news-item="sme">
+                <a href=""><img src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae7ebbfd7749a8d80cc0/1650896510750/sme.png" alt=""></a>
+            </li>
+            <li class="news-item" news-item="shinchew">
+                <a href=""><img src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae800ea7ec40f70c792d/1650896512954/sinchew.png" alt=""></a>
+            </li>
+            <li class="news-item" news-item="orientaldailynews">
+                <a href=""><img src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae8208f28b23a5b77dde/1650896514794/orientaldailynews.png" alt=""></a>
+            </li>
+            <li class="news-item" news-item="malaysianbusiness">
+                <a href=""><img src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae846d39b1158e906e96/1650896517086/malaysianbusiness.png" alt=""></a>
+            </li>
+            <li class="news-item" news-item="e27">
+                <a href=""><img src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae86a7957a1ce4c171c5/1650896518683/e27.png" alt=""></a>
+            </li>
+            <li class="news-item" news-item="dagangnews">
+                <a href=""><img src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae88bbfd7749a8d80cde/1650896520736/dagangnews.png" alt=""></a>
+            </li>
+            <li class="news-item" news-item="businesstoday">
+                <a href=""><img src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae8ad240466a7d793fca/1650896522597/businesstodaylowres.png" alt=""></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<style>
+    .section-newslogos .news-container .news-grid {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 5px;
+        position: relative;
+        padding: 0;
+    }
+
+    .section-newslogos .news-container .news-item {
+        position: relative;
+        z-index: 0;
+    }
+
+    .section-newslogos .news-container .news-item a {
+        padding: 0;
+        padding: 25px 50px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(100% - 50px);
+        transform: scale(1);
+        transition: transform 0.2s ease;
+    }
+
+    .section-newslogos .news-container .news-item:hover a {
+        transform: scale(1.1);
+        transition: transform 0.2s ease;
+    }
+    
+    .section-newslogos .news-container .news-item:hover {
+        z-index: 1;
+    }
+
+    .section-newslogos .news-container .news-item a::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        box-shadow: 0 0 30px rgba(0,0,0,0.05);
+        content: "";
+        z-index: -1;
+    }
+
+    .section-newslogos .news-container .news-item a::after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 3px;
+        background: var(--gurulab-orange);
+        content: "";
+        z-index: 2;
+    }
+
+    .section-newslogos .news-container .news-item[news-item="techinasia"] a img {
+        max-height: 100px;
+    }
+
+    .section-newslogos .news-container .news-item a img {
+        filter: grayscale(1);
+        opacity: 0.75;
+        transition: filter 0.2s ease, opacity 0.2s ease;
+    }
+    
+    .section-newslogos .news-container .news-item:hover a img {
+        filter: grayscale(0);
+        opacity: 1;
+        transition: filter 0.2s ease, opacity 0.2s ease;
+    }
+</style>
