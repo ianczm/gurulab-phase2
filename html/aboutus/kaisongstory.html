@@ -1,0 +1,209 @@
+<div class="section founders-story-section">
+  <div class="story-container">
+    <div class="story-profile">
+      <div class="profile-picture">
+        <img
+          src="https://images.unsplash.com/photo-1616325629936-99a9013c29c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          alt="profile-picture">
+      </div>
+      <!-- <div class="profile-details">
+        <h3 class="profile-name">Kai Song</h3>
+        <p class="profile-title">Co-Founder</p>
+        <a class="profile-linkedin" href=""><i class="fa-brands fa-linkedin"></i></a>
+      </div> -->
+    </div>
+    <div class="story-body">
+      <div class="body-header">
+        <h2 class="header-title"><strong>Kai Song's</strong> Story</h2>
+        <h4 class="header-subtitle">
+          <span>Co-Founder</span>
+          <a class="profile-linkedin" href="https://www.linkedin.com/in/kaisongeer/" target="_blank">Connect on <i class="fa-brands fa-linkedin"></i></a>
+        </h4>
+      </div>
+      <div class="divider"></div>
+      <div class="body-text">
+        <p>At the age of 18, Kai Song rallied 200 youths and built her first education non-profit with to help
+          underprivileged communities access tertiary education. She went on to pursue a Master in Information
+          Engineering with a Machine Learning focus at the Cambridge University which equipped her with the
+          technical foundation to transform the traditional “one-size-fits-all” approach to education,
+          leveraging on data.</p>
+        <p>Kai Song also has experience working in top-tier management consulting firm McKinsey & Company in
+          London where she served clients on growth strategies in the UK, US, Middle East and Europe. She was
+          also the Chief of Staff to and to the CEO of an Advanced Analytics startup in London.Kai Song
+          returned home after spending many years in the UK when she saw an opportunity to contribute to the
+          Malaysian education system by leveraging the power of data science. <b>She is a strong believer that
+            English is a key to upward social mobility and with a personalised approach, she aspires to a world
+            where no student is left behind.</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="story-container story-container--left-aligned">
+    <div class="story-profile">
+      <div class="profile-picture">
+        <img
+          src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt="profile-picture">
+      </div>
+      <!-- <div class="profile-details">
+        <h3 class="profile-name">Kai Song</h3>
+        <p class="profile-title">Co-Founder</p>
+        <a class="profile-linkedin" href=""><i class="fa-brands fa-linkedin"></i></a>
+      </div> -->
+    </div>
+    <div class="story-body">
+      <div class="body-header">
+        <h2 class="header-title"><strong>Vicky's</strong> Story</h2>
+        <h4 class="header-subtitle">
+          <span>Co-Founder</span>
+          <a class="profile-linkedin" href="https://www.linkedin.com/in/vickytanwenhui/" target="_blank">Connect on <i class="fa-brands fa-linkedin"></i></a>
+        </h4>
+      </div>
+      <div class="divider"></div>
+      <div class="body-text">
+        <p>Vicky discovered her love for teaching when she started teaching English during her gap year. She realised
+          that students who speak English fluently tend to do better at school and can apply for university admissions
+          and scholarships with relative ease. But for students who struggle to even string simple sentences together
+          without grammar mistakes, learning English can be a very tough journey. The journey is made even tougher when
+          their teachers struggle to give everyone their undivided attention due to having a large number of students
+          and immense workload.</p>
+        <p><b>Since then, Vicky has been on a mission to make personalised English learning more accessible for all
+          students.</b> After completing her MSc in Education at Oxford University, she started an English learning centre,
+          Veritas Academy. She has helped public school students to get As in English examinations and even college
+          students to secure scholarships. The teaching technique that works best for her students is giving detailed
+          feedback to her students and tracking their progress in key areas across time so that she can tailor her
+          lessons to the students’ needs. <b>But there’s only so much one person can do, and this problem inspired her to
+          building GuruLab.</b></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .story-container {
+    position: relative;
+  }
+
+  .story-container:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
+  .story-container .story-profile {
+    position: absolute;
+    width: 27%;
+    top: 50%;
+    margin: auto 0;
+    left: 1%;
+    right: unset;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+  
+  .story-container.story-container--left-aligned .story-profile {
+    left: unset;
+    right: 1%;
+  }
+  
+  .story-container .story-profile .profile-picture img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  .story-container .story-profile .profile-details {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .story-container .story-profile .profile-details>* {
+    margin: 0;
+    color: white;
+  }
+
+  .story-container .story-profile .profile-details .profile-title {
+    color: var(--gurulab-orange);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .story-container .story-body .body-header .header-subtitle .profile-linkedin i {
+    font-size: 1.5rem;
+  }
+
+  .story-container .story-body {
+    background: white;
+    padding: 40px 100px;
+    padding-right: 60px;
+    /* padding-left: 80px; */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    width: 62%;
+    margin-left: auto;
+    margin-right: 0;
+    position: relative;
+    z-index: 0;
+  }
+
+  .story-container.story-container--left-aligned .story-body {
+    padding: 40px 100px;
+    padding-left: 60px;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .story-container .story-body::before {
+    content: "";
+    background-color: var(--gurulab-orange);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+
+  .story-container strong {
+    color: var(--gurulab-orange);
+  }
+
+  .story-container .story-body .body-header .header-title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .story-container .story-body .body-header .header-subtitle {
+    margin-top: 0;
+    font-size: 1.2rem;
+    /* color: #666666; */
+    font-weight: 400;
+    /* text-transform: uppercase; */
+    margin-bottom: 1.5rem;
+  }
+
+  .story-container .story-body .body-header .header-subtitle>*:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  .story-container .story-body .body-header .header-subtitle>*:not(:last-child)::after {
+    content: "";
+    background-color: var(--gurulab-orange);
+    width: 2px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 15px;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+  }
+
+  .story-container .story-body .divider {
+    height: 5px;
+    width: 40px;
+    background-color: var(--gurulab-orange);
+    margin-bottom: 1.5rem;
+  }
+</style>
