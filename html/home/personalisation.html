@@ -164,7 +164,7 @@
 
 <script>
   const uspcards = document.querySelectorAll(".usp.card");
-  const personalisatonNavObserver = new IntersectionObserver((entries) => {
+  const personalisationNavObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         let navidx = entry.target.getAttribute("nav-idx");
@@ -176,6 +176,6 @@
     threshold: 0.9
   });
   uspcards.forEach((uspcard) => {
-    personalisatonNavObserver.observe(uspcard);
+    personalisationNavObserver.observe(uspcard);
   })
 </script>
