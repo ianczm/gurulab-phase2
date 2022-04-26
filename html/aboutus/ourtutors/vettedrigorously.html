@@ -92,7 +92,7 @@
 
   .vetted.card {
     background: white;
-    padding: 25px;
+    padding: 40px;
     position: relative;
     box-shadow: 0 0 30px rgba(244, 136, 71, 0.1);
     display: block;
@@ -106,8 +106,10 @@
     content: "";
     position: absolute;
     top: 0;
+    right: unset;
     bottom: 0;
     left: 0;
+    height: auto;
     width: 3px;
     background-color: var(--gurulab-orange);
   }
@@ -122,7 +124,7 @@
   /* Images */
 
   .vetted .image img {
-    width: 50%;
+    width: 40%;
     min-width: 50px;
   }
 
@@ -188,7 +190,19 @@
     }
 
     .vetted.card {
-      padding: 40px;
+      padding: 25px;
+    }
+
+    .vetted.card::before {
+      content: "";
+      position: absolute;
+      top: unset;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: auto;
+      background-color: var(--gurulab-orange);
     }
   }
 </style>
