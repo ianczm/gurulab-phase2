@@ -1,0 +1,103 @@
+<div class="section section-boxes">
+  <div class="box-container" box-idx="1">
+    <div class="box-image">
+      <img
+        src="https://images.unsplash.com/photo-1607268113410-2d8c2a5b35cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+        alt="image">
+    </div>
+    <div class="box-body">
+      <div class="body-header">
+        <h2>Our Methodology</h2>
+      </div>
+      <div class="body-text">
+        <p>The strong bond between our framework and technology delivers a superior curriculum that supercharges our
+          programme. We bring personalisation at an affordable scale to all learners so that each learner can have a
+          learning experience unique to their needs, just as if a private English tutor is right next to you!</p>
+      </div>
+      <div class="body-button">
+        <a href="">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-boxes .box-container {
+    /* background: var(--gurulab-box-1); */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+  }
+
+  .section-boxes .box-container * {
+    color: white;
+  }
+
+  .section-boxes .box-container>*:not(:last-child) {
+    margin-right: 80px;
+    margin-bottom: 0;
+  }
+
+  .section-boxes .box-container .box-image img {
+    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 20px;
+    max-width: 500px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .section-boxes .box-container .box-body > *:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-boxes .box-container .box-body .body-button a {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    display: inline-block;
+    font-weight: 600;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  /* Box 1 */
+  .page-section[data-section-id="62659ab51e34f11bd9f3aa82"] .section-boxes .box-container .box-body .body-button a {
+    color: #623AA2;
+  }
+
+  /* Box 2 */
+  .page-section[data-section-id="6267b0e2d64b4f0015a51ea1"] .section-boxes .box-container .box-body .body-button a {
+    color: #1B7F85;
+  }
+
+  /* Box 3 */
+  .page-section[data-section-id="6267cb85a613f54842b6a4aa"] .section-boxes .box-container .box-body .body-button a {
+    color: #F55555;
+  }
+
+  .section-boxes .box-container .box-body .body-button a:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .section-boxes .box-container {
+      display: block;
+    }
+
+    .section-boxes .box-container>*:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-boxes .box-container .box-image img {
+      max-width: 100%;
+    }
+
+    .section-boxes .box-container .box-body > *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+</style>

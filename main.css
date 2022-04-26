@@ -427,3 +427,27 @@ a.header-nav-lang-btn-cn {
     display: none !important;
   }
 }
+
+.page-section[data-section-id="625fe45f6d00904c0e126282"] .section-background {
+  background: linear-gradient( 135deg, #F55555 10%, #F48847 100%);
+}
+
+/* About Us 2 */
+
+/* Box 1: Data Section ID 62659ab51e34f11bd9f3aa82 */
+
+.page-section[data-section-id="62659ab51e34f11bd9f3aa82"] .section-background {
+  background: linear-gradient( 135deg, #F97794 10%, #623AA2 100%);
+}
+
+/* Box 2: Data Section ID 6267b0e2d64b4f0015a51ea1 */
+
+.page-section[data-section-id="6267b0e2d64b4f0015a51ea1"] .section-background {
+  background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
+}
+
+/* Box 3: Data Section ID 6267cb85a613f54842b6a4aa */
+
+.page-section[data-section-id="6267cb85a613f54842b6a4aa"] .section-background {
+  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+}
