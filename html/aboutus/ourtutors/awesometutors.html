@@ -1,0 +1,234 @@
+<div class="section section-awesometutor">
+  <div class="awesometutor cards-container">
+    <div class="awesometutor card" nav-idx="1">
+      <div class="image">
+        <img
+          src="https://st3.depositphotos.com/1010683/19125/i/600/depositphotos_191251860-stock-photo-young-asian-woman-smiling.jpg">
+      </div>
+      <div class="text">
+        <h3 class="title">Mr Jarod Yong</h3>
+        <h4 class="subtitle">Master of Education, Columbia University</h4>
+      </div>
+    </div>
+    <div class="awesometutor card" nav-idx="2">
+      <div class="image">
+        <img
+          src="https://media.istockphoto.com/photos/profile-of-young-womans-face-picture-id1137851574?k=20&m=1137851574&s=612x612&w=0&h=vdDs2XWP_oZJ4X64orwl6hPLrjfDbkyEB0jhIDmpGtY=">
+      </div>
+      <div class="text">
+        <h3 class="title">Dr Sharmini Ghanaguru</h3>
+        <h4 class="subtitle">PhD in Education, University Kebangsaan Malaysia</h4>
+      </div>
+    </div>
+    <div class="awesometutor card" nav-idx="3">
+      <div class="image">
+        <img src="https://cdn.tatlerasia.com/tatlerasia/i/2022/03/07122054-donnie-yen-cover_cover_1499x843.jpeg">
+      </div>
+      <div class="text">
+        <h3 class="title">Ms Emily Neoh</h3>
+        <h4 class="subtitle">MSc,  University of Queensland</h4>
+      </div>
+    </div>
+    <div class="awesometutor card" nav-idx="4">
+      <div class="image">
+        <img src="https://cdn.tatlerasia.com/tatlerasia/i/2022/03/07122054-donnie-yen-cover_cover_1499x843.jpeg">
+      </div>
+      <div class="text">
+        <h3 class="title">Ms Vicky Tan</h3>
+        <h4 class="subtitle">MSc in Education, University of Oxford</h4>
+      </div>
+    </div>
+    <div class="awesometutor card" nav-idx="5">
+      <div class="image">
+        <img src="https://cdn.tatlerasia.com/tatlerasia/i/2022/03/07122054-donnie-yen-cover_cover_1499x843.jpeg">
+      </div>
+      <div class="text">
+        <h3 class="title">Ms Amanda Navaratnam</h3>
+        <h4 class="subtitle">Xx, University of Queensland</h4>
+      </div>
+    </div>
+    <div class="awesometutor card" nav-idx="6">
+      <div class="image">
+        <img src="https://cdn.tatlerasia.com/tatlerasia/i/2022/03/07122054-donnie-yen-cover_cover_1499x843.jpeg">
+      </div>
+      <div class="text">
+        <h3 class="title">Mr Azfar Shamin</h3>
+        <h4 class="subtitle">Xx, University of Malaya</h4>
+      </div>
+    </div>
+  </div>
+  <div class="awesometutor-cards-scroll-nav">
+    <div class="awesometutor-cards-scroll-nav-dots" nav-idx="1"></div>
+    <div class="awesometutor-cards-scroll-nav-dots" nav-idx="2"></div>
+    <div class="awesometutor-cards-scroll-nav-dots" nav-idx="3"></div>
+    <div class="awesometutor-cards-scroll-nav-dots" nav-idx="4"></div>
+    <div class="awesometutor-cards-scroll-nav-dots" nav-idx="5"></div>
+    <div class="awesometutor-cards-scroll-nav-dots" nav-idx="6"></div>
+  </div>
+</div>
+
+
+<style>
+  .awesometutor.cards-container {
+    overflow-x: scroll;
+    scroll-snap-type: inline mandatory;
+    display: grid;
+    grid-gap: 15px;
+    grid-auto-flow: column;
+    /* grid-auto-columns: calc(33% - 10px); */
+    grid-auto-columns: calc(100%);
+  }
+
+  .awesometutor.cards-container {
+    scrollbar-width: none;
+  }
+
+  .awesometutor.cards-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Card */
+
+  .awesometutor.card {
+    background: white;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(240, 231, 226, 0.1);
+    /*display: flex;*/
+    display: block;
+    align-items: center;
+    background-color: white;
+    transition: background 0.2s ease;
+    scroll-snap-align: center;
+    text-align: center;
+  }
+
+  .awesometutor.card::before {
+    content: "";
+    position: absolute;
+    top: unset;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: auto;
+    background-color: var(--gurulab-orange);
+  }
+
+  /* Margins */
+
+  .awesometutor .text>* {
+    margin: 0;
+    cursor: default;
+  }
+
+  /* Images */
+
+  .awesometutor .image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+
+  .awesometutor .image {
+    margin-bottom: 1.5rem;
+    margin-right: 0;
+  }
+
+  /* Typesetting */
+
+  .awesometutor .title {
+    color: var(--gurulab-orange);
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .awesometutor .subtitle {
+    color: black;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .awesometutor p {
+    color: black;
+    transition: color 0.2s ease;
+  }
+
+  /* Scroll Nav Dots */
+  .awesometutor-cards-scroll-nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 5px;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .awesometutor-cards-scroll-nav-dots {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: rgba(244, 136, 71, 0);
+    transition: background-color 0.2s ease;
+    border: 2px solid var(--gurulab-orange);
+  }
+
+  .awesometutor-cards-scroll-nav-dots.active {
+    background-color: rgba(244, 136, 71, 1);
+    transition: background-color 0.2s ease;
+  }
+
+  @media only screen and (min-width: 1025px) {
+    .awesometutor.cards-container {
+      overflow-x: hidden;
+      scroll-snap-type: none;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      grid-auto-flow: row;
+    }
+
+    .awesometutor-cards-scroll-nav {
+      display: none;
+    }
+
+    .awesometutor.card {
+      text-align: center;
+    }
+
+    .awesometutor.card::before {
+      content: "";
+      position: absolute;
+      top: unset;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: auto;
+      background-color: var(--gurulab-orange);
+    }
+  }
+</style>
+
+<script>
+  const tutorcards = document.querySelectorAll(".awesometutor.card");
+  const tutorsNavObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let navidx = entry.target.getAttribute("nav-idx");
+        $(".awesometutor-cards-scroll-nav-dots").removeClass("active");
+        $(`.awesometutor-cards-scroll-nav-dots[nav-idx=${navidx}]`).addClass("active");
+      }
+    });
+  }, {
+    threshold: 0.9
+  });
+  tutorcards.forEach((tutorcard) => {
+    tutorsNavObserver.observe(tutorcard);
+  })
+</script>
