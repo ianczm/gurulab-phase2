@@ -1,0 +1,207 @@
+<div class="section section-vetted">
+    <div class="vetted cards-container">
+      <div class="vetted card" nav-idx="1">
+        <div class="image">
+          <img
+            src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd2301892c05f44aa0280/1650446896635/analytics.png">
+        </div>
+        <div class="text">
+          <h3 class="title">Powerful</h3>
+          <h4 class="subtitle">with advanced technology and data analytics.</h4>
+          <p>Personalisation used to mean having a private tutor. However, GuruLab is able to replicate the experience
+            at the price of a group class by leveraging pioneering technology and data analytics.</p>
+        </div>
+      </div>
+      <div class="vetted card" nav-idx="2">
+        <div class="image">
+          <img
+            src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd1d146e57130b9592f33/1650446801119/trophy.png">
+        </div>
+        <div class="text">
+          <h3 class="title">Reliable</h3>
+          <h4 class="subtitle">with proven and internationally-aligned curriculum.</h4>
+          <p>With our precise assessment techniques and CEFR-aligned curriculum, we ensure your child has a good head
+            start and reaches each milestone confidently with the right class.</p>
+        </div>
+      </div>
+      <div class="vetted card" nav-idx="3">
+        <div class="image">
+          <img
+            src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png">
+        </div>
+        <div class="text">
+          <h3 class="title">Possible</h3>
+          <h4 class="subtitle">with qualified, experienced and dedicated tutors.</h4>
+          <p>Nothing can replace a human teacher and, at GuruLab, our qualified, experienced, and dedicated tutors are
+            trained to ensure students learn at the right level and pace, ensuring your child’s success.</p>
+        </div>
+      </div>
+      <div class="vetted card" nav-idx="4">
+        <div class="image">
+          <img
+            src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png">
+        </div>
+        <div class="text">
+          <h3 class="title">Possible</h3>
+          <h4 class="subtitle">with qualified, experienced and dedicated tutors.</h4>
+          <p>Nothing can replace a human teacher and, at GuruLab, our qualified, experienced, and dedicated tutors are
+            trained to ensure students learn at the right level and pace, ensuring your child’s success.</p>
+        </div>
+      </div>
+      <div class="vetted card" nav-idx="5">
+        <div class="image">
+          <img
+            src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png">
+        </div>
+        <div class="text">
+          <h3 class="title">Possible</h3>
+          <h4 class="subtitle">with qualified, experienced and dedicated tutors.</h4>
+          <p>Nothing can replace a human teacher and, at GuruLab, our qualified, experienced, and dedicated tutors are
+            trained to ensure students learn at the right level and pace, ensuring your child’s success.</p>
+        </div>
+      </div>
+    </div>
+    <div class="vetted-cards-scroll-nav">
+      <div class="vetted-cards-scroll-nav-dots" nav-idx="1"></div>
+      <div class="vetted-cards-scroll-nav-dots" nav-idx="2"></div>
+      <div class="vetted-cards-scroll-nav-dots" nav-idx="3"></div>
+      <div class="vetted-cards-scroll-nav-dots" nav-idx="4"></div>
+      <div class="vetted-cards-scroll-nav-dots" nav-idx="5"></div>
+    </div>
+  </div>
+  
+  
+  <style>
+    /* Card */
+    
+    .vetted.cards-container {
+      overflow-x: scroll;
+      scroll-snap-type: inline mandatory;
+      display: grid;
+      grid-gap: 15px;
+      grid-auto-flow: column;
+      /* grid-auto-columns: calc(33% - 10px); */
+      grid-auto-columns: calc(100%);
+    }
+  
+    .vetted.cards-container {
+      scrollbar-width: none;
+    }
+  
+    .vetted.cards-container::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .vetted.card {
+      background: white;
+      padding: 40px;
+      position: relative;
+      box-shadow: 0 0 30px rgba(244, 136, 71, 0.1);
+      display: block;
+      align-items: center;
+      background-color: white;
+      transition: background 0.2s ease;
+      scroll-snap-align: center;
+    }
+  
+    .vetted.card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 3px;
+      background-color: var(--gurulab-orange);
+    }
+  
+    /* Margins */
+  
+    .vetted .text>* {
+      margin: 0;
+      cursor: default;
+    }
+  
+    /* Images */
+  
+    .vetted .image img {
+      width: 100px;
+      min-width: 75px;
+    }
+  
+    .vetted .image {
+      margin-bottom: 1.5rem;
+      margin-right: 0;
+    }
+  
+    /* Typesetting */
+  
+    .vetted .title {
+      color: var(--gurulab-orange);
+      margin-bottom: 0.5rem;
+      transition: color 0.2s ease;
+    }
+  
+    .vetted .subtitle {
+      color: black;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s ease;
+    }
+  
+    .vetted p {
+      color: black;
+      transition: color 0.2s ease;
+    }
+  
+    /* Scroll Nav Dots */
+    .vetted-cards-scroll-nav {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 5px;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  
+    .vetted-cards-scroll-nav-dots {
+      width: 7px;
+      height: 7px;
+      border-radius: 100%;
+      background-color: rgba(244, 136, 71, 0);
+      transition: background-color 0.2s ease;
+      border: 2px solid var(--gurulab-orange);
+    }
+    
+    .vetted-cards-scroll-nav-dots.active {
+      background-color: rgba(244, 136, 71, 1);
+      transition: background-color 0.2s ease;
+    }
+  
+    @media only screen and (min-width: 1025px) {
+      .vetted.cards-container {
+        overflow-x: hidden;
+        scroll-snap-type: none;
+        grid-template-columns: repeat(5, 1fr);
+      }
+  
+      .vetted-cards-scroll-nav {
+        display: none;
+      }
+    }
+  </style>
+  
+  <script>
+    const uspcards = document.querySelectorAll(".vetted.card");
+    const personalisatonNavObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let navidx = entry.target.getAttribute("nav-idx");
+          $(".vetted-cards-scroll-nav-dots").removeClass("active");
+          $(`.vetted-cards-scroll-nav-dots[nav-idx=${navidx}]`).addClass("active");
+        }
+      });
+    }, {
+      threshold: 0.9
+    });
+    uspcards.forEach((uspcard) => {
+      personalisatonNavObserver.observe(uspcard);
+    })
+  </script>
