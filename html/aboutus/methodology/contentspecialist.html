@@ -1,0 +1,184 @@
+<div class="section section-content-specialist">
+  <div class="content-specialist cards-container">
+    <div class="content-specialist card" nav-idx="1">
+      <div class="image">
+        <img
+          src="https://st3.depositphotos.com/1010683/19125/i/600/depositphotos_191251860-stock-photo-young-asian-woman-smiling.jpg">
+      </div>
+      <div class="text">
+        <h3 class="title">Emily Neoh Gaik Kin</h3>
+        <p>Emily is a highly motivated educator who has taught in both public and private schools. With her familiarity with a range of English curricula and exposure to publishing SPM & MUET English reference books, Emily brings both author and educator perspectives to curriculum design.</p>
+      </div>
+    </div>
+    <div class="content-specialist card" nav-idx="2">
+      <div class="image">
+        <img
+          src="https://media.istockphoto.com/photos/profile-of-young-womans-face-picture-id1137851574?k=20&m=1137851574&s=612x612&w=0&h=vdDs2XWP_oZJ4X64orwl6hPLrjfDbkyEB0jhIDmpGtY=">
+      </div>
+      <div class="text">
+        <h3 class="title">Tiong Ngee Derk</h3>
+        <p>Dr Tiong has spent 12 years specialising in Education and obtained his Master's and PhD from the University of Cambridge. He was previously the Head of the English Department in a reputable international school and is currently a senior lecturer in English Language Studies, making him an expert in designing curricula that prepare learners for their future.</p>
+      </div>
+    </div>
+    <div class="content-specialist card" nav-idx="3">
+      <div class="image">
+        <img
+          src="https://cdn.tatlerasia.com/tatlerasia/i/2022/03/07122054-donnie-yen-cover_cover_1499x843.jpeg">
+      </div>
+      <div class="text">
+        <h3 class="title">Vicky Tan Hui Wen</h3>
+        <p>Vicky is an effective educator with 10 years of experience teaching English across different curricula, such as KSSM, IGCSE and UEC. Her broad exposure to various curricula makes her a crucial asset in designing an effective English learning experience.</p>
+      </div>
+    </div>
+  </div>
+  <div class="content-specialist-cards-scroll-nav">
+    <div class="content-specialist-cards-scroll-nav-dots" nav-idx="1"></div>
+    <div class="content-specialist-cards-scroll-nav-dots" nav-idx="2"></div>
+    <div class="content-specialist-cards-scroll-nav-dots" nav-idx="3"></div>
+  </div>
+</div>
+  
+  
+<style>
+  .content-specialist.cards-container {
+    overflow-x: scroll;
+    scroll-snap-type: inline mandatory;
+    display: grid;
+    grid-gap: 15px;
+    grid-auto-flow: column;
+    /* grid-auto-columns: calc(33% - 10px); */
+    grid-auto-columns: calc(100%);
+  }
+
+  .content-specialist.cards-container {
+    scrollbar-width: none;
+  }
+
+  .content-specialist.cards-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Card */
+
+  .content-specialist.card {
+    background: white;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(240, 231, 226, 0.1);
+    /*display: flex;*/
+    display: block;
+    align-items: center;
+    background-color: white;
+    transition: background 0.2s ease;
+    scroll-snap-align: center;
+  }
+
+  .content-specialist.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    background-color: var(--gurulab-orange);
+  }
+
+  /* Margins */
+
+  .content-specialist .text>* {
+    margin: 0;
+    cursor: default;
+  }
+
+  /* Images */
+
+  .content-specialist .image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+
+  .content-specialist .image {
+    margin-bottom: 1.5rem;
+    margin-right: 0;
+  }
+
+  /* Typesetting */
+
+  .content-specialist .title {
+    color: var(--gurulab-orange);
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .content-specialist .subtitle {
+    color: black;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .content-specialist p {
+    color: black;
+    transition: color 0.2s ease;
+  }
+
+  /* Scroll Nav Dots */
+  .content-specialist-cards-scroll-nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 5px;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .content-specialist-cards-scroll-nav-dots {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: rgba(244, 136, 71, 0);
+    transition: background-color 0.2s ease;
+    border: 2px solid var(--gurulab-orange);
+  }
+  
+  .content-specialist-cards-scroll-nav-dots.active {
+    background-color: rgba(244, 136, 71, 1);
+    transition: background-color 0.2s ease;
+  }
+
+  @media only screen and (min-width: 1025px) {
+    .content-specialist.cards-container {
+      overflow-x: hidden;
+      scroll-snap-type: none;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .content-specialist-cards-scroll-nav {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const contentspecialistcards = document.querySelectorAll(".content-specialist.card");
+  const contentspecialistsNavObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let navidx = entry.target.getAttribute("nav-idx");
+        $(".content-specialist-cards-scroll-nav-dots").removeClass("active");
+        $(`.content-specialist-cards-scroll-nav-dots[nav-idx=${navidx}]`).addClass("active");
+      }
+    });
+  }, {
+    threshold: 0.9
+  });
+  contentspecialistcards.forEach((contentspecialistcard) => {
+    contentspecialistsNavObserver.observe(contentspecialistcard);
+  })
+</script>
