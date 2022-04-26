@@ -148,6 +148,7 @@
     color: black;
     margin-bottom: 1.5rem;
     transition: color 0.2s ease;
+    font-size: 1rem;
   }
 
   .vetted p {
@@ -182,7 +183,8 @@
     .vetted.cards-container {
       overflow-x: hidden;
       scroll-snap-type: none;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
     }
 
     .vetted-cards-scroll-nav {
@@ -191,6 +193,10 @@
 
     .vetted.card {
       padding: 25px;
+    }
+
+    .vetted .image img {
+      width: 75px;
     }
 
     .vetted.card::before {
