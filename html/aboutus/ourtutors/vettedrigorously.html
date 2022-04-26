@@ -4,10 +4,12 @@
       <div class="image">
         <img
           src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd2301892c05f44aa0280/1650446896635/analytics.png">
-      </div>
+          <div class="text">
+            <h3 class="title">Step 1</h3>
+            <h4 class="subtitle">Screening</h4>
+          </div>
+        </div>
       <div class="text">
-        <h3 class="title">Step 1</h3>
-        <h4 class="subtitle">Screening</h4>
         <p>We ensure all our Tutors have at least 2 years of teaching experience in the English subject, hold (at least)
           a Degree in English or Education and attain a minimum English proficiency of CEFR C2/ IELTS Band 8.5.</p>
       </div>
@@ -16,10 +18,12 @@
       <div class="image">
         <img
           src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd1d146e57130b9592f33/1650446801119/trophy.png">
+          <div class="text">
+            <h3 class="title">Step 2</h3>
+            <h4 class="subtitle">Interview with Tutor Management Team</h4>
+          </div>
       </div>
       <div class="text">
-        <h3 class="title">Step 2</h3>
-        <h4 class="subtitle">Interview with Tutor Management Team</h4>
         <p>We identify the Tutor’s core motives to ensure we have the most dedicated Tutors.</p>
       </div>
     </div>
@@ -27,10 +31,12 @@
       <div class="image">
         <img
           src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png">
+          <div class="text">
+            <h3 class="title">Step 3</h3>
+            <h4 class="subtitle">Mock Online Lesson</h4>
+          </div>
       </div>
       <div class="text">
-        <h3 class="title">Step 3</h3>
-        <h4 class="subtitle">Mock Online Lesson</h4>
         <p>GuruLab ensures each Tutor delivers effective and engaging lessons according to the GuruLab Methodology.</p>
       </div>
     </div>
@@ -38,10 +44,12 @@
       <div class="image">
         <img
           src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png">
+          <div class="text">
+            <h3 class="title">Step 4</h3>
+            <h4 class="subtitle">Interview with Senior Leadership Team</h4>
+          </div>
       </div>
       <div class="text">
-        <h3 class="title">Step 4</h3>
-        <h4 class="subtitle">Interview with Senior Leadership Team</h4>
         <p>We evaluate their critical thinking and problem-solving skills to deal with the unique needs of each learner.
         </p>
       </div>
@@ -50,14 +58,29 @@
       <div class="image">
         <img
           src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png">
+          <div class="text">
+            <h3 class="title">Step 5</h3>
+            <h4 class="subtitle">Background Screening</h4>
+          </div>
       </div>
       <div class="text">
-        <h3 class="title">Step 5</h3>
-        <h4 class="subtitle">Background Screening</h4>
         <p>We want to ensure a safe learning environments for learners, so all Tutors are subject to a background
           screening before we appoint them.</p>
       </div>
     </div>
+    <!-- <div class="vetted card" nav-idx="6">
+      <div class="image">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png">
+          <div class="text">
+            <h3 class="title">Step 6</h3>
+            <h4 class="subtitle">Recruitment and Onboarding</h4>
+          </div>
+      </div>
+      <div class="text">
+        <p>Welcome onboard!</p>
+      </div>
+    </div> -->
   </div>
   <div class="vetted-cards-scroll-nav">
     <div class="vetted-cards-scroll-nav-dots" nav-idx="1"></div>
@@ -65,6 +88,7 @@
     <div class="vetted-cards-scroll-nav-dots" nav-idx="3"></div>
     <div class="vetted-cards-scroll-nav-dots" nav-idx="4"></div>
     <div class="vetted-cards-scroll-nav-dots" nav-idx="5"></div>
+    <div class="vetted-cards-scroll-nav-dots" nav-idx="6"></div>
   </div>
 </div>
 
@@ -125,7 +149,10 @@
 
   .vetted .image img {
     width: 40%;
-    min-width: 50px;
+    min-width: 75px;
+    display: block;
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
   }
 
   .vetted .image {
@@ -179,24 +206,39 @@
     transition: background-color 0.2s ease;
   }
 
+  /* .vetted.card[nav-idx="6"] {
+    background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+  }
+
+  .vetted.card[nav-idx="6"] * {
+    color: white;
+  } */
+
   @media only screen and (min-width: 1025px) {
     .vetted.cards-container {
       overflow-x: hidden;
       scroll-snap-type: none;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: auto auto;
+      grid-auto-flow: row;
     }
 
     .vetted-cards-scroll-nav {
       display: none;
     }
 
-    .vetted.card {
+    /* .vetted.card {
       padding: 25px;
+    } */
+
+    .vetted .image {
+      display: flex;
+      align-items: center;
     }
 
     .vetted .image img {
       width: 75px;
+      margin-bottom: 0;
     }
 
     .vetted.card::before {
