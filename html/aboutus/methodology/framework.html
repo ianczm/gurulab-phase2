@@ -169,7 +169,7 @@
 
 <script>
   const frameworkcards = document.querySelectorAll(".section-framework .framework-card");
-  const personalisatonNavObserver = new IntersectionObserver((entries) => {
+  const frameworkNavObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         let navidx = entry.target.getAttribute("nav-idx");
@@ -181,6 +181,6 @@
     threshold: 0.9
   });
   frameworkcards.forEach((frameworkcard) => {
-    personalisatonNavObserver.observe(frameworkcard);
+    frameworkNavObserver.observe(frameworkcard);
   })
 </script>

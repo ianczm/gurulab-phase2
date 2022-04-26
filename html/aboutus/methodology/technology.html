@@ -1,0 +1,186 @@
+<div class="section section-technology">
+  <div class="technology-container">
+    <div class="technology-card" nav-idx="1">
+      <div class="technology-icon">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png"
+          alt="icon">
+      </div>
+      <div class="body">
+        <h3 class="heading">Seamless Learning Experience</h3>
+        <p class="text">From attending classes to submitting assignments, learners can do everything in one place – the
+          GuruLab app!</p>
+      </div>
+    </div>
+    <div class="technology-card technology-card--reverse" nav-idx="2">
+      <div class="technology-icon">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png"
+          alt="icon">
+      </div>
+      <div class="body">
+        <h3 class="heading">Quality Feedback from Tutors</h3>
+        <p class="text">Our technology empowers tutors to provide quality feedback to learners, be it essays or verbal
+          responses for speaking exercises. No generic scores like in tuition centres - when students submit their
+          assignments, their every word is analysed and detailed explanations on how to improve are provided.</p>
+      </div>
+    </div>
+    <div class="technology-card" nav-idx="3">
+      <div class="technology-icon">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png"
+          alt="icon">
+      </div>
+      <div class="body">
+        <h3 class="heading">Customised Targeted Interventions</h3>
+        <p class="text">Using data analytics of learners’ work, we are able to formulate targeted strategies to help
+          students improve in specific areas, such as customising practice questions and recommending the right
+          materials.</p>
+      </div>
+    </div>
+  </div>
+  <div class="technology-scroll-nav">
+    <div class="technology-scroll-nav-dots" nav-idx="1"></div>
+    <div class="technology-scroll-nav-dots" nav-idx="2"></div>
+    <div class="technology-scroll-nav-dots" nav-idx="3"></div>
+  </div>
+</div>
+
+<style>
+  .section-technology * {
+    margin: 0;
+  }
+
+  .section-technology .technology-container {
+    display: grid;
+    grid-gap: 15px;
+  }
+
+  .section-technology .technology-container {
+    scrollbar-width: none;
+  }
+
+  .section-technology .technology-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .section-technology .technology-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 40px;
+    position: relative;
+  }
+
+  .section-technology .technology-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: unset;
+    width: 3px;
+    background: var(--gurulab-orange);
+  }
+
+  .section-technology .technology-card.technology-card--reverse::before {
+    right: 0;
+    left: unset;
+  }
+
+  .section-technology .technology-card>*:not(:last-child),
+  .section-technology .technology-card.technology-card--reverse>*:not(:first-child) {
+    margin-right: 40px;
+  }
+
+  .section-technology .technology-card.technology-card--reverse {
+    flex-direction: row-reverse;
+  }
+
+  .section-technology .technology-card .technology-icon {
+    max-width: 100px;
+  }
+
+  .section-technology .technology-card .body .heading {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Scroll Nav Dots */
+
+  .technology-scroll-nav {
+    display: none;
+  }
+
+  .technology-scroll-nav-dots {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: rgba(244, 136, 71, 0);
+    transition: background-color 0.2s ease;
+    border: 2px solid var(--gurulab-orange);
+  }
+
+  .technology-scroll-nav-dots.active {
+    background-color: rgba(244, 136, 71, 1);
+    transition: background-color 0.2s ease;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .section-technology .technology-scroll-nav {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 5px;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .section-technology .technology-container {
+      overflow-x: scroll;
+      scroll-snap-type: inline mandatory;
+      grid-auto-flow: column;
+      grid-auto-columns: 100%;
+    }
+
+    .section-technology .technology-card {
+      display: block;
+      scroll-snap-align: center;
+    }
+
+    .section-technology .technology-card::before,
+    .section-technology .technology-card.technology-card--reverse::before {
+      top: unset;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      width: unset;
+    }
+
+    .section-technology .technology-card .technology-icon {
+      margin-bottom: 1rem;
+    }
+
+    .section-technology .technology-card .body .heading {
+      margin-bottom: 1rem;
+    }
+  }
+</style>
+
+<script>
+  const technologycards = document.querySelectorAll(".section-technology .technology-card");
+  const technologyNavObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let navidx = entry.target.getAttribute("nav-idx");
+        $(".technology-scroll-nav-dots").removeClass("active");
+        $(`.technology-scroll-nav-dots[nav-idx=${navidx}]`).addClass("active");
+      }
+    });
+  }, {
+    threshold: 0.9
+  });
+  technologycards.forEach((technologycard) => {
+    technologyNavObserver.observe(technologycard);
+  })
+</script>
