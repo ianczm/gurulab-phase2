@@ -6,10 +6,9 @@
             src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd2301892c05f44aa0280/1650446896635/analytics.png">
         </div>
         <div class="text">
-          <h3 class="title">Powerful</h3>
-          <h4 class="subtitle">with advanced technology and data analytics.</h4>
-          <p>Personalisation used to mean having a private tutor. However, GuruLab is able to replicate the experience
-            at the price of a group class by leveraging pioneering technology and data analytics.</p>
+          <h3 class="title">Step 1</h3>
+          <h4 class="subtitle">Screening</h4>
+          <p>We ensure all our Tutors have at least 2 years of teaching experience in the English subject, hold (at least) a Degree in English or Education and attain a minimum English proficiency of CEFR C2/ IELTS Band 8.5.</p>
         </div>
       </div>
       <div class="vetted card" nav-idx="2">
@@ -18,10 +17,9 @@
             src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd1d146e57130b9592f33/1650446801119/trophy.png">
         </div>
         <div class="text">
-          <h3 class="title">Reliable</h3>
-          <h4 class="subtitle">with proven and internationally-aligned curriculum.</h4>
-          <p>With our precise assessment techniques and CEFR-aligned curriculum, we ensure your child has a good head
-            start and reaches each milestone confidently with the right class.</p>
+          <h3 class="title">Step 2</h3>
+          <h4 class="subtitle">Interview with Tutor Management Team</h4>
+          <p>We identify the Tutor’s core motives to ensure we have the most dedicated Tutors.</p>
         </div>
       </div>
       <div class="vetted card" nav-idx="3">
@@ -30,10 +28,9 @@
             src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png">
         </div>
         <div class="text">
-          <h3 class="title">Possible</h3>
-          <h4 class="subtitle">with qualified, experienced and dedicated tutors.</h4>
-          <p>Nothing can replace a human teacher and, at GuruLab, our qualified, experienced, and dedicated tutors are
-            trained to ensure students learn at the right level and pace, ensuring your child’s success.</p>
+          <h3 class="title">Step 3</h3>
+          <h4 class="subtitle">Mock Online Lesson</h4>
+          <p>GuruLab ensures each Tutor delivers effective and engaging lessons according to the GuruLab Methodology.</p>
         </div>
       </div>
       <div class="vetted card" nav-idx="4">
@@ -42,10 +39,9 @@
             src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png">
         </div>
         <div class="text">
-          <h3 class="title">Possible</h3>
-          <h4 class="subtitle">with qualified, experienced and dedicated tutors.</h4>
-          <p>Nothing can replace a human teacher and, at GuruLab, our qualified, experienced, and dedicated tutors are
-            trained to ensure students learn at the right level and pace, ensuring your child’s success.</p>
+          <h3 class="title">Step 4</h3>
+          <h4 class="subtitle">Interview with Senior Leadership Team</h4>
+          <p>We evaluate their critical thinking and problem-solving skills to deal with the unique needs of each learner.</p>
         </div>
       </div>
       <div class="vetted card" nav-idx="5">
@@ -54,10 +50,9 @@
             src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png">
         </div>
         <div class="text">
-          <h3 class="title">Possible</h3>
-          <h4 class="subtitle">with qualified, experienced and dedicated tutors.</h4>
-          <p>Nothing can replace a human teacher and, at GuruLab, our qualified, experienced, and dedicated tutors are
-            trained to ensure students learn at the right level and pace, ensuring your child’s success.</p>
+          <h3 class="title">Step 5</h3>
+          <h4 class="subtitle">Background Screening</h4>
+          <p>We want to ensure a safe learning environments for learners, so all Tutors are subject to a background screening before we appoint them.</p>
         </div>
       </div>
     </div>
@@ -78,7 +73,7 @@
       overflow-x: scroll;
       scroll-snap-type: inline mandatory;
       display: grid;
-      grid-gap: 15px;
+      grid-gap: 10px;
       grid-auto-flow: column;
       /* grid-auto-columns: calc(33% - 10px); */
       grid-auto-columns: calc(100%);
@@ -94,7 +89,7 @@
   
     .vetted.card {
       background: white;
-      padding: 40px;
+      padding: 25px;
       position: relative;
       box-shadow: 0 0 30px rgba(244, 136, 71, 0.1);
       display: block;
@@ -124,8 +119,8 @@
     /* Images */
   
     .vetted .image img {
-      width: 100px;
-      min-width: 75px;
+      width: 50%;
+      min-width: 50px;
     }
   
     .vetted .image {
@@ -139,6 +134,9 @@
       color: var(--gurulab-orange);
       margin-bottom: 0.5rem;
       transition: color 0.2s ease;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      font-weight: 600;
     }
   
     .vetted .subtitle {
@@ -185,6 +183,10 @@
       .vetted-cards-scroll-nav {
         display: none;
       }
+
+      .vetted.card {
+        padding: 40px;
+    }
     }
   </style>
   
