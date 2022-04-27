@@ -208,8 +208,8 @@
 </style>
 
 <script>
-  const uspcards = document.querySelectorAll(".vetted.card");
-  const personalisatonNavObserver = new IntersectionObserver((entries) => {
+  const vettedcards = document.querySelectorAll(".vetted.card");
+  const vettedNavObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         let navidx = entry.target.getAttribute("nav-idx");
@@ -220,7 +220,7 @@
   }, {
     threshold: 0.9
   });
-  uspcards.forEach((uspcard) => {
-    personalisatonNavObserver.observe(uspcard);
+  vettedcards.forEach((vettedcard) => {
+    vettedNavObserver.observe(vettedcard);
   })
 </script>
