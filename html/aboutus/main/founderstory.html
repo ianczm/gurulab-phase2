@@ -23,10 +23,10 @@
           <h2 class="header-title"><strong>Kai Song's</strong> Story</h2>
           <h4 class="header-subtitle">
             <span>Co-Founder</span>
-            <div class="profile-linkedin">
+            <!-- <div class="profile-linkedin">
               <a href="https://www.linkedin.com/in/kaisongeer/" target="_blank">Connect on <i
                 class="fa-brands fa-linkedin"></i></a>
-            </div>
+            </div> -->
           </h4>
         </div>
       </div>
@@ -44,6 +44,9 @@
           Malaysian education system by leveraging the power of data science. <b>She is a strong believer that
             English is a key to upward social mobility and with a personalised approach, she aspires to a world
             where no student is left behind.</b></p>
+      </div>
+      <div class="body-linkedin">
+        <a href="https://www.linkedin.com/in/kaisongeer/" target="_blank">Connect on LinkedIn <i class="fa-solid fa-plus"></i></a>
       </div>
     </div>
   </div>
@@ -71,10 +74,10 @@
           <h2 class="header-title"><strong>Vicky's</strong> Story</h2>
           <h4 class="header-subtitle">
             <span>Co-Founder</span>
-            <div class="profile-linkedin">
+            <!-- <div class="profile-linkedin">
               <a href="https://www.linkedin.com/in/vickytanwenhui/" target="_blank">Connect on <i
                 class="fa-brands fa-linkedin"></i></a>
-            </div>
+            </div> -->
           </h4>
         </div>
       </div>
@@ -95,6 +98,9 @@
           lessons to the students’ needs. <b>But there’s only so much one person can do, and this problem inspired her
             to
             building GuruLab.</b></p>
+      </div>
+      <div class="body-linkedin">
+        <a href="https://www.linkedin.com/in/vickytanwenhui/" target="_blank">Connect on LinkedIn <i class="fa-solid fa-plus"></i></a>
       </div>
     </div>
   </div>
@@ -262,6 +268,45 @@
     margin-bottom: 1.5rem;
   }
 
+  .story-container .story-body .body-text {
+    margin-bottom: 1.5rem;
+  }
+
+  /* .story-container .story-body .body-linkedin a {
+    padding: 15px 25px;
+    background: var(--gurulab-orange);
+    display: block;
+    border-radius: 50px;
+    color: white;
+    width: max-content;
+    margin-left: auto;
+  } */
+
+  .story-container .story-body .body-linkedin a {
+    padding: 15px 25px;
+    background: none;
+    display: block;
+    border-radius: 50px;
+    color: var(--gurulab-orange);
+    width: max-content;
+    margin-left: auto;
+    border: 2px solid var(--gurulab-orange);
+    box-shadow: 0 0 0px rgba(0,0,0,0.1);
+    font-weight: 600;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .story-container .story-body .body-linkedin a:hover {
+    background: var(--gurulab-orange);
+    color: white;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .story-container .story-body .body-linkedin a i {
+    margin-left: 0.5rem;
+  }
+
   @media only screen and (max-width: 800px) {
     .story-container:not(:last-child) {
       margin-bottom: 1rem;
@@ -303,6 +348,10 @@
 
     .story-container .story-body .body-header .header-subtitle .profile-linkedin i {
       font-size: 1rem;
+    }
+
+    .story-container .story-body .body-linkedin a {
+      margin-right: auto;
     }
   }
 </style>
