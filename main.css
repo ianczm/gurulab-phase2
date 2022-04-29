@@ -440,6 +440,12 @@ a.header-nav-lang-btn-cn {
 
 /* About Us 2 */
 
+/* Founders: Data Section ID 6266579108f28b23a5ae6240 */
+
+.page-section[data-section-id="6266579108f28b23a5ae6240"] .section-background {
+  background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
+}
+
 /* Box 1: Data Section ID 62659ab51e34f11bd9f3aa82 */
 
 .page-section[data-section-id="62659ab51e34f11bd9f3aa82"] .section-background {
