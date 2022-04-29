@@ -15,7 +15,7 @@
     <div class="form-header">
       <h3>GuruLab</h3>
       <h3 class="form-title">Book Free Consultation</h3>
-      <p class="form-desc">Description here.</p>
+      <p class="form-desc">We are ready to give your child a great English learning experience. Please give us your details below and we will be in touch!</p>
     </div>
     <div class="divider"></div>
     <form id="consultation-form" method="POST"
@@ -25,7 +25,12 @@
         <div class="form-element">
           <label for="consultation-name">Your Name *</label>
           <!-- <p class="form-tip">Tip</p> -->
-          <input type="text" id="consultation-name" name="name" required>
+          <input type="text" id="consultation-name" name="parent-name" required>
+        </div>
+        <div class="form-element">
+          <label for="consultation-name">Your Child's Name *</label>
+          <!-- <p class="form-tip">Tip</p> -->
+          <input type="text" id="consultation-name" name="child-name" required>
         </div>
         <div class="form-element">
           <label for="consultation-name">Mobile Number *</label>
@@ -38,27 +43,33 @@
             data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary"
             package-id="wm-3"
             style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
+            <button type="submit" id="consultation-form-submit-btn"
+              class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
+              data-initialized="true">
+              Submit
+            </button>
+          </div>
+          <!-- <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
+            data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary"
+            package-id="wm-3"
+            style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
             <a id="consultation-form-next-page"
               class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
               data-initialized="true">
               Next
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
-      <div class="form-page" nav-idx="2">
-        <!-- Self-Assessment Questions -->
+      <!-- <div class="form-page" nav-idx="2">
         <div class="form-element">
           <label for="consultation-sa-1">SA1 *</label>
-          <!-- <p class="form-tip">Tip</p> -->
           <input type="text" id="consultation-sa-1" name="sa1" required>
         </div>
         <div class="form-element">
           <label for="consultation-sa-2">SA2 *</label>
-          <!-- <p class="form-tip">Tip</p> -->
           <input type="text" id="consultation-sa-2" name="sa2" required>
         </div>
-        <!-- Submit -->
         <div class="form-btn-group">
           <div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
             data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary"
@@ -81,7 +92,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> -->
     </form>
     <div id="form-success">
       <p class="form-desc">Thank you, we will be in touch with you shortly!</p>
@@ -116,6 +127,7 @@
     left: 50vw;
     transform: translate(-50%, -50%);
     z-index: 10;
+    max-width: 450px;
     /* display: none; */
   }
 
