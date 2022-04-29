@@ -1,5 +1,9 @@
 # GuruLab Phase 2
 
+Please refer to [Component Documentation]() for component styling and usage.
+
+---
+
 ## Home Page
 
 **Purpose:** A landing page that redirects users into pages for further reading and CTA fulfilment.

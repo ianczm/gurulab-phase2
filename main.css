@@ -164,6 +164,7 @@ https:/*static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f3d535cd62dd
 
 :root {
   --gurulab-orange: #F48847;
+  --gurulab-sat-orange: #F55555;
   --gurulab-grey: #828282;
   --gurulab-body: #000000;
   --gurulab-light-orange: #FFF7F0;
@@ -456,4 +457,92 @@ a.header-nav-lang-btn-cn {
 
 .page-section[data-section-id="6267cb85a613f54842b6a4aa"] .section-background {
   background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+}
+
+/* Our Methodology */
+
+/* Our Technology: Data Section ID 6266dc624759a0440b0fa84d */
+
+.page-section[data-section-id="6266dc624759a0440b0fa84d"] .section-background {
+  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+}
+
+/* Our Specialists: Data Section ID 6266dd398aff8d56f9532fda */
+
+.page-section[data-section-id="6266dd398aff8d56f9532fda"] .section-background {
+  background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
+}
+
+/* Our Technology: Data Section ID 6266ddba3756ff631212778e */
+
+.page-section[data-section-id="6266ddba3756ff631212778e"] .section-background {
+  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+}
+
+/* Gurulab Components */
+
+.gurulab-component-container *.justify-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gurulab-component-container *.justify-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.gurulab-component-container *.justify-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.gurulab-component-container.margin-top-1rem {
+  margin-top: 1rem;
+}
+
+.gurulab-component-container.margin-bottom-1rem {
+  margin-bottom: 1rem;
+}
+
+.gurulab-component-container .gurulab-button,
+.gurulab-component-container .gurulab-button.bg-dark {
+  padding: 15px 25px;
+  background: white;
+  border: none;
+  border-radius: 50px;
+  color: black;
+  width: max-content;
+  display: block;
+  font-weight: 600;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: auto;
+}
+
+.gurulab-component-container .gurulab-button.size-large {
+  padding: 25px 35px;
+}
+
+.gurulab-component-container .gurulab-button.bg-light.color-orange {
+  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+  color: white;
+}
+
+.gurulab-component-container .gurulab-button.bg-light.color-teal {
+  background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
+  color: white;
+}
+
+.gurulab-component-container .gurulab-button.bg-dark.color-orange {
+  color: var(--gurulab-sat-orange);
+}
+
+.gurulab-component-container .gurulab-button.bg-dark.color-teal {
+  color: var(--gurulab-teal);
+}
+
+.gurulab-component-container .gurulab-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
