@@ -70,9 +70,10 @@
     background: white;
     padding: 40px;
     position: relative;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
   }
 
-  .section-framework .framework-card::before {
+  /* .section-framework .framework-card::before {
     content: "";
     position: absolute;
     top: 0;
@@ -81,7 +82,7 @@
     right: unset;
     width: 3px;
     background: var(--gurulab-orange);
-  }
+  } */
 
   .section-framework .framework-card.framework-card--reverse::before {
     right: 0;
@@ -118,11 +119,11 @@
     border-radius: 100%;
     background-color: rgba(244, 136, 71, 0);
     transition: background-color 0.2s ease;
-    border: 2px solid var(--gurulab-orange);
+    border: 2px solid white;
   }
 
   .framework-scroll-nav-dots.active {
-    background-color: rgba(244, 136, 71, 1);
+    background-color: white;
     transition: background-color 0.2s ease;
   }
 
@@ -141,13 +142,13 @@
       grid-auto-flow: column;
       grid-auto-columns: 100%;
     }
-    
+
     .section-framework .framework-card {
       display: block;
       scroll-snap-align: center;
     }
 
-    .section-framework .framework-card::before,
+    /* .section-framework .framework-card::before,
     .section-framework .framework-card.framework-card--reverse::before {
       top: unset;
       bottom: 0;
@@ -155,7 +156,7 @@
       right: 0;
       height: 3px;
       width: unset;
-    }
+    } */
 
     .section-framework .framework-card>*:not(:last-child),
     .section-framework .framework-card.framework-card--reverse>*:not(:first-child) {
