@@ -1,5 +1,10 @@
 /*
 
+Stock Images
+
+Online Learning 1
+https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/626c20b7cdc9c255bd6d63e6/1651253508408/online-learning-1.jpg
+
 New News Logos
 
 The Star
@@ -437,7 +442,8 @@ a.header-nav-lang-btn-cn {
 /* Box 1: Data Section ID 62659ab51e34f11bd9f3aa82 */
 
 .page-section[data-section-id="62659ab51e34f11bd9f3aa82"] .section-background {
-  background: linear-gradient( 135deg, #F97794 10%, #623AA2 100%);
+  /* background: linear-gradient( 135deg, #F97794 10%, #623AA2 100%); */
+  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
 }
 
 /* Box 2: Data Section ID 6267b0e2d64b4f0015a51ea1 */
