@@ -1,0 +1,251 @@
+<div class="section section-solution">
+  <div class="solution-container">
+    <div class="solution-card" nav-idx="1">
+      <div class="solution-icon">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png"
+          alt="icon">
+      </div>
+      <div class="body">
+        <h3 class="heading">CEFR-aligned</h3>
+        <p class="text">We align everything that we teach to international standards (CEFR A2 to C1) with the help of
+          curriculum specialists so that our graduates are ready to be global citizens.</p>
+      </div>
+    </div>
+    <div class="solution-card solution-card--reverse" nav-idx="2">
+      <div class="solution-icon">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png"
+          alt="icon">
+      </div>
+      <div class="body">
+        <h3 class="heading">Exam-ready</h3>
+        <p class="text">With core skills tested in school exams covered in our English Essentials programme and free
+          seminars on exam formats in <b>UPSR English, PT3 English, SPM English, UEC English, IGCSE English</b>, our curriculum
+          truly goes above and beyond school syllabi.</p>
+      </div>
+    </div>
+    <div class="solution-card" nav-idx="3">
+      <div class="solution-icon">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png"
+          alt="icon">
+      </div>
+      <div class="body">
+        <h3 class="heading">Suitable for all learning needs</h3>
+        <p class="text">Whether your child is a Form 5 student struggling to write <b>SPM English</b> essays without glaring
+          grammar mistakes or a Form 3 student wanting to learn more advanced writing skills beyond the <b>PT3 English</b>
+          syllabus, there is something for everyone!</p>
+      </div>
+    </div>
+    <div class="solution-card" nav-idx="4">
+      <div class="solution-icon">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png"
+          alt="icon">
+      </div>
+      <div class="body">
+        <h3 class="heading">CEFR-aligned</h3>
+        <p class="text">We align everything that we teach to international standards (CEFR A2 to C1) with the help of
+          curriculum specialists so that our graduates are ready to be global citizens.</p>
+      </div>
+    </div>
+    <div class="solution-card solution-card--reverse" nav-idx="5">
+      <div class="solution-icon">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png"
+          alt="icon">
+      </div>
+      <div class="body">
+        <h3 class="heading">Exam-ready</h3>
+        <p class="text">With core skills tested in school exams covered in our English Essentials programme and free
+          seminars on exam formats in <b>UPSR English, PT3 English, SPM English, UEC English, IGCSE English</b>, our curriculum
+          truly goes above and beyond school syllabi.</p>
+      </div>
+    </div>
+    <div class="solution-card" nav-idx="6">
+      <div class="solution-icon">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png"
+          alt="icon">
+      </div>
+      <div class="body">
+        <h3 class="heading">Suitable for all learning needs</h3>
+        <p class="text">Whether your child is a Form 5 student struggling to write <b>SPM English</b> essays without glaring
+          grammar mistakes or a Form 3 student wanting to learn more advanced writing skills beyond the <b>PT3 English</b>
+          syllabus, there is something for everyone!</p>
+      </div>
+    </div>
+  </div>
+  <div class="solution-scroll-nav">
+    <div class="solution-scroll-nav-dots" nav-idx="1"></div>
+    <div class="solution-scroll-nav-dots" nav-idx="2"></div>
+    <div class="solution-scroll-nav-dots" nav-idx="3"></div>
+    <div class="solution-scroll-nav-dots" nav-idx="4"></div>
+    <div class="solution-scroll-nav-dots" nav-idx="5"></div>
+    <div class="solution-scroll-nav-dots" nav-idx="6"></div>
+  </div>
+</div>
+
+<style>
+  .section-solution {
+    display: grid;
+    grid-gap: 15px;
+    /* grid-auto-flow: column; */
+    /* grid-auto-columns: 100%; */
+    /* overflow-x: scroll; */
+    /* scroll-snap-type: inline mandatory; */
+  }
+  
+  .section-solution * {
+    margin: 0;
+  }
+
+  .section-solution .solution-container {
+    display: grid;
+    grid-gap: 15px;
+    /* scroll-snap-align: center; */
+  }
+
+  .section-solution .solution-container {
+    scrollbar-width: none;
+  }
+
+  .section-solution .solution-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .section-solution .solution-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+
+  /* .section-solution .solution-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: unset;
+    width: 3px;
+    background: var(--gurulab-orange);
+  } */
+
+  .section-solution .solution-card.solution-card--reverse::before {
+    right: 0;
+    left: unset;
+  }
+
+  /* .section-solution .solution-card>*:not(:last-child),
+  .section-solution .solution-card.solution-card--reverse>*:not(:first-child) {
+    margin-right: 40px;
+  } */
+
+  .section-solution .solution-card>*:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  /* .section-solution .solution-card.solution-card--reverse {
+    flex-direction: row-reverse;
+  } */
+
+  .section-solution .solution-card .solution-icon {
+    max-width: 100px;
+  }
+
+  .section-solution .solution-card .body .heading {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Scroll Nav Dots */
+
+  .solution-scroll-nav {
+    display: none;
+  }
+
+  .solution-scroll-nav-dots {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: rgba(244, 136, 71, 0);
+    transition: background-color 0.2s ease;
+    border: 2px solid white;
+  }
+
+  .solution-scroll-nav-dots.active {
+    background-color: white;
+    transition: background-color 0.2s ease;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .section-solution .solution-scroll-nav {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 5px;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .section-solution .solution-container {
+      overflow-x: scroll;
+      scroll-snap-type: inline mandatory;
+      grid-auto-flow: column;
+      grid-auto-columns: 100%;
+    }
+
+    .section-solution .solution-card {
+      display: block;
+      scroll-snap-align: center;
+    }
+
+    /* .section-solution .solution-card::before,
+    .section-solution .solution-card.solution-card--reverse::before {
+      top: unset;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      width: unset;
+    } */
+
+    /* .section-solution .solution-card>*:not(:last-child),
+    .section-solution .solution-card.solution-card--reverse>*:not(:first-child) {
+      margin-right: 0;
+    } */
+    
+    .section-solution .solution-card>*:not(:last-child) {
+      margin-right: 0;
+    }
+
+    .section-solution .solution-card .solution-icon {
+      margin-bottom: 1rem;
+    }
+
+    .section-solution .solution-card .body .heading {
+      margin-bottom: 1rem;
+    }
+  }
+</style>
+
+<script>
+  const solutioncards = document.querySelectorAll(".section-solution .solution-card");
+  const solutionNavObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let navidx = entry.target.getAttribute("nav-idx");
+        $(".solution-scroll-nav-dots").removeClass("active");
+        $(`.solution-scroll-nav-dots[nav-idx=${navidx}]`).addClass("active");
+      }
+    });
+  }, {
+    threshold: 0.9
+  });
+  solutioncards.forEach((solutioncard) => {
+    solutionNavObserver.observe(solutioncard);
+  })
+</script>
