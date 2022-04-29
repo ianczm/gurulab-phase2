@@ -1,4 +1,4 @@
-# GuruLab Component Documentation
+# GuruLab Components
 
 All CSS rulesets can be found in the `main.css` file.
 
