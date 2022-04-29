@@ -2,29 +2,45 @@
   <!-- <button class="slider-button" id="slider-left"><i class="fas fa-chevron-left"></i></button> -->
   <div class="slider-wrapper">
     <div class="slider">
-      <div class="item"><img
-          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f44450b6d51a228cdd59fd/1643398224390/businesstoday.png">
+      <div class="item" news-item="thestar">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae0b57094e52115b45f9/1650896396044/thestar.png">
       </div>
-      <div class="item"><img
-          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f44456a9cdd040200eb677/1643398230460/dagangnews.png">
+      <div class="item" news-item="technode">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae7b45ee9d0755454016/1650896507166/technode.png">
       </div>
-      <div class="item"><img
-          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f4445a1f1cf5346afb3968/1643398234689/e27.png">
+      <div class="item" news-item="techinasia">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae7dbe929828d2018757/1650896509161/techinasia.png">
       </div>
-      <div class="item"><img
-          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f4445e0eaeae65a5701eb2/1643398239019/orientaldailynews.jpg">
+      <div class="item" news-item="sme">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae7ebbfd7749a8d80cc0/1650896510750/sme.png">
       </div>
-      <div class="item"><img
-          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f44462c88f86207f663098/1643398242538/sme.png">
+      <div class="item" news-item="sinchew">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae800ea7ec40f70c792d/1650896512954/sinchew.png">
       </div>
-      <div class="item"><img
-          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f44465eaf48743df8dcb59/1643398245749/techinasia.png">
+      <div class="item" news-item="orientaldaily">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae8208f28b23a5b77dde/1650896514794/orientaldailynews.png">
       </div>
-      <div class="item"><img
-          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f3d535cd62dd59dd633b02/1643369781830/Sinchew.png">
+      <div class="item" news-item="malaysianbusiness">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae846d39b1158e906e96/1650896517086/malaysianbusiness.png">
       </div>
-      <div class="item"><img
-          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6203ec3647c556785c7135cd/1644424246123/The+Star.png">
+      <div class="item" news-item="e27">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae86a7957a1ce4c171c5/1650896518683/e27.png">
+      </div>
+      <div class="item" news-item="dagangnews">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae88bbfd7749a8d80cde/1650896520736/dagangnews.png">
+      </div>
+      <div class="item" news-item="businesstoday">
+        <img
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6266ae8ad240466a7d793fca/1650896522597/businesstodaylowres.png">
       </div>
     </div>
   </div>
@@ -49,8 +65,10 @@
   }
 
   .media-partners .item img {
-    filter: grayscale(100%);
-    /* background: #FAFAFA; */
+    /* filter: grayscale(100%); */
+    position: relative;
+    /* background: white; */
+    /* padding: 25px 50px; */
     transition: all 0.3s ease-in-out;
     aspect-ratio: 16 / 9;
     max-height: 140px;
@@ -58,6 +76,16 @@
     object-fit: contain;
   }
   
+  /* .media-partners .item img::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: var(--gurulab-orange);
+    content: "";
+  } */
+
   .media-partners .item {
     /* filter: grayscale(100%); */
     /* background: #FAFAFA; */
@@ -122,11 +150,11 @@
 <script>
   $(document).ready(function () {
     $(".media-partners .slider").slick({
-      slidesToShow: 6,
+      slidesToShow: 5,
       slidesToScroll: 1,
       infinite: true,
-      autoplay: true,
-      autoplaySpeed: 2000,
+      autoplay: false,
+      // autoplaySpeed: 2000,
       dots: false,
       arrows: false,
       pauseOnHover: false,
