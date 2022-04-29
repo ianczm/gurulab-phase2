@@ -499,6 +499,13 @@ a.header-nav-lang-btn-cn {
   background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
 }
 
+/* Why GuruLab */
+
+/* Our Solution: 626b2c445722f310572726bd */
+.page-section[data-section-id="626b2c445722f310572726bd"] .section-background {
+  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+}
+
 /* Gurulab Components */
 
 .gurulab-component-container *.justify-center {
