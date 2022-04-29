@@ -70,9 +70,11 @@ Data structure needed
           <div class="packages">
             <ul class="package-item-container package-item-container--1">
               <li class="package-item" nav-idx="1">
-                <h4 class="title">Monthly Package</h4>
-                <h1 class="price">RM 90</h1>
-                <p class="price-monthly"></p>
+                <div class="package-item-text">
+                  <h4 class="title">Monthly Package</h4>
+                  <h1 class="price">RM 90</h1>
+                  <p class="price-monthly"></p>
+                </div>
                 <div class="sqs-block-button-container sqs-block-button-container--center preFlex flexIn package-btn" data-animation-role="button" data-alignment="center" data-button-size="medium" data-button-type="primary" package-id="ee-1" style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
                   <a href="/sign-up" target="_blank" class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element" data-initialized="true">
                     Sign Up Now
@@ -83,9 +85,11 @@ Data structure needed
                 <!-- <button>Sign Up Now!</button> -->
               </li>
               <li class="package-item" nav-idx="2">
-                <h4 class="title">3-Month Package</h4>
-                <h1 class="price">RM 240</h1>
-                <p class="price-monthly">RM 80 / Month</p>
+                <div class="package-item-text">
+                  <h4 class="title">3-Month Package</h4>
+                  <h1 class="price">RM 240</h1>
+                  <p class="price-monthly">RM 80 / Month</p>
+                </div>
                 <div class="sqs-block-button-container sqs-block-button-container--center preFlex flexIn package-btn" data-animation-role="button" data-alignment="center" data-button-size="medium" data-button-type="primary" package-id="ee-2" style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
                   <a href="/sign-up" target="_blank" class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element" data-initialized="true">
                     Sign Up Now
@@ -96,9 +100,11 @@ Data structure needed
                 <!-- <button>Sign Up Now!</button> -->
               </li>
               <li class="package-item" nav-idx="3">
-                <h4 class="title">12-Month Package</h4>
-                <h1 class="price">RM 840</h1>
-                <p class="price-monthly">RM 70 / Month</p>
+                <div class="package-item-text">
+                  <h4 class="title">12-Month Package</h4>
+                  <h1 class="price">RM 840</h1>
+                  <p class="price-monthly">RM 70 / Month</p>
+                </div>
                 <div class="sqs-block-button-container sqs-block-button-container--center preFlex flexIn package-btn" data-animation-role="button" data-alignment="center" data-button-size="medium" data-button-type="primary" package-id="ee-3" style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
                   <a href="/sign-up" target="_blank" class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element" data-initialized="true">
                     Sign Up Now
@@ -170,9 +176,11 @@ Data structure needed
           <div class="packages">
             <ul class="package-item-container package-item-container--2">
               <li class="package-item" nav-idx="1">
-                <h4 class="title">Monthly Package</h4>
-                <h1 class="price">RM 90</h1>
-                <p class="price-monthly"></p>
+                <div class="package-item-text">
+                  <h4 class="title">Monthly Package</h4>
+                  <h1 class="price">RM 90</h1>
+                  <p class="price-monthly"></p>
+                </div>
                 <!-- <button><i class="fa-solid fa-cart-shopping"></i></button> -->
                 <!-- <button><i class="fa-solid fa-chevron-right"></i></button> -->
                 <!-- <button>Sign Up Now!</button> -->
@@ -183,9 +191,11 @@ Data structure needed
                 </div>
               </li>
               <li class="package-item" nav-idx="2">
-                <h4 class="title">3-Month Package</h4>
-                <h1 class="price">RM 240</h1>
-                <p class="price-monthly">RM 80 / Month</p>
+                <div class="package-item-text">
+                  <h4 class="title">3-Month Package</h4>
+                  <h1 class="price">RM 240</h1>
+                  <p class="price-monthly">RM 80 / Month</p>
+                </div>
                 <!-- <button><i class="fa-solid fa-cart-shopping"></i></button> -->
                 <!-- <button><i class="fa-solid fa-chevron-right"></i></button> -->
                 <!-- <button>Sign Up Now!</button> -->
@@ -196,9 +206,11 @@ Data structure needed
                 </div>
               </li>
               <li class="package-item" nav-idx="3">
-                <h4 class="title">12-Month Package</h4>
-                <h1 class="price">RM 840</h1>
-                <p class="price-monthly">RM 70 / Month</p>
+                <div class="package-item-text">
+                  <h4 class="title">12-Month Package</h4>
+                  <h1 class="price">RM 840</h1>
+                  <p class="price-monthly">RM 70 / Month</p>
+                </div>
                 <!-- <button><i class="fa-solid fa-cart-shopping"></i></button> -->
                 <!-- <button><i class="fa-solid fa-chevron-right"></i></button> -->
                 <!-- <button>Sign Up Now!</button> -->
@@ -397,6 +409,9 @@ Data structure needed
     z-index: 0;
     scroll-snap-align: center;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 175px;
   }
 
@@ -430,9 +445,9 @@ Data structure needed
     /* z-index: 1; */
   }
 
-  .section-programmes .accordion-content .pricing .packages .package-item .sqs-block-button-container {
-    position: absolute;
-    bottom: 40px;
+  .section-programmes .accordion-content .pricing .packages .package-item .package-btn {
+    /* position: absolute; */
+    /* bottom: 40px; */
   }
 
   /* Scroll Nav Dots */
