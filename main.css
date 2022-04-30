@@ -1,5 +1,16 @@
 /*
 
+Student Pictures
+
+Fikri
+https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/626d9f58d81a355bc5b861d9/1651351385413/fikri.jpeg
+
+Vincent
+https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/626d9f5e7b27ec05bcf072a9/1651351390396/vincent.jpeg
+
+Xiao Hui
+https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/626d9f62591ebf709dbca4ae/1651351397108/xiaohui.png
+
 Office Pictures
 
 https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/626d7d2a8d02785e0cf806b5/1651342667193/about-us-2.jpeg
@@ -638,6 +649,12 @@ a.header-nav-lang-btn-cn {
 /* Contact Us 626d5563478bb20ff1112633 */
 
 .page-section[data-section-id="626d5563478bb20ff1112633"] .section-background {
+  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+}
+
+/* FAQ 626d9dbe9ce2eb2327d3a521 */
+
+.page-section[data-section-id="626d9dbe9ce2eb2327d3a521"] .section-background {
   background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
 }
 
