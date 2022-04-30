@@ -1,0 +1,53 @@
+<div class="section section-socialmedia">
+  <div class="socialmedia-grid">
+    <div class="socialmedia-icon">
+      <a href="">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+    </div>
+    <div class="socialmedia-icon">
+      <a href="">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+    </div>
+    <div class="socialmedia-icon">
+      <a href="">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+    </div>
+    <div class="socialmedia-icon">
+      <a href="">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-socialmedia .socialmedia-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px;
+    width: max-content;
+  }
+
+  .section-socialmedia .socialmedia-grid .socialmedia-icon a {
+    font-size: 2rem;
+    background-color: white;
+    padding: 20px;
+    aspect-ratio: 1;
+    display: block;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+    color: black;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .section-socialmedia .socialmedia-grid .socialmedia-icon a:hover {
+    color: var(--gurulab-orange);
+    /* transform: scale(1.05); */
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+</style>
