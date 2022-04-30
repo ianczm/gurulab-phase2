@@ -57,3 +57,12 @@ size-verylarge
 color-orange
 color-teal
 ```
+
+### Common Patterns
+
+Dark Orange Large
+```html
+<div class="gurulab-component-container">
+  <a class="gurulab-button justify-center bg-dark size-verylarge color-orange">Sign Up Now</a>
+</div>
+```
