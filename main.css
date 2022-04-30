@@ -544,10 +544,17 @@ a.header-nav-lang-btn-cn {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   height: auto;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .gurulab-component-container .gurulab-button.size-large {
   padding: 25px 35px;
+}
+
+.gurulab-component-container .gurulab-button.size-verylarge {
+  padding: 25px 35px;
+  width: 200px;
 }
 
 .gurulab-component-container .gurulab-button.bg-light.color-orange {

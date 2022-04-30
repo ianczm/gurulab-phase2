@@ -53,6 +53,7 @@ bg-dark
 bg-light
 size-default
 size-large
+size-verylarge
 color-orange
 color-teal
 ```
