@@ -1,0 +1,65 @@
+<div class="section section-careers">
+  <div class="career-card">
+    <div class="card-text">
+      <h3>GuruLab Careers</h3>
+      <p>If you’re interested in joining the GuruLab team, current vacancies can be viewed here.</p>
+    </div>
+    <div class="card-career-cta">
+      <div class="gurulab-component-container">
+        <a href="https://www.linkedin.com/company/mygurulab/jobs/" class="gurulab-button bg-light size-large color-orange">View Vacancies</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-careers .career-card {
+    /* background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%); */
+    background: white;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    top: calc(60px - 2vw);
+    /* color: white; */
+  }
+
+  .section-careers .career-card .card-career-cta {
+    margin-left: 2rem;
+  }
+
+  /* .section-careers .career-card::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    background: rgba(255,255,255,0.9);
+    z-index: 0;
+  } */
+
+  .section-careers .career-card h3 {
+    color: var(--gurulab-orange);
+    /* color: white; */
+  }
+
+  @media only screen and (max-width: 800px) {
+    .section-careers .career-card {
+      display: block;
+      position: unset;
+    }
+
+    .section-careers .career-card > *:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    .section-careers .career-card .card-career-cta {
+      margin-left: 0rem;
+    }
+  }
+</style>

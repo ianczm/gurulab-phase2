@@ -1,0 +1,274 @@
+<!-- <div class="mapouter">
+  <div class="gmap_canvas">
+    <iframe
+      id="gmap_canvas"
+      src="https://maps.google.com/maps?q=22-1,%20Jln%20Radin%20Bagus%203,%20Bandar%20Baru%20Sri%20Petaling,%2057000%20Kuala%20Lumpur,%20Wilayah%20Persekutuan%20Kuala%20Lumpur&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      frameborder="0"
+      scrolling="no"
+      marginheight="0"
+      marginwidth="0">
+    </iframe>
+  </div>
+</div>
+
+<style>
+  .gmap_canvas {
+    width: 100%;
+  }
+
+  .mapouter {
+    width: 100%;
+  }
+</style> -->
+
+<!-- 
+   Office Location
+
+22-1, Jln Radin Bagus 3, Bandar Baru Sri Petaling, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur
+
+Want To Get In Touch With Us? We’re Happy To Hear From You!
+
+Call: +6017-8007460
+
+WhatsApp: +6017-8007460
+
+Email: hello@mygurulab.com
+
+Do you share our passion?
+
+If you’re interested in joining the GuruLab team, current vacancies can be viewed here.
+ -->
+
+<div class="section section-contactus">
+  <div class="contactus-card">
+    <div class="card-image">
+      <img
+        src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/626d7d2a8d02785e0cf806b5/1651342667193/about-us-2.jpeg"
+        alt="">
+    </div>
+    <div class="details-location">
+      <h3>Our Location</h3>
+      <p>22-1, Jln Radin Bagus 3, Bandar Baru Sri Petaling, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
+    </div>
+    <div class="details-contact">
+      <div class="primary-contact">
+        <h3>Contact Information</h3>
+        <p>Want to get in touch with us? We're happy to hear from you!</p>
+        <ul class="contact-array">
+          <li class="contact-item">
+            <a href="http://wa.me/60178007460">
+              <i class="fa-solid fa-mobile-screen"></i>
+              <span>+6017-8007460</span>
+            </a>
+          </li>
+          <li class="contact-item">
+            <a href="http://wa.me/60178007460">
+              <i class="fa-brands fa-whatsapp-square"></i>
+              <span>+6017-8007460</span>
+            </a>
+          </li>
+          <li class="contact-item">
+            <a href="mailto:hello@mygurulab.com">
+              <i class="fa-solid fa-envelope"></i>
+              <span>hello@mygurulab.com</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="socialmedia">
+        <h4>Follow Us on Social Media</h4>
+        <ul class="socialmedia-array">
+          <li class="socialmedia-item">
+            <a href="https://www.instagram.com/mygurulab">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li class="socialmedia-item">
+            <a href="https://www.facebook.com/mygurulab">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="socialmedia-item">
+            <a href="https://www.linkedin.com/company/mygurulab">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li class="socialmedia-item">
+            <a href="https://www.youtube.com/channel/UCDS5Ecu8vQEY_d-PygDjxgg">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-contactus {
+    height: calc(315px + 6vw);
+    position: relative;
+    z-index: 10;
+  }
+
+  .section-contactus .contactus-card {
+    position: absolute;
+    display: grid;
+    grid-template-areas: "image contact" "location contact";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto min-content;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .section-contactus .contactus-card .card-image {
+    grid-area: image;
+  }
+
+  .section-contactus .contactus-card .card-image img {
+    aspect-ratio: 3 / 1.5;
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .section-contactus .contactus-card .details-location {
+    grid-area: location;
+    background: white;
+    padding: 40px;
+  }
+
+  .section-contactus .contactus-card .details-contact {
+    grid-area: contact;
+    background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
+    padding: 40px;
+    padding-right: 80px;
+  }
+
+  .section-contactus .contactus-card .details-contact > *,
+  .section-contactus .contactus-card .details-contact h3,
+  .section-contactus .contactus-card .details-contact h4 {
+    /* margin: 0; */
+    color: white;
+    transform: color 0.2s ease;
+  }
+
+  .section-contactus .contactus-card .details-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .section-contactus .contactus-card .details-contact .contact-array,
+  .section-contactus .contactus-card .details-contact .socialmedia-array {
+    list-style: none;
+    padding: 0;
+  }
+
+  .section-contactus .contactus-card .details-contact p {
+    margin-bottom: 3rem;
+  }
+
+  .section-contactus .contactus-card .details-contact .contact-array .contact-item {
+    margin: 0;
+  }
+
+  .section-contactus .contactus-card .details-contact .contact-array .contact-item a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    transition: background 0.2s ease;
+  }
+
+  .section-contactus .contactus-card .details-contact .contact-array .contact-item a:hover {
+    color: var(--gurulab-teal) !important;
+    background: white;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .section-contactus .contactus-card .details-contact .contact-array .contact-item:not(:last-child) {
+    /* margin-bottom: 2rem; */
+    position: relative;
+  }
+
+  .section-contactus .contactus-card .details-contact .contact-array .contact-item:not(:last-child)::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: white;
+    display: block;
+    margin-top: 1rem;
+  }
+
+  .section-contactus .contactus-card .details-contact .contact-array .contact-item i {
+    font-size: 1.95rem;
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+  }
+
+  .section-contactus .contactus-card .details-contact .contact-array .contact-item span {
+    margin-left: 2rem;
+  }
+
+  .section-contactus .contactus-card .details-contact .socialmedia-array .socialmedia-item {
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: transform 0.2s ease;
+  }
+
+  .section-contactus .contactus-card .details-contact .socialmedia-array .socialmedia-item:hover {
+    transform: translateY(-3px);
+    transition: transform 0.2s ease;
+  }
+
+  .section-contactus .contactus-card .details-contact .socialmedia-array .socialmedia-item:not(:first-child) {
+    margin-left: 1.5rem;
+  }
+
+  .section-contactus .contactus-card .details-contact .socialmedia h4 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-contactus .contactus-card .details-contact .primary-contact {
+    margin-bottom: 3rem;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .section-contactus {
+      height: auto;
+    }
+    
+    .section-contactus .contactus-card {
+      display: grid;
+      grid-template-areas: "image" "location" "contact";
+      grid-template-columns: 1fr;
+      position: unset;
+    }
+
+    .section-contactus .contactus-card .card-image img {
+      aspect-ratio: 4 / 3;
+    }
+
+    .section-contactus .contactus-card .details-contact {
+      padding-right: 40px;
+    }
+
+    .section-contactus .contactus-card .details-contact .contact-array .contact-item span {
+      margin-left: 1rem;
+    }
+
+    .section-contactus .contactus-card .details-contact p {
+      margin-bottom: 1rem;
+    }
+  }
+
+
+</style>
