@@ -1,10 +1,10 @@
-<div class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn" data-animation-role="button"
-  data-alignment="left" data-button-size="medium" data-button-type="primary" id="hero-popup-button"
-  style="transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 0.5s;">
-  <button class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"
-    data-initialized="true">
-    Book Free Consultation
-  </button>
+<div class="hero-button-group">
+  <div class="gurulab-component-container">
+    <button id="hero-popup-button" class="gurulab-button justify-left bg-dark size-large color-orange">Book Free Consultation</button>
+  </div>
+  <div class="gurulab-component-container">
+    <a href="/sign-up" target="_blank" id="hero-popup-button" class="gurulab-button justify-left bg-light size-large color-orange">Sign Up Now</a>
+  </div>
 </div>
 
 <!-- <div class="section hero-popup-section disable-in-editor" id="hero-popup-section"> -->
@@ -111,6 +111,15 @@
 </div>
 
 <style>
+  .hero-button-group > * {
+    display: inline-block;
+  }
+
+  .hero-button-group > *:not(:last-child) {
+    margin-bottom: 15px;
+    margin-right: 15px;
+  }
+  
   .section.hero-popup-section {
     position: relative;
     z-index: 10;
