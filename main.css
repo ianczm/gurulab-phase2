@@ -190,7 +190,8 @@ html {
   color: var(--gurulab-orange);
 }
 
-.sqs-block-accordion .arrow {
+.sqs-block-accordion .arrow,
+.sqs-block-accordion .plus {
   color: var(--gurulab-orange);
 }
 
