@@ -480,6 +480,12 @@ a.header-nav-lang-btn-cn {
   background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
 }
 
+/* Testimonials 625fd881c273291cbf0ab791 */
+
+.page-section[data-section-id="625fd881c273291cbf0ab791"] .section-background {
+  background: linear-gradient( 45deg, #47ADB2 10%, #1B7F85 100%);
+}
+
 /* Tutors 625fe39c887f814c655ccc13 */
 
 .page-section[data-section-id="625fe39c887f814c655ccc13"] .section-background {
