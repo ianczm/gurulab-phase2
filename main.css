@@ -501,6 +501,12 @@ a.header-nav-lang-btn-cn {
   background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
 }
 
+/* Table: 626b2c7644e5d43d3c9601f4 */
+
+.page-section[data-section-id="626b2c7644e5d43d3c9601f4"] .section-background {
+  background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
+}
+
 /* Gurulab Components */
 
 .gurulab-component-container *.justify-center {

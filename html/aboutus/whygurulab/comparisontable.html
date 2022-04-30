@@ -60,7 +60,7 @@
   .section-comparison {
     border-radius: 15px;
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
-    overflow-x: scroll;
+    overflow-x: hidden;
   }
 
   .section-comparison table {
@@ -73,8 +73,11 @@
   .section-comparison table td,
   .section-comparison table th {
     padding: 20px 10px;
-    text-align: left;
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+
+  .section-comparison table th {
+    font-size: 1rem;
   }
 
   .section-comparison table td {
@@ -94,7 +97,7 @@
   }
 
   .section-comparison table th {
-    background: var(--gurulab-orange);
+    background: var(--gurulab-teal);
     color: white;
   }
 
@@ -111,7 +114,7 @@
   }
 
   .section-comparison table tbody tr:last-child {
-    border-bottom: 3px solid var(--gurulab-orange);
+    border-bottom: 3px solid var(--gurulab-teal);
   }
 
   .section-comparison table tbody .left-header {
@@ -120,7 +123,7 @@
 
   .section-comparison table tbody .active-col {
     font-weight: 600;
-    color: var(--gurulab-orange);
+    color: var(--gurulab-teal);
   }
 
   /* @media only screen and (max-width: 1000px) {
