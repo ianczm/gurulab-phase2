@@ -1,0 +1,14 @@
+<script>
+  $(document).ready(function() {
+    $("div.header-burger").prepend('<div class = "header-nav-lang-menu"><i class="fas fa-globe"></i><a class="header-nav-lang-btn header-nav-lang-btn-en" href = "/home">  EN</a> | <a class="header-nav-lang-btn header-nav-lang-btn-cn" href = "/home-cn">中文</a> | <a class="header-nav-lang-btn header-nav-lang-btn-bm" href = "/home-bm">BM</a> </div>');
+    $("nav.header-nav-list").prepend('<div class = "header-nav-lang-menu header-nav-item"><i class="fas fa-globe"></i>&nbsp;<a class="header-nav-lang-btn header-nav-lang-btn-en" href = "/home">  EN</a> | <a class="header-nav-lang-btn header-nav-lang-btn-cn" href = "/home-cn">中文</a> | <a class="header-nav-lang-btn header-nav-lang-btn-bm" href = "/home-bm">BM</a> </div><div class="header-nav-divider"></div>');
+  });
+</script>
+
+<style>
+  a.header-nav-lang-btn-en {
+    pointer-events: none;
+    color: var(--gurulab-grey) !important;
+    text-decoration:none;
+  }
+</style>
