@@ -60,7 +60,20 @@
   .section-comparison {
     border-radius: 15px;
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
-    overflow-x: hidden;
+    overflow-x: scroll;
+  }
+
+  .section-comparison::-webkit-scrollbar {
+    /* display: none; */
+    background-color: white;
+    border-radius: 50px;
+    height: 10px;
+  }
+
+  .section-comparison::-webkit-scrollbar-thumb {
+    background-color: var(--gurulab-teal);
+    border-radius: 50px;
+    border: 1px solid white;
   }
 
   .section-comparison table {
