@@ -56,6 +56,7 @@ size-large
 size-verylarge
 color-orange
 color-teal
+font-large
 ```
 
 ### Common Patterns

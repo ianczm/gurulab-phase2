@@ -569,7 +569,7 @@ a.header-nav-lang-btn-cn {
 /* Personalisation 625c20f888ac262692a4b5d5 */
 
 .page-section[data-section-id="625c20f888ac262692a4b5d5"] .section-background {
-  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+  background: var(--gurulab-gradient-orange);
 }
 
 /* Testimonials 625fd881c273291cbf0ab791 */
@@ -581,7 +581,7 @@ a.header-nav-lang-btn-cn {
 /* Tutors 625fe39c887f814c655ccc13 */
 
 .page-section[data-section-id="625fe39c887f814c655ccc13"] .section-background {
-  background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
+  background: var(--gurulab-gradient-teal);
 }
 
 /* Next Steps 625fe45f6d00904c0e126282 */
@@ -595,26 +595,29 @@ a.header-nav-lang-btn-cn {
 /* Founders: Data Section ID 6266579108f28b23a5ae6240 */
 
 .page-section[data-section-id="6266579108f28b23a5ae6240"] .section-background {
-  background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
+  background: var(--gurulab-gradient-teal);
 }
 
 /* Box 1: Data Section ID 62659ab51e34f11bd9f3aa82 */
 
 .page-section[data-section-id="62659ab51e34f11bd9f3aa82"] .section-background {
   /* background: linear-gradient( 135deg, #F97794 10%, #623AA2 100%); */
-  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+  /* background: var(--gurulab-gradient-orange-light); */
+  background: var(--gurulab-gradient-orange-light);
 }
 
 /* Box 2: Data Section ID 6267b0e2d64b4f0015a51ea1 */
 
 .page-section[data-section-id="6267b0e2d64b4f0015a51ea1"] .section-background {
-  background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
+  /* background: var(--gurulab-gradient-teal-light); */
+  background: var(--gurulab-gradient-teal-light);
 }
 
 /* Box 3: Data Section ID 6267cb85a613f54842b6a4aa */
 
 .page-section[data-section-id="6267cb85a613f54842b6a4aa"] .section-background {
-  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+  /* background: var(--gurulab-gradient-orange-light); */
+  background: var(--gurulab-gradient-orange-light);
 }
 
 /* Our Methodology */
@@ -622,13 +625,13 @@ a.header-nav-lang-btn-cn {
 /* Our Framework: Data Section ID 6266dc624759a0440b0fa84d */
 
 .page-section[data-section-id="6266dc624759a0440b0fa84d"] .section-background {
-  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+  background: var(--gurulab-gradient-orange);
 }
 
 /* Our Technology: Data Section ID 6266ddba3756ff631212778e */
 
 .page-section[data-section-id="6266ddba3756ff631212778e"] .section-background {
-  background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
+  background: var(--gurulab-gradient-teal);
 }
 
 /* Our Tutors */
@@ -636,38 +639,38 @@ a.header-nav-lang-btn-cn {
 /* Vetted Rigorously: Data Section ID 6266dea11c8d451221d12f96 */
 
 .page-section[data-section-id="6266dea11c8d451221d12f96"] .section-background {
-  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+  background: var(--gurulab-gradient-orange);
 }
 
 /* Awesome Tutors: 6266dea11c8d451221d12f9a */
 
 .page-section[data-section-id="6266dea11c8d451221d12f9a"] .section-background {
-  background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
+  background: var(--gurulab-gradient-teal);
 }
 
 /* Why GuruLab */
 
 /* Our Solution: 626b2c445722f310572726bd */
 .page-section[data-section-id="626b2c445722f310572726bd"] .section-background {
-  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+  background: var(--gurulab-gradient-orange);
 }
 
 /* Table: 626b2c7644e5d43d3c9601f4 */
 
 .page-section[data-section-id="626b2c7644e5d43d3c9601f4"] .section-background {
-  background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
+  background: var(--gurulab-gradient-teal);
 }
 
 /* Contact Us 626d5563478bb20ff1112633 */
 
 .page-section[data-section-id="626d5563478bb20ff1112633"] .section-background {
-  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+  background: var(--gurulab-gradient-orange);
 }
 
 /* FAQ 626d9dbe9ce2eb2327d3a521 */
 
 .page-section[data-section-id="626d9dbe9ce2eb2327d3a521"] .section-background {
-  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+  background: var(--gurulab-gradient-orange);
 }
 
 /* Gurulab Components */
@@ -724,13 +727,29 @@ a.header-nav-lang-btn-cn {
   width: 200px;
 }
 
+.gurulab-component-container .gurulab-button.font-large {
+  font-size: 1.2rem;
+}
+
 .gurulab-component-container .gurulab-button.bg-light.color-orange {
-  background: linear-gradient( 135deg, #ffa339 10%, #F55555 100%);
+  background: var(--gurulab-gradient-orange);
+  /* background: var(--gurulab-orange); */
+  color: white;
+}
+
+.gurulab-component-container .gurulab-button.bg-light.color-solid-orange {
+  background: var(--gurulab-orange);
   color: white;
 }
 
 .gurulab-component-container .gurulab-button.bg-light.color-teal {
-  background: linear-gradient( 135deg, #47ADB2 10%, #1B7F85 100%);
+  background: var(--gurulab-gradient-teal);
+  /* background: var(--gurulab-teal); */
+  color: white;
+}
+
+.gurulab-component-container .gurulab-button.bg-light.color-solid-teal {
+  background: var(--gurulab-teal);
   color: white;
 }
 
