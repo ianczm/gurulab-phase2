@@ -56,6 +56,10 @@ size-large
 size-verylarge
 color-orange
 color-teal
+color-solid-orange
+color-solid-teal
+color-outline-orange
+color-outline-teal
 font-large
 ```
 

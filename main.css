@@ -769,6 +769,34 @@ a.header-nav-lang-btn-cn {
   color: var(--gurulab-teal);
 }
 
+.gurulab-component-container .gurulab-button.bg-dark.color-outline-orange {
+  color: var(--gurulab-orange);
+  outline: 2px solid var(--gurulab-orange);
+  background: none;
+  outline-offset: -2px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.gurulab-component-container .gurulab-button.bg-dark.color-outline-orange:hover {
+  color: white;
+  background: var(--gurulab-orange);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.gurulab-component-container .gurulab-button.bg-dark.color-outline-teal {
+  color: var(--gurulab-teal);
+  outline: 2px solid var(--gurulab-teal);
+  background: none;
+  outline-offset: -2px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.gurulab-component-container .gurulab-button.bg-dark.color-outline-teal:hover {
+  color: white;
+  background: var(--gurulab-teal);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
 .gurulab-component-container .gurulab-button:hover {
   transform: translate(2px, 2px);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
