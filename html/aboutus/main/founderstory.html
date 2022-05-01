@@ -44,9 +44,14 @@
           Malaysian education system by leveraging the power of data science. <b>She is a strong believer that
             English is a key to upward social mobility and with a personalised approach, she aspires to a world
             where no student is left behind.</b></p>
+        <div class="white-gradient"></div>
+        <div class="gurulab-component-container read-more">
+          <a id="see-more-kaisong" class="gurulab-button justify-center bg-light size-default color-orange">See More</a>
+        </div>
       </div>
       <div class="body-linkedin">
-        <a href="https://www.linkedin.com/in/kaisongeer/" target="_blank">Connect on LinkedIn <i class="fa-solid fa-plus"></i></a>
+        <a href="https://www.linkedin.com/in/kaisongeer/" target="_blank">Connect on LinkedIn <i
+            class="fa-solid fa-plus"></i></a>
       </div>
     </div>
   </div>
@@ -98,9 +103,14 @@
           lessons to the students’ needs. <b>But there’s only so much one person can do, and this problem inspired her
             to
             building GuruLab.</b></p>
+        <div class="white-gradient"></div>
+        <div class="gurulab-component-container read-more">
+          <a id="see-more-vicky" class="gurulab-button justify-center bg-light size-default color-orange">See More</a>
+        </div>
       </div>
       <div class="body-linkedin">
-        <a href="https://www.linkedin.com/in/vickytanwenhui/" target="_blank">Connect on LinkedIn <i class="fa-solid fa-plus"></i></a>
+        <a href="https://www.linkedin.com/in/vickytanwenhui/" target="_blank">Connect on LinkedIn <i
+            class="fa-solid fa-plus"></i></a>
       </div>
     </div>
   </div>
@@ -173,7 +183,7 @@
     align-items: center;
   }
 
-  .story-container .story-body .body-header >*:not(:last-child) {
+  .story-container .story-body .body-header>*:not(:last-child) {
     margin-right: 20px;
   }
 
@@ -291,7 +301,7 @@
     width: max-content;
     margin-left: auto;
     border: 2px solid var(--gurulab-orange);
-    box-shadow: 0 0 0px rgba(0,0,0,0.1);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
     font-weight: 600;
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
   }
@@ -299,7 +309,7 @@
   .story-container .story-body .body-linkedin a:hover {
     background: var(--gurulab-orange);
     color: white;
-    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
   }
 
@@ -311,7 +321,7 @@
     .story-container:not(:last-child) {
       margin-bottom: 1rem;
     }
-    
+
     .story-container .story-body .body-header {
       display: flex;
     }
@@ -350,8 +360,55 @@
       font-size: 1rem;
     }
 
+    .story-container .story-body .body-text {
+      height: 150px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .story-container .story-body .body-text .white-gradient {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 10%;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    }
+
+    .story-container .story-body .body-text .read-more {
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+
     .story-container .story-body .body-linkedin a {
       margin-right: auto;
     }
   }
 </style>
+
+<script>
+  $("#see-more-vicky, #see-more-kaisong").click(function() {
+    // $(this).parents(".story-container .story-body .body-text::after").fadeOut(200);
+    let text = $(this).parents(".body-text");
+    let currentHeight = text.height();
+    let targetHeight = text.css({height: "auto"}).height();
+
+    text.height(currentHeight);
+
+    // expand
+    text.animate({
+      height: `${targetHeight}px`,
+    }, 200);
+
+    // remove whiteness
+    $(this).parents(".body-text").children(".white-gradient").fadeOut(200);
+
+    // remove button
+    $(this).fadeOut(200);
+
+  });
+</script>
