@@ -408,6 +408,40 @@ a.header-nav-lang-btn-cn {
     background: rgba(255, 255, 255, .95);
     backdrop-filter: blur(25px);
   }
+
+  #header .header-nav-folder-content {
+    background: white;
+    border-radius: 15px 0 15px 15px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    /* margin-top: 10px; */
+  }
+
+  #header .header-nav-folder-content .header-nav-folder-item a {
+    /* background: linear-gradient(135deg, white, white); */
+    padding: 10px 20px;
+    display: block;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+
+  /* #header .header-nav-folder-content .header-nav-folder-item:not(:last-of-type) a {
+    border-bottom: 1px solid #dddddd;
+  } */
+
+  #header .header-nav-folder-content .header-nav-folder-item a::after {
+    display: none;
+  }
+
+  #header .header-nav-folder-content .header-nav-folder-item a:hover {
+    background: var(--gurulab-orange);
+    color: white;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+
+  /* #header {
+    background: var(--gurulab-gradient-orange-light);
+  } */
 }
 
 /*Hides Language Nav in Mobile Nav Menu*/
