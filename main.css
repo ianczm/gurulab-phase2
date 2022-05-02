@@ -459,19 +459,26 @@ a.header-nav-lang-btn-cn {
   }
 }
 
-.float{
-    position:fixed;
-    width:60px;
-    height:60px;
-    bottom:40px;
-    right:40px;
-    background-color:#25d366;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
+.float {
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background: linear-gradient( 135deg, #70F570 10%, #49C628 100%);
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
   font-size:30px;
-    box-shadow: 2px 2px 3px #999;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   z-index:1;
+  transition: transform 0.2s ease;
+}
+
+.float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
 }
 
 .my-float{
