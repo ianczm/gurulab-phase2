@@ -412,7 +412,13 @@ a.header-nav-lang-btn-cn {
   #header {
     background: rgba(255, 255, 255, .95);
     backdrop-filter: blur(25px);
+    /* background: var(--gurulab-teal); */
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.1);
   }
+
+  /* #header * {
+    color: white;
+  } */
 
   #header .header-nav-folder-content {
     background: white;
