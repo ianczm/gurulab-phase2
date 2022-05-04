@@ -13,7 +13,7 @@
         <p>Our learners are staying ahead. Sign your child up to experience a GuruLab class.</p>
       </div>
       <div class="gurulab-component-container">
-        <a id="book-free-trial-btn" class="gurulab-button justify-left bg-light size-verylarge color-solid-teal font-large">Book Trial</a>
+        <a id="book-free-trial-btn" class="gurulab-button justify-left bg-light size-verylarge color-solid-teal font-large">Book Free Trial</a>
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@
     <div class="form-close-btn" id="free-trial-popup-close-btn"><i class="fa-solid fa-xmark"></i></div>
     <div class="form-header">
       <h3>GuruLab</h3>
-      <h3 class="form-title">Book Free Consultation</h3>
+      <h3 class="form-title">Book Free Trial</h3>
       <p class="form-desc">We are ready to give your child a great English learning experience. Please give us your details below and we will be in touch!</p>
     </div>
     <div class="divider"></div>
@@ -61,9 +61,9 @@
             </button>
           </div>
     </form>
-    <div id="form-success">
+    <div id="trial-form-success">
       <p class="form-desc">Thank you, we will be in touch with you shortly!</p>
-      <div id="consultation-form-success-btn"
+      <div id="consultation-trial-form-success-btn"
         class="sqs-block-button-container sqs-block-button-container--left preFlex flexIn package-btn"
         data-animation-role="button" data-alignment="left" data-button-size="medium" data-button-type="primary"
         package-id="wm-3"
@@ -261,11 +261,11 @@
     $("#free-trial-popup-section").fadeIn(formAnimationDuration);
     $("#consultation-form").show();
     consultationFormSetPage(1);
-    $("#form-success").hide();
+    $("#trial-form-success").hide();
     $("#consultation-form-submit-btn").text("Submit");
   });
 
-  $("#consultation-form-bg, #free-trial-popup-close-btn, #consultation-form-success-btn").click(function () {
+  $("#consultation-form-bg, #free-trial-popup-close-btn, #consultation-trial-form-success-btn").click(function () {
     $("#free-trial-popup-section").fadeOut(formAnimationDuration);
   });
 
@@ -295,7 +295,7 @@
     })
       .then(() => {
         $("#consultation-form").hide();
-        $("#form-success").show();
+        $("#trial-form-success").show();
         $(".free-trial-popup-section .form-container .form-element > input").val("");
       })
   });
