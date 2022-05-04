@@ -324,6 +324,11 @@ https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f3d535cd62dd
   --gurulab-gradient-orange-light: linear-gradient( 135deg, #FBB980 10%, #FFEEE1 100%);
 }
 
+/* Remove mobile tap focusing */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 html {
   scroll-behavior: smooth;
 }
