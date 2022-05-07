@@ -57,8 +57,9 @@
       margin: 0 auto;
     }
   }
-
-  @media only screen and (min-width: 800px) {
+  
+  /* x > : 1025px desktop */
+  @media only screen and (min-width: 1025px) {
     .hero-image .hero-desktop {
       display: block;
     }
@@ -66,10 +67,25 @@
     .hero-image .hero-mobile {
       display: none;
     }
+  }
 
+  /* 800px < x < 1025px : mobile */
+
+  @media only screen and (min-width: 800px) {
     .section-herolanding .hero-grid {
       grid-template-columns: 1fr 1fr;
       grid-template-areas: "text image";
+    }
+  }
+
+  /* 500px < x < 800px : desktop */
+  @media only screen and (min-width: 500px) and (max-width: 800px) {
+    .hero-image .hero-desktop {
+      display: block;
+    }
+
+    .hero-image .hero-mobile {
+      display: none;
     }
   }
 </style>
