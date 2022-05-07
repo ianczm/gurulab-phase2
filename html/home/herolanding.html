@@ -1,0 +1,75 @@
+<div class="section section-herolanding">
+  <div class="hero-grid">
+    <div class="hero-image">
+      <img class="hero-desktop" src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6275e5e67a9bba1234b162b7/1651893756646/desktop-home-hero.png" alt="">
+      <img class="hero-mobile" src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/6275e63dd0371d705ac90769/1651893824821/mobile-home-hero.png" alt="">
+    </div>
+    <div class="hero-text">
+      <h2><strong>English</strong> – The Key to Your Child's Future</h2>
+      <p>We truly understand your child’s strengths and weaknesses, and drive improvements using our pioneering technology, proven curriculum and experienced tutors.</p>
+      <p>So be it PT3, SPM or IGCSE, we ensure that your child is ready for their exams and future!</p>
+      <div class="gurulab-component-container">
+        <a href="/sign-up/?SQF_SOURCE=home_hero" target="_blank" class="gurulab-button justify-left bg-light size-verylarge color-orange">Sign Up Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero-image .hero-desktop {
+    display: none;
+  }
+
+  .hero-image .hero-mobile {
+    display: block;
+  }
+
+  .section-herolanding .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "image" "text";
+    grid-gap: 3rem;
+    align-items: center;
+  }
+
+  .section-herolanding .hero-text {
+    grid-area: text;
+  }
+
+  .section-herolanding .hero-image {
+    grid-area: image;
+  }
+
+  .section-herolanding .hero-text strong {
+    color: var(--gurulab-orange);
+  }
+
+  .section-herolanding .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .section-herolanding .hero-text .gurulab-component-container {
+    margin-top: 1.5rem;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .section-herolanding .hero-text .gurulab-component-container .gurulab-button {
+      margin: 0 auto;
+    }
+  }
+
+  @media only screen and (min-width: 800px) {
+    .hero-image .hero-desktop {
+      display: block;
+    }
+
+    .hero-image .hero-mobile {
+      display: none;
+    }
+
+    .section-herolanding .hero-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "text image";
+    }
+  }
+</style>
