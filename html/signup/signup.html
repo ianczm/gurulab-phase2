@@ -1,0 +1,181 @@
+<div class="section section-sign-up">
+  <div class="sign-up-header">
+    <h2 class="title">GuruLab New Student<br><strong>Sign Up</strong></h2>
+    <p class="subtitle"></p>
+  </div>
+  <div class="divider"></div>
+  <div class="sign-up-form-container">
+    <form action="" id="sign-up-form">
+      <div class="form-page" page="1">
+        <div class="form-element">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name">
+        </div>
+        <div class="form-element">
+          <label for="class">Class</label>
+          <select name="class" id="class">
+            <option value="ee1">English Essentials (1 Month - RM 90)</option>
+            <option value="ee2">English Essentials (3 Months - RM 240)</option>
+            <option value="ee3">English Essentials (1 Year - RM 840)</option>
+            <option value="wm1">Writing Masterclass (1 Month - RM 135)</option>
+            <option value="wm2">Writing Masterclass (3 Months - RM 360)</option>
+            <option value="wm3">Writing Masterclass (1 Year - RM 1,200)</option>
+          </select>
+        </div>
+      </div>
+      <div id="checkout-page" class="form-page" page="2">
+        <div class="text">
+          <p>Thank you for signing up with us!</p>
+          <p>Your package link has been generated, please click the button to proceed to checkout.</p>
+        </div>
+      </div>
+      <div class="form-element form-element--button">
+        <div class="gurulab-component-container">
+          <button id="form-next-btn" class="gurulab-button justify-left bg-light size-large color-orange">Next</button>
+          <button id="form-submit-btn" class="gurulab-button justify-left bg-light size-large color-orange">Submit</button>
+          <a href="" id="form-checkout-btn" class="gurulab-button justify-left bg-light size-large color-orange">Checkout: Package Name</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .section-sign-up {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+
+  .section-sign-up .divider {
+    width: 100%;
+    height: 1px;
+    background: black;
+    margin: 2rem 0;
+  }
+
+  .section-sign-up strong {
+    color: var(--gurulab-orange);
+  }
+
+  .section-sign-up .form-element {
+    margin: 1rem 0;
+  }
+
+  .section-sign-up .form-element > * {
+    display: block;
+  }
+
+  .section-sign-up .form-element label {
+    margin-bottom: 0.5rem;
+  }
+
+  .section-sign-up .form-element input,
+  .section-sign-up .form-element select {
+    padding: 15px 25px;
+    border: 1px solid black;
+    border-radius: 50px;
+  }
+
+  .section-sign-up .form-element--button {
+    margin-top: 3rem;
+  }
+</style>
+
+<script>
+  const PREV = -1;
+  const NEXT = 1;
+
+  const packages = {};
+  packages["ee1"] = {
+    name: "English Essentials: 1 Month",
+    price: 90,
+    stripeLink: "https://buy.stripe.com/test_eVa9CdfxngTt54A5kr"
+  }
+  packages["ee2"] = {
+    name: "English Essentials: 3 Months",
+    price: 240,
+    stripeLink: "https://buy.stripe.com/test_bIY7u51Gx0Uv1SoaEK"
+  }
+  packages["ee3"] = {
+    name: "English Essentials: 1 Year",
+    price: 840,
+    stripeLink: "https://buy.stripe.com/test_cN28y92KBgTt8gM149"
+  }
+  packages["wm1"] = {
+    name: "Writing Masterclass: 1 Month",
+    price: 135,
+    stripeLink: "https://buy.stripe.com/test_00gcOpfxn1Yzcx2fZ2"
+  }
+  packages["wm2"] = {
+    name: "Writing Masterclass: 3 Months",
+    price: 360,
+    stripeLink: "https://buy.stripe.com/test_7sI4hTetjcDd68EeUX"
+  }
+  packages["wm3"] = {
+    name: "Writing Masterclass: 1 Year",
+    price: 1200,
+    stripeLink: "https://buy.stripe.com/test_6oE8y95WN32D40wdQS"
+  }
+
+  const checkoutPage = $("#checkout-page").attr("page");
+
+  let page = 1;
+
+  const setPage = (newPage) => {
+    page = newPage;
+    $('.section-sign-up .form-page').hide();
+    $(`.section-sign-up .form-page[page=${page}]`).show();
+    setButtons();
+  }
+
+  const setButtons = () => {
+    $("#form-checkout-btn, #form-submit-btn, #form-next-btn").hide();
+    if (page == checkoutPage) {
+      $("#form-checkout-btn").show();
+    } else if (page == checkoutPage - 1) {
+      $("#form-submit-btn").show();
+    } else {
+      $("#form-next-btn").show();
+    }
+  }
+
+  const navPage = (direction) => {
+    setPage(page + direction);
+  }
+
+  const validateFormData = () => {
+    const form = document.getElementById("sign-up-form");
+    let formData = new FormData(form);
+    console.log("Validated");
+    console.log(formData);
+    return formData;
+  }
+
+  $(document).ready(function () {
+    setPage(1);
+  })
+
+  $("#form-checkout-btn").click(function (e) {
+    // e.preventDefault();
+    console.log("Click checkout");
+  });
+
+  $("#form-next-btn").click(function (e) {
+    e.preventDefault();
+    console.log("Click next");
+    navPage(NEXT);
+  });
+
+  $("#form-submit-btn").click(function (e) {
+    e.preventDefault();
+    console.log("Click submit");
+    navPage(NEXT);
+    let formData = validateFormData();
+    let selectedClass = formData.get("class");
+    console.log(selectedClass);
+    $("#form-checkout-btn").attr("href", packages[selectedClass].stripeLink);
+    $("#form-checkout-btn").text(`Checkout: ${packages[selectedClass].name}`);
+  });
+</script>
