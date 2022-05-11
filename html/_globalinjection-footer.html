@@ -1,0 +1,23 @@
+<!-- WhatsApp Floating Button -->
+<a href="https://api.whatsapp.com/send?phone=60178007460&text=Hi%21%20I%20saw%20this%20on%20your%20website."
+  class="float" target="_blank">
+  <i class="fa fa-whatsapp my-float"></i>
+</a>
+
+<!-- Inject App Button -->
+<script>
+  $(document).ready(function () {
+    var $signUpBtnMobile = $(".header-menu-cta a").clone();
+    $signUpBtnMobile.attr("href", "https://app.gurulab.com.my");
+    $signUpBtnMobile.attr("target", "_blank");
+    $signUpBtnMobile.text("Log In");
+    $signUpBtnMobile.prependTo(".header-menu-cta");
+
+    var $signUpBtnDesktop = $(".header-actions-action--cta a").clone();
+    $signUpBtnDesktop.attr("href", "https://app.gurulab.com.my");
+    $signUpBtnDesktop.attr("target", "_blank");
+    $signUpBtnDesktop.text("Log In");
+    $signUpBtnDesktop.prependTo(".header-actions-action--cta");
+    $(".header-actions-action--cta a:first-child").remove();
+  });
+</script>

@@ -843,18 +843,18 @@ a.header-nav-lang-btn-cn {
 /* Gurulab Components */
 
 .gurulab-component-container *.justify-center {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .gurulab-component-container *.justify-left {
-  margin-left: 0;
-  margin-right: auto;
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
 
 .gurulab-component-container *.justify-right {
-  margin-left: auto;
-  margin-right: 0;
+  margin-left: auto !important;
+  margin-right: 0 !important;
 }
 
 .gurulab-component-container.margin-top-1rem {
