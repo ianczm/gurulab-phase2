@@ -838,6 +838,11 @@ a.header-nav-lang-btn-cn {
   background: var(--gurulab-gradient-orange);
 }
 
+/* Sign Up 6278970a639ac72ca9a24705 */
+.page-section[data-section-id="6278970a639ac72ca9a24705"] .section-background {
+  background: var(--gurulab-gradient-orange-light);
+}
+
 /* Gurulab Components */
 
 .gurulab-component-container *.justify-center {

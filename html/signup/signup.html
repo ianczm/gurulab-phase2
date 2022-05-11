@@ -8,8 +8,12 @@
     <form action="" id="sign-up-form">
       <div class="form-page" page="1">
         <div class="form-element">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name">
+          <label for="name">Parent Name</label>
+          <input type="text" name="parent-name" id="parent-name" placeholder="Adam Tan">
+        </div>
+        <div class="form-element">
+          <label for="name">Child Name</label>
+          <input type="text" name="child-name" id="child-name" placeholder="Lily Tan">
         </div>
         <div class="form-element">
           <label for="class">Class</label>
@@ -42,10 +46,10 @@
 
 <style>
   .section-sign-up {
-    background-color: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    background: rgba(241,241,241,1);
+    padding: 80px;
+    border-radius: 40px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
   }
 
   .section-sign-up .divider {
@@ -60,7 +64,7 @@
   }
 
   .section-sign-up .form-element {
-    margin: 1rem 0;
+    margin: 2rem 0;
   }
 
   .section-sign-up .form-element > * {
@@ -69,13 +73,21 @@
 
   .section-sign-up .form-element label {
     margin-bottom: 0.5rem;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .section-sign-up .form-element input,
   .section-sign-up .form-element select {
     padding: 15px 25px;
-    border: 1px solid black;
+    border: 1px solid rgba(204,204,204,1);
     border-radius: 50px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    background-color: rgba(250,250,250,1);
+    font-size: 0.95rem;
   }
 
   .section-sign-up .form-element--button {
