@@ -73,6 +73,10 @@
       </div>
     </form>
   </div>
+  <div class="form-success">
+    <p>Thank you for your registration. You will be redirected to checkout shortly.</p>
+    <p>Please <a id="stripe-manual-redirect" target="_blank" href="">click here</a> if you have not been redirected automatically.</p>
+  </div>
 </div>
 
 <style>
@@ -219,12 +223,10 @@
       left: firstAlertPos.left,
       behavior: "smooth"
     })
-    console.log("Form error");
   }
 
   const displayFieldError = (fieldid, errorString) => {
     const inputElement = $(fieldid).siblings().last();
-    console.log(inputElement.siblings(".error-alert"));
     if (!inputElement.parent().hasClass("error-parent")) {
       const errorAlert = $('<div/>', {
         class: "error-alert",
@@ -318,7 +320,9 @@
         body: formData
       }).then((response) => {
         $("#form-checkout-btn").text("Checking Out...");
+        $("#stripe-manual-redirect").attr("href", packages[selectedClass].stripeLink);
         window.open(packages[selectedClass].stripeLink);
+        onFormSuccess();
       }).catch((error) => {
         onFormError();
       });
@@ -333,7 +337,13 @@
     $("#form-checkout-btn").text(`Checkout RM ${packages[selectedClass].price.toLocaleString()}`);
   }
 
+  const onFormSuccess = () => {
+    $(".sign-up-form-container").slideUp(200);
+    $(".form-success").slideDown(200);
+  }
+
   $(document).ready(function () {
+    $(".form-success").hide();
     updateCheckoutButtonText();
   })
 </script>
