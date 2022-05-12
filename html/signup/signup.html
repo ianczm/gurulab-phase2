@@ -5,7 +5,7 @@
   </div>
   <div class="divider"></div>
   <div class="sign-up-form-container">
-    <form action="" id="sign-up-form">
+    <form id="sign-up-form">
       <div class="form-page" page="1">
 
         <div class="form-element">
@@ -42,13 +42,13 @@
 
         <div class="form-element">
           <label for="gurulab-package">GuruLab Package *</label>
-          <select name="gurulab-package" id="gurulab-package" onchange="updateCheckoutLink()" required>
-            <option value="ee1">English Essentials (1 Month - RM 90)</option>
-            <option value="ee2">English Essentials (3 Months - RM 240)</option>
-            <option value="ee3">English Essentials (1 Year - RM 840)</option>
-            <option value="wm1">Writing Masterclass (1 Month - RM 135)</option>
-            <option value="wm2">Writing Masterclass (3 Months - RM 360)</option>
-            <option value="wm3">Writing Masterclass (1 Year - RM 1,200)</option>
+          <select name="gurulab-package" id="gurulab-package" onchange="updateCheckoutButtonText()" required>
+            <option value="EE1">English Essentials (1 Month - RM 90)</option>
+            <option value="EE3">English Essentials (3 Months - RM 240)</option>
+            <option value="EE12">English Essentials (12 Months - RM 840)</option>
+            <option value="WM1">Writing Masterclass (1 Month - RM 135)</option>
+            <option value="WM3">Writing Masterclass (3 Months - RM 360)</option>
+            <option value="WM12">Writing Masterclass (12 Months - RM 1,200)</option>
           </select>
         </div>
         <div class="form-element">
@@ -62,7 +62,13 @@
       </div>
       <div class="form-element form-element--button">
         <div class="gurulab-component-container">
-          <a href="" target="_blank" id="form-checkout-btn" class="gurulab-button justify-left bg-light size-large color-orange">Checkout RM X,XXX</a>
+          <button
+            id="form-checkout-btn"
+            type="submit"
+            form="sign-up-form"
+            class="gurulab-button justify-left bg-light size-large color-orange">
+            Checkout RM X,XXX
+          </button>
         </div>
       </div>
     </form>
@@ -123,6 +129,23 @@
     margin-top: 1rem;
   }
 
+  .section-sign-up .form-element .error-alert {
+    padding: 7px 15px 5px 15px;
+    background: var(--gurulab-error);
+    color: white;
+    font-size: 0.85rem;
+    width: max-content;
+    border-radius: 2px;
+  }
+
+  .section-sign-up .form-element.error-parent {
+    color: var(--gurulab-error-text);
+  }
+
+  .section-sign-up .form-element.error-parent > *:last-child {
+    border: 1px solid var(--gurulab-error-light);
+  }
+
   .section-sign-up .form-element--button {
     margin-top: 3rem;
   }
@@ -136,65 +159,181 @@
 </style>
 
 <script>
+
+  // Refactor especially the alerts!
+  // class: error-alert is for the alert itself
+  // class: error-parent is for styling the parent
+
   const PREV = -1;
   const NEXT = 1;
 
+  const emailRegex = /^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z](-?[a-zA-Z0-9])*(\.[a-zA-Z](-?[a-zA-Z0-9])*)+$/;
+  const phoneRegex = /^[0-9]{7,20}$/;
+
+  const GSHEET = "https://script.google.com/macros/s/AKfycbyLJB7n03Ucr_A-70NLXaI-67UwcHG5lTFsQGPXKK9Erf8aQb63aHj8gZZer75J0l9kzQ/exec";
+
   const packages = {};
-  packages["ee1"] = {
+  packages["EE1"] = {
     name: "English Essentials: 1 Month",
     price: 90,
     stripeLink: "https://buy.stripe.com/test_eVa9CdfxngTt54A5kr"
   }
-  packages["ee2"] = {
+  packages["EE3"] = {
     name: "English Essentials: 3 Months",
     price: 240,
     stripeLink: "https://buy.stripe.com/test_bIY7u51Gx0Uv1SoaEK"
   }
-  packages["ee3"] = {
-    name: "English Essentials: 1 Year",
+  packages["EE12"] = {
+    name: "English Essentials: 12 Months",
     price: 840,
     stripeLink: "https://buy.stripe.com/test_cN28y92KBgTt8gM149"
   }
-  packages["wm1"] = {
+  packages["WM1"] = {
     name: "Writing Masterclass: 1 Month",
     price: 135,
     stripeLink: "https://buy.stripe.com/test_00gcOpfxn1Yzcx2fZ2"
   }
-  packages["wm2"] = {
+  packages["WM3"] = {
     name: "Writing Masterclass: 3 Months",
     price: 360,
     stripeLink: "https://buy.stripe.com/test_7sI4hTetjcDd68EeUX"
   }
-  packages["wm3"] = {
-    name: "Writing Masterclass: 1 Year",
+  packages["WM12"] = {
+    name: "Writing Masterclass: 12 Months",
     price: 1200,
     stripeLink: "https://buy.stripe.com/test_6oE8y95WN32D40wdQS"
   }
 
-  const validateFormData = () => {
+  const isRequiredButEmpty = (key, value) => {
+    const isRequired = $(`#${key}`).prop("required");
+    return !value && isRequired;
+  }
+
+  const onFormError = () => {
+    updateCheckoutButtonText();
+    // scroll to first error
+    const firstAlertPos = $(".error-alert").parent().offset();
+    const headerHeight = $("#header").height();
+    window.scroll({
+      top: firstAlertPos.top - headerHeight - 32,
+      left: firstAlertPos.left,
+      behavior: "smooth"
+    })
+    console.log("Form error");
+  }
+
+  const displayFieldError = (fieldid, errorString) => {
+    const inputElement = $(fieldid).siblings().last();
+    console.log(inputElement.siblings(".error-alert"));
+    if (!inputElement.parent().hasClass("error-parent")) {
+      const errorAlert = $('<div/>', {
+        class: "error-alert",
+        text: errorString
+      });
+      errorAlert.insertAfter(inputElement);
+      inputElement.parent().addClass("error-parent");
+    }
+  }
+
+  const retrieveFormData = () => {
     const form = document.getElementById("sign-up-form");
-    let formData = new FormData(form);
-    console.log("Validated");
-    console.log(formData);
+    return new FormData(form);
+  }
+
+  const validateFormData = () => {
+
+    const formData = retrieveFormData();
+    let errorFlag = false;
+
+    // Reset errors
+    $(".error-alert").remove();
+    $(".error-parent").removeClass("error-parent");
+
+    // Perform overall check for required fields
+    for (let pair of formData.entries()) {
+      if (isRequiredButEmpty(pair[0], pair[1])) {
+        errorFlag = true;
+        displayFieldError(`#${pair[0]}`, 'Please fill in this field.');
+      }
+    }
+
+    // Parent name need not be validated
+
+    // Parent mobile number
+    if (!phoneRegex.test(formData.get("parent-mobile-number"))) {
+      errorFlag = true;
+      displayFieldError('#parent-mobile-number', 'Please input a valid phone number. i.e. 60123456789');
+    }
+
+    // Parent gmail
+    if (!emailRegex.test(formData.get("parent-gmail"))) {
+      errorFlag = true;
+      displayFieldError('#parent-gmail', 'Please input a valid email address.');
+    }
+
+    // Student name need not be validated
+
+    // Student mobile number
+    if (!phoneRegex.test(formData.get("student-mobile-number"))) {
+      errorFlag = true;
+      displayFieldError('#student-mobile-number', 'Please input a valid phone number. i.e. 60123456789');
+    }
+
+    // Student gmail
+    if (!emailRegex.test(formData.get("student-gmail"))) {
+      errorFlag = true;
+      displayFieldError('#student-gmail', 'Please input a valid email address.');
+    }
+
+    // Abort if error found
+    if (errorFlag) {
+      return null;
+    }
+
+    // Gurulab package and additional notes need not be validated
+
+    // Append source
+    const urlParams = new URLSearchParams(window.location.search);
+    const source = urlParams.get("SQF_SOURCE");
+    formData.append("source", source);
+
+    // Append date
+    const date = new Date();
+    const dateString = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    formData.append("time-submitted", dateString);
+
     return formData;
   }
 
   $("#form-checkout-btn").click(function (e) {
-    // e.preventDefault();
-    console.log("Click checkout");
-    console.log(e);
-    let formData = validateFormData();
+    e.preventDefault();
+    $("#form-checkout-btn").text("Processing...");
+
+    const formData = validateFormData();
+
+    if (formData != null) {
+      const selectedClass = formData.get("gurulab-package");
+      fetch(GSHEET, {
+        method: "POST",
+        body: formData
+      }).then((response) => {
+        $("#form-checkout-btn").text("Checking Out...");
+        window.open(packages[selectedClass].stripeLink);
+      }).catch((error) => {
+        onFormError();
+      });
+    } else {
+      onFormError();
+    }
+    
   });
 
-  const updateCheckoutLink = () => {
-    let formData = validateFormData();
-    let selectedClass = formData.get("gurulab-package");
-    console.log(selectedClass);
-    $("#form-checkout-btn").attr("href", packages[selectedClass].stripeLink);
+  const updateCheckoutButtonText = () => {
+    const selectedClass = retrieveFormData().get("gurulab-package");
     $("#form-checkout-btn").text(`Checkout RM ${packages[selectedClass].price.toLocaleString()}`);
   }
 
   $(document).ready(function () {
-    updateCheckoutLink();
+    updateCheckoutButtonText();
   })
 </script>

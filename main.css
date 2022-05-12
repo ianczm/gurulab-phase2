@@ -410,6 +410,9 @@ https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/61f3d535cd62dd
   --gurulab-light-background: #FFFFFF;
   --gurulab-teal: #1B7F85;
   --gurulab-light-grey: #F1F1F1;
+  --gurulab-error: #cc3b3b;
+  --gurulab-error-text: #bd0000;
+  --gurulab-error-light: #e99292;
   --google-green: #34A853;
   --google-red: #EA4335;
   --gurulab-light-light-teal: #DBEFF0;
