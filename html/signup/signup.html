@@ -1,7 +1,28 @@
 <div class="section section-sign-up">
   <div class="sign-up-header">
-    <h2 class="title">GuruLab New Student<br><strong>Sign Up</strong></h2>
-    <p class="subtitle"></p>
+    <h2 class="title">GuruLab New Student<br><strong>Sign Up Form</strong></h2>
+    <ul class="notes">
+      <li class="notes-item">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>No Deposit and Registration Fee (cancel anytime!)</span>
+      </li>
+      <li class="notes-item">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span id="notes-popup-link"><u>Money Back Guarantee* (no questions asked)</u></span>
+        <div id="notes-popup">
+          <p><b>Terms and Conditions</b></p>
+          <ul class="mbg-tnc">
+            <li class="mbg-tnc-item">Only for payment through the website upon sign up</li>
+            <li class="mbg-tnc-item">Cancellation only applicable 14 calendar days after first payment</li>
+            <li class="mbg-tnc-item">Refund via bank transfer only</li>
+          </ul>
+        </div>
+      </li>
+      <li class="notes-item">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Assessment during student onboarding to personalise learning</span>
+      </li>
+    </ul>
   </div>
   <div class="divider"></div>
   <div class="sign-up-form-container">
@@ -42,7 +63,8 @@
 
         <div class="form-element">
           <label for="gurulab-package">GuruLab Package *</label>
-          <select name="gurulab-package" id="gurulab-package" onchange="updateCheckoutButtonText()" required>
+          <!-- removed onchange event that updates button text -->
+          <select name="gurulab-package" id="gurulab-package" required>
             <option value="EE1">English Essentials (1 Month - RM 90)</option>
             <option value="EE3">English Essentials (3 Months - RM 240)</option>
             <option value="EE12">English Essentials (12 Months - RM 840)</option>
@@ -55,7 +77,11 @@
           <label for="class">Additional notes to the team (if any)</label>
           <textarea name="additional-notes" id="additional-notes" rows="8"></textarea>
         </div>
+
+        <div class="divider"></div>
+
         <div class="form-element">
+          <p>Once payment is made, our friendly student support team will contact you via Whatsapp to provide a personalised assessment and onboard your child onto our app within 1 business day.</p>
           <p><b>Note:</b> You may enter your promo code at checkout.</p>
         </div>
 
@@ -67,7 +93,7 @@
             type="submit"
             form="sign-up-form"
             class="gurulab-button justify-left bg-light size-large color-orange">
-            Checkout RM X,XXX
+            Proceed
           </button>
         </div>
       </div>
@@ -85,6 +111,7 @@
     padding: 80px;
     border-radius: 40px;
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    overflow: hidden;
   }
 
   .section-sign-up .divider {
@@ -96,6 +123,66 @@
 
   .section-sign-up strong {
     color: var(--gurulab-orange);
+  }
+
+  .section-sign-up .sign-up-header .title {
+    margin-top: 0;
+  }
+
+  .section-sign-up .sign-up-header .notes {
+    list-style: none;
+    padding: 0;
+    margin-left: 1rem;
+  }
+
+  .section-sign-up .sign-up-header .notes .notes-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .section-sign-up .sign-up-header .notes .notes-item i {
+    display: inline-block;
+    width: 30px;
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .section-sign-up .sign-up-header .notes .notes-item span {
+    display: inline-block;
+    margin-left: 1rem;
+  }
+
+  .section-sign-up .sign-up-header .notes .notes-item #notes-popup-link {
+    color: var(--gurulab-orange);
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .section-sign-up .sign-up-header .notes .notes-item:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .section-sign-up .sign-up-header .notes .notes-item #notes-popup-link ~ #notes-popup {
+    position: absolute;
+    z-index: 1;
+    background: white;
+    top: calc(100% + 5px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .section-sign-up .sign-up-header .notes .notes-item #notes-popup-link ~ #notes-popup p {
+    margin-top: 0;
+  }
+
+  .section-sign-up .sign-up-header .notes .notes-item #notes-popup-link:hover ~ #notes-popup {
+    opacity: 1;
+    transition: opacity 0.2s ease;
   }
 
   .section-sign-up .form-element {
@@ -172,6 +259,21 @@
       border-radius: 25px;
     }
   }
+
+  @media only screen and (min-width: 800px) {
+    .section-sign-up .sign-up-header .notes .notes-item #notes-popup-link ~ #notes-popup {
+      position: absolute;
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      top: calc(100%);
+      width: max-content;
+      z-index: 1;
+      opacity: 0;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+      transition: opacity 0.2s ease;
+    }
+  }
 </style>
 
 <script>
@@ -226,7 +328,7 @@
   }
 
   const onFormError = () => {
-    updateCheckoutButtonText();
+    // updateCheckoutButtonText();
     // scroll to first error
     const firstAlertPos = $(".error-alert").parent().offset();
     const headerHeight = $("#header").height();
@@ -344,10 +446,10 @@
     
   });
 
-  const updateCheckoutButtonText = () => {
-    const selectedClass = retrieveFormData().get("gurulab-package");
-    $("#form-checkout-btn").text(`Checkout RM ${packages[selectedClass].price.toLocaleString()}`);
-  }
+  // const updateCheckoutButtonText = () => {
+  //   const selectedClass = retrieveFormData().get("gurulab-package");
+  //   $("#form-checkout-btn").text(`Checkout RM ${packages[selectedClass].price.toLocaleString()}`);
+  // }
 
   const onFormSuccess = () => {
     $(".sign-up-form-container").slideUp(200);
@@ -356,6 +458,17 @@
 
   $(document).ready(function () {
     $(".form-success").hide();
-    updateCheckoutButtonText();
+    // $("#notes-popup").hide();
+    // updateCheckoutButtonText();
   })
+
+  // const hidePopUp = () => {
+  //   $("#notes-popup").fadeOut(200);
+  // }
+
+  // $("#notes-popup-link").hover(function() {
+  //   $("#notes-popup").fadeIn(200);
+  // }, function() {
+  //   $("#notes-popup").fadeOut(200);
+  // })
 </script>
