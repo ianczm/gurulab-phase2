@@ -131,6 +131,18 @@
     background-color: rgba(250,250,250,1);
     font-size: 0.95rem;
     margin-top: 1rem;
+    box-shadow: 0 0 0px rgba(244, 136, 71, 0.15);
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .section-sign-up .form-element input:focus,
+  .section-sign-up .form-element select:focus,
+  .section-sign-up .form-element textarea:focus {
+    border: 1px solid var(--gurulab-orange);
+    outline: none;
+    outline-offset: 0;
+    box-shadow: 0 0 30px rgba(244, 136, 71, 0.15);
+    transition: border 0.2s ease, box-shadow 0.2s ease;
   }
 
   .section-sign-up .form-element .error-alert {
