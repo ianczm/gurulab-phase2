@@ -1,6 +1,7 @@
 <div class="section section-sign-up">
   <div class="sign-up-header">
     <h2 class="title">GuruLab New Student<br><strong>Sign Up Form</strong></h2>
+    <p class="description">Once payment is made, our friendly student support team will contact you via Whatsapp to provide a personalised assessment and onboard your child onto our app within 1 business day.</p>
     <ul class="notes">
       <li class="notes-item">
         <i class="fa-solid fa-cart-shopping"></i>
@@ -81,7 +82,6 @@
         <div class="divider"></div>
 
         <div class="form-element">
-          <p>Once payment is made, our friendly student support team will contact you via Whatsapp to provide a personalised assessment and onboard your child onto our app within 1 business day.</p>
           <p><b>Note:</b> You may enter your promo code at checkout.</p>
         </div>
 
@@ -127,6 +127,10 @@
 
   .section-sign-up .sign-up-header .title {
     margin-top: 0;
+  }
+
+  .section-sign-up .sign-up-header .description {
+    margin-bottom: 2rem;
   }
 
   .section-sign-up .sign-up-header .notes {
@@ -330,6 +334,7 @@
   const onFormError = () => {
     // updateCheckoutButtonText();
     // scroll to first error
+    $("#form-checkout-btn").text("Proceed");
     const firstAlertPos = $(".error-alert").parent().offset();
     const headerHeight = $("#header").height();
     window.scroll({
@@ -433,10 +438,7 @@
         method: "POST",
         body: formData
       }).then((response) => {
-        $("#form-checkout-btn").text("Checking Out...");
-        $("#stripe-manual-redirect").attr("href", packages[selectedClass].stripeLink);
-        window.open(packages[selectedClass].stripeLink);
-        onFormSuccess();
+        onFormSuccess(selectedClass);
       }).catch((error) => {
         onFormError();
       });
@@ -451,9 +453,26 @@
   //   $("#form-checkout-btn").text(`Checkout RM ${packages[selectedClass].price.toLocaleString()}`);
   // }
 
-  const onFormSuccess = () => {
+  const onFormSuccess = (selectedClass) => {
+    // adjust page view first
+    $("#stripe-manual-redirect").attr("href", packages[selectedClass].stripeLink);
+    window.scroll({
+      top: 0,
+      bottom: 0,
+      behavior: "smooth"
+    });
     $(".sign-up-form-container").slideUp(200);
     $(".form-success").slideDown(200);
+    $("#form-checkout-btn").text("Redirecting...");
+
+    // push data
+    window.dataLayer.push({
+      "event": "onSignUpFormSubmission",
+      "packageSelected": packages[selectedClass]
+    });
+
+    // redirect
+    window.open(packages[selectedClass].stripeLink);
   }
 
   $(document).ready(function () {
