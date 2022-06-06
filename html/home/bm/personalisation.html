@@ -1,0 +1,185 @@
+<div class="section section-usp">
+  <div class="usp cards-container">
+    <div class="usp card" nav-idx="1">
+      <div class="image">
+        <img loading="lazy"
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd2301892c05f44aa0280/1650446896635/analytics.png">
+      </div>
+      <div class="text">
+        <h3 class="title">Teknologi</h3>
+        <h4 class="subtitle">canggih dan analitik data.</h4>
+        <p>Dahulu, pemperibadian bermaksud mempunyai tutor persendirian. Walau bagaimanapun, GuruLab berjaya
+          mengaplikasikan pengalaman itu kepada bentuk kumpulan dengan memanfaatkan teknologi perintis dan analitik
+          data.</p>
+      </div>
+    </div>
+    <div class="usp card" nav-idx="2">
+      <div class="image">
+        <img loading="lazy"
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd1d146e57130b9592f33/1650446801119/trophy.png">
+      </div>
+      <div class="text">
+        <h3 class="title">Kurikulum</h3>
+        <h4 class="subtitle">yang terbukti sejajar dengan kurikulum antarabangsa.</h4>
+        <p>Dengan menggunakan teknik penilaian tepat dan kurikulum sejajar CEFR, kami memastikan anak anda mempunyai
+          permulaan yang baik dan mencapai setiap pencapaian dengan yakin dalam kelas yang betul.</p>
+      </div>
+    </div>
+    <div class="usp card" nav-idx="3">
+      <div class="image">
+        <img loading="lazy"
+          src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/625fd4b3cf060f609121ece3/1650447539876/videoconference.png">
+      </div>
+      <div class="text">
+        <h3 class="title">Tutor</h3>
+        <h4 class="subtitle">yang layak, berpengalaman dan berdedikasi.</h4>
+        <p>Tiada yang akan mampu menggantikan guru sebenar, dan di GuruLab, tutor yang layak, berpengalaman dan
+          berdedikasi dilatih untuk memastikan pelajar belajar pada tahap dan kadar yang betul demi memastikan kejayaan
+          anak anda.</p>
+      </div>
+    </div>
+  </div>
+  <div class="usp-cards-scroll-nav">
+    <div class="usp-cards-scroll-nav-dots" nav-idx="1"></div>
+    <div class="usp-cards-scroll-nav-dots" nav-idx="2"></div>
+    <div class="usp-cards-scroll-nav-dots" nav-idx="3"></div>
+  </div>
+</div>
+
+
+<style>
+  /* Card */
+
+  .usp.cards-container {
+    overflow-x: scroll;
+    scroll-snap-type: inline mandatory;
+    display: grid;
+    grid-gap: 15px;
+    grid-auto-flow: column;
+    /* grid-auto-columns: calc(33% - 10px); */
+    grid-auto-columns: calc(100%);
+  }
+
+  .usp.cards-container {
+    scrollbar-width: none;
+  }
+
+  .usp.cards-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .usp.card {
+    background: white;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(244, 136, 71, 0.1);
+    display: block;
+    align-items: center;
+    background-color: white;
+    transition: background 0.2s ease;
+    scroll-snap-align: center;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  /* .usp.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    background-color: var(--gurulab-orange);
+  } */
+
+  /* Margins */
+
+  .usp .text>* {
+    margin: 0;
+    cursor: default;
+  }
+
+  /* Images */
+
+  .usp .image img {
+    width: 100px;
+    min-width: 75px;
+  }
+
+  .usp .image {
+    margin-bottom: 1.5rem;
+    margin-right: 0;
+  }
+
+  /* Typesetting */
+
+  .usp .title {
+    color: var(--gurulab-orange);
+    margin-bottom: 0.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .usp .subtitle {
+    color: black;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .usp p {
+    color: black;
+    transition: color 0.2s ease;
+  }
+
+  /* Scroll Nav Dots */
+  .usp-cards-scroll-nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 5px;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .usp-cards-scroll-nav-dots {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: rgba(244, 136, 71, 0);
+    transition: background-color 0.2s ease;
+    border: 2px solid white;
+  }
+
+  .usp-cards-scroll-nav-dots.active {
+    background-color: white;
+    transition: background-color 0.2s ease;
+  }
+
+  @media only screen and (min-width: 1025px) {
+    .usp.cards-container {
+      overflow-x: hidden;
+      scroll-snap-type: none;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .usp-cards-scroll-nav {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const uspcards = document.querySelectorAll(".usp.card");
+  const personalisationNavObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let navidx = entry.target.getAttribute("nav-idx");
+        $(".usp-cards-scroll-nav-dots").removeClass("active");
+        $(`.usp-cards-scroll-nav-dots[nav-idx=${navidx}]`).addClass("active");
+      }
+    });
+  }, {
+    threshold: 0.9
+  });
+  uspcards.forEach((uspcard) => {
+    personalisationNavObserver.observe(uspcard);
+  })
+</script>

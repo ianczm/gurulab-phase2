@@ -1,0 +1,266 @@
+<div class="section section-testimonials">
+  <div class="container">
+    <div class="content">
+      <div class="profile">
+        <div class="profile-picture">
+          <img loading="lazy" src="" alt="profile-picture" class="" />
+        </div>
+        <div class="profile-details">
+          <h3 class="profile-name">Loading...</h3>
+          <h4 class="profile-class">Loading...</h4>
+        </div>
+      </div>
+      <div class="body">
+        <h4 class="section-title">Testimoni</h4>
+        <h3 class="body-title">Loading...</h3>
+        <p class="body-text">Loading...</p>
+      </div>
+    </div>
+    <div class="nav">
+      <h3 class="nav-page">Muka Surat 1 / 4</h3>
+      <div class="button-group">
+        <button id="testimonial-nav-left">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="testimonial-nav-right">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-testimonials .container {
+    padding: 40px 60px;
+    /* padding: 40px; */
+    /* border-radius: 15px; */
+    position: relative;
+    overflow: hidden;
+    background: white;
+    /* background: linear-gradient(180deg, rgba(255, 250, 246, 1) 0%, rgba(255, 239, 229, 1) 100%); */
+    /* box-shadow: 0 0 30px rgba(255, 125, 45, 0.1); */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    cursor: default;
+    transition: background 0.2s ease;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  /* .section-testimonials .container:hover {
+    background: #FFF4ED;
+    transition: background 0.2s ease;
+  } */
+
+  .section-testimonials .content {
+    display: flex;
+    align-items: center;
+    margin-bottom: calc(2rem + 30px);
+  }
+
+  .section-testimonials .content .profile {
+    /* display: flex; */
+    align-items: center;
+    /* margin-bottom: 2rem; */
+    margin-right: 60px;
+  }
+
+  .section-testimonials .content .profile > * {
+    margin: 0;
+  }
+
+  .section-testimonials .content .profile .profile-picture {
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    /* margin-right: 2rem; */
+    margin-bottom: 0.5rem;
+  }
+
+  .section-testimonials .content .profile .profile-picture img {
+    object-fit: cover;
+    aspect-ratio: 1;
+  }
+
+  .section-testimonials .content .profile .profile-details > * {
+    margin: 0;
+    text-align: center;
+  }
+
+  .section-testimonials .content .profile .profile-details .profile-class {
+    color: var(--gurulab-teal);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .section-testimonials .content .body .section-title {
+    color: var(--gurulab-teal);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .section-testimonials .content .body .body-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    /* color: var(--gurulab-teal); */
+  }
+
+  .section-testimonials .nav {
+    background-color: var(--gurulab-teal);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .section-testimonials .nav .nav-page {
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .section-testimonials .nav .button-group button {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    border: 2px solid white;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+  }
+
+  .section-testimonials .nav .button-group button:hover {
+    color: var(--gurulab-teal);
+    background-color: white;
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .section-testimonials .container {
+      padding: 20px;
+    }
+
+    .section-testimonials .content {
+      display: block;
+      margin-bottom: calc(2rem + 50px);
+    }
+
+    .section-testimonials .content .profile {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+
+    .section-testimonials .content .profile .profile-picture {
+      margin-right: 1.5rem;
+      width: 75px;
+      height: 75px;
+    }
+
+    .section-testimonials .content .profile .profile-details > * {
+      text-align: left;
+    }
+
+    .section-testimonials .content .body .body-title,
+    .section-testimonials .content .profile .profile-details .profile-name {
+      font-size: 1.2rem;
+    }
+
+    .section-testimonials .nav {
+      padding: 15px 20px;
+    }
+  }
+</style>
+
+<script>
+  const contents = [];
+  contents[0] = {
+    picture:
+      "https://st3.depositphotos.com/1010683/19125/i/600/depositphotos_191251860-stock-photo-young-asian-woman-smiling.jpg",
+    picpos: "object-position: 30% 50%;",
+    name: "Lily",
+    class: "Ibu bapa",
+    title:
+      "A dalam subjek Bahasa Inggeris SPM dan Biasiswa Kerajaan ke Perancis",
+    text: "Setelah 2 tahun  bekerja keras dengan bantuan daripada tutor GuruLab, anak saya akhirnya memperoleh A dalam subjek Bahasa Inggeris SPM walaupun tidak memperoleh A dalam  PT3. Paling menggembirakan adalah anak saya berjaya mendapat biasiswa penuh kerajaan untuk melanjutkan pelajaran ke Perancis! Pada mulanya anak saya agak bimbang dia tidak berjaya mendapatkannya kerana dia lemah dalam kemahiran bertutur tetapi tutor GuruLab membantunya meningkatkan keyakinan diri untuk menyerlah dalam proses temu duga berbanding calon lain.",
+  };
+  contents[1] = {
+    picture:
+      "https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/626d9f62591ebf709dbca4ae/1651351397108/xiaohui.png",
+    picpos: "object-position: 50% 50%;",
+    name: "Xiao Hui",
+    class: "Ibu bapa",
+    title: "Bukan Sekadar Kelas Dalam Talian Biasa",
+    text: "GuruLab menjadikan pembelajaran lebih menarik dan menyeronokkan kerana kaedah pembelajaran mereka adalah unik dan efektif. Meskipun dilaksanakan secara maya, mereka tetap berjaya menarik anak saya dengan melakukan pelbagai aktiviti dan yang lebih penting, program mereka membawa kesan positif.  Saya amat kagum apabila melihat anak perempuan saya berjaya memperoleh keputusan yang lebih baik selepas menghadiri kelas anjuran GuruLab! Kadang - kadang anak saya juga akan membetulkan bahasa Inggeris saya kerana GuruLab telah memberikannya keyakinan untuk bertutur dalam bahasa Inggeris dengan lancar. Sudah tentu saya akan mengesyorkan GuruLab kepada semua ibu bapa.",
+  };
+  contents[2] = {
+    picture:
+      "https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/626d9f58d81a355bc5b861d9/1651351385413/fikri.jpeg",
+    picpos: "object-position: 50% 50%;",
+    name: "Fikri",
+    class: "Pelajar",
+    title: "Bukan Sekadar Kelas Bahasa Inggeris",
+    text: "Kelas GuruLab membantu menambahbaik kelancaran saya bertutur dalam bahasa Inggeris ketika PT3  kerana terdapat banyak ujian bertutur dalam kelas mereka. Bukan itu sahaja, GuruLab juga telah menggilap kemahiran menulis saya dan menyediakan keperluan yang sesuai untuk saya menguatkan lagi asas dalam kemahiran saya yang lain untuk saya lebih bersedia secara sosial atau keperluan profesional.",
+  };
+  contents[3] = {
+    picture:
+      "https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/626d9f5e7b27ec05bcf072a9/1651351390396/vincent.jpeg",
+    picpos: "object-position: 50% 50%;",
+    name: "Vincent",
+    class: "Pelajar",
+    title: "Pembinaan Karakter",
+    text: "Kemahiran saya dalam bahasa Inggeris sudah tentunya bertambah baik melalui kelas dalam talian anjuran Gurulab dan saya boleh bertutur dengan lebih lancar dan yakin. Saya memilih GuruLab kerana tutor saya akan memastikan kami bersedia menghadapi SPM dan lebih lagi.",
+  };
+
+  const Left = -1;
+  const Right = 1;
+
+  const prefix = ".section-testimonials .container ";
+
+  var page = 0;
+  var totalpagecount = 4;
+
+  $("#testimonial-nav-left").click(function () {
+    navigateTestimonials(Left);
+  });
+  $("#testimonial-nav-right").click(function () {
+    navigateTestimonials(Right);
+  });
+
+  navigateTestimonials = function (direction) {
+    console.log("test");
+    page =
+      (((page + direction) % totalpagecount) + totalpagecount) % totalpagecount;
+    setPageTestimonials(page);
+  };
+
+  setPageTestimonials = function (page) {
+    $(prefix + ".profile .profile-picture img").attr({
+      src: contents[page].picture,
+      style: contents[page].picpos,
+    });
+    $(prefix + ".profile .profile-details .profile-name").text(
+      contents[page].name
+    );
+    $(prefix + ".profile .profile-details .profile-class").text(
+      contents[page].class
+    );
+    $(prefix + ".body .body-title").text(contents[page].title);
+    $(prefix + ".body .body-text").text(contents[page].text);
+    $(prefix + ".nav .nav-page").text(
+      "Page " + (page + 1) + " / " + totalpagecount
+    );
+  };
+
+  $(document).ready(function () {
+    setPageTestimonials(0);
+  });
+</script>

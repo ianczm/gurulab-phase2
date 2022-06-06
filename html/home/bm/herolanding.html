@@ -1,0 +1,91 @@
+<div class="section section-herolanding">
+  <div class="hero-grid">
+    <div class="hero-image">
+      <img loading="lazy" class="hero-desktop" src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/627b620c7cc1235bdf61e522/1652253197482/desktop-home-hero.png" alt="">
+      <img loading="lazy" class="hero-mobile" src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/627b62114ae8e9753a5cb0dd/1652253201356/mobile-home-hero.png" alt="">
+    </div>
+    <div class="hero-text">
+      <h2><strong>Bahasa Inggeris</strong> – Kunci Masa Depan Anak Kita</h2>
+      <p>Kami memahami kekuatan dan kelemahan anak anda,  dan memacu perkembangan menggunakan teknologi perintis kami, kurikulum yang terbukti dan tutor berpengalaman.</p>
+      <p>Justeru, sama ada PT3, SPM atau IGCSE, kami akan memastikan bahawa anak anda akan bersedia menghadapi peperiksaan dan masa depan mereka!</p>
+      <div class="gurulab-component-container">
+        <a href="/sign-up/?SQF_SOURCE=home_hero" target="_blank" class="gurulab-button justify-left bg-light size-verylarge color-orange">Daftar Sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero-image .hero-desktop {
+    display: none;
+  }
+
+  .hero-image .hero-mobile {
+    display: block;
+  }
+
+  .section-herolanding .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "image" "text";
+    grid-gap: 3rem;
+    align-items: center;
+  }
+
+  .section-herolanding .hero-text {
+    grid-area: text;
+  }
+
+  .section-herolanding .hero-image {
+    grid-area: image;
+  }
+
+  .section-herolanding .hero-text strong {
+    color: var(--gurulab-orange);
+  }
+
+  .section-herolanding .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .section-herolanding .hero-text .gurulab-component-container {
+    margin-top: 1.5rem;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .section-herolanding .hero-text .gurulab-component-container .gurulab-button {
+      margin: 0 auto;
+    }
+  }
+  
+  /* x > : 1025px desktop */
+  @media only screen and (min-width: 1025px) {
+    .hero-image .hero-desktop {
+      display: block;
+    }
+
+    .hero-image .hero-mobile {
+      display: none;
+    }
+  }
+
+  /* 800px < x < 1025px : mobile */
+
+  @media only screen and (min-width: 800px) {
+    .section-herolanding .hero-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "text image";
+    }
+  }
+
+  /* 500px < x < 800px : desktop */
+  @media only screen and (min-width: 500px) and (max-width: 800px) {
+    .hero-image .hero-desktop {
+      display: block;
+    }
+
+    .hero-image .hero-mobile {
+      display: none;
+    }
+  }
+</style>
