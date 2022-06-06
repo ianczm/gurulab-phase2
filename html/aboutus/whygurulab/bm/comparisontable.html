@@ -1,0 +1,221 @@
+<div class="section section-comparison">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>GuruLab</th>
+        <th>Tutor Peribadi</th>
+        <th>Pusat Tuisyen Dalam Talian/Luar Talian</th>
+        <th>Pusat Bahasa Inggeris Khusus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left-header">Harga Sebulan</td>
+        <td class="active-col">Serendah RM70-90</td>
+        <td>
+          Sekurangnya RM200 dan boleh mencapai RM600 bergantung kepada bilangan
+          jam
+        </td>
+        <td>Berbeza mengikut tempat dan kawasan tempat tinggal</td>
+        <td>RM200-500</td>
+      </tr>
+      <tr>
+        <td class="left-header">Profil Tutor</td>
+        <td class="active-col">
+          100% dalam kalangan mereka memiliki kelayakan dalam bahasa Inggeris
+          atau pendidikan dan kebanyakan mereka memiliki pengalaman menanda
+          kertas PT3/SPM
+        </td>
+        <td>
+          Tutor mungkin tidak mempunyai kelayakan yang diperlukan jadi ia boleh
+          menjadi perkara baik atau tidak baik kepada ibu bapa
+        </td>
+        <td>
+          Tutor mungkin tidak mempunyai kelayakan yang diperlukan jadi ia boleh
+          menjadi perkara baik atau tidak baik kepada ibu bapa
+        </td>
+        <td>
+          Ada yang layak tetapi mungkin tidak mempunyai pengalaman menyediakan
+          pelajar untuk peperiksaan sekolah
+        </td>
+      </tr>
+      <tr>
+        <td class="left-header">Kurikulum</td>
+        <td class="active-col">
+          Kemahiran + sejajar CEFR diperlukan untuk peperiksaan Bahasa Inggeris
+          dalam PT3, SPM, UEC dan IGCSE
+        </td>
+        <td>Berkemungkinan tidak menepati set piawaian antarabangsa</td>
+        <td>Sama ada bahasa Inggeris PT3 atau SPM sahaja</td>
+        <td>
+          Mengikuti standard antarabangsa tetapi tidak mengikut silibus sekolah
+          atau peperiksaan sekolah
+        </td>
+      </tr>
+      <tr>
+        <td class="left-header">Model Kelas</td>
+        <td class="active-col">Purata 15 pelajar dalam satu kelas*</td>
+        <td>
+          Model one-to-one menyebabkan pelajar tidak dapat berlatih kemahiran
+          bertutur atau belajar dengan rakan sebaya mereka
+        </td>
+        <td>
+          Saiz kelas yang besar dengan 25 atau lebih pelajar menyebabkan tutor
+          tidak mempunyai masa yang cukup untuk memenuhi keperluan pelajaran
+          setiap pelajar
+        </td>
+        <td>
+          Saiz kelas sederhana sebanyak 10 pelajar atau lebih tetapi proses
+          pemperibadian pembelajaran yang terhad
+        </td>
+      </tr>
+      <tr>
+        <td class="left-header">Pemperibadian</td>
+        <td class="active-col">
+          Pelajaran, latihan, maklum balas dan intervensi yang diperibadikan
+          mengikut tahap pelajar
+        </td>
+        <td>
+          Pemberibadian pada tahap tertentu tetapi tidak memliki struktur yang
+          jelas
+        </td>
+        <td>
+          Tiada pemperibadian yang sesuai dengan keperluan dan matlamat unik
+          setiap pelajar
+        </td>
+        <td>
+          Tiada pemperibadian yang sesuai dengan keperluan dan matlamat unik
+          setiap pelajar
+        </td>
+      </tr>
+      <tr>
+        <td class="left-header">Teknologi</td>
+        <td class="active-col">
+          Teknologi dipacu data untuk menjejak kemajuan dan menjadikan
+          pemperibadian lebih berkesan
+        </td>
+        <td>
+          Teknologi terhad kepada penggunaan alat persidangan video dan kuiz
+          dalam talian
+        </td>
+        <td>
+          Teknologi terhad kepada penggunaan alat persidangan video dan kuiz
+          dalam talian
+        </td>
+        <td>
+          Teknologi terhad kepada penggunaan alat persidangan video dan kuiz
+          dalam talian
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .section-comparison {
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    overflow-x: scroll;
+  }
+
+  .section-comparison::-webkit-scrollbar {
+    /* display: none; */
+    background-color: white;
+    border-radius: 50px;
+    height: 10px;
+  }
+
+  .section-comparison::-webkit-scrollbar-thumb {
+    background-color: var(--gurulab-teal);
+    border-radius: 50px;
+    border: 1px solid white;
+  }
+
+  .section-comparison table {
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    /* box-shadow: 0 0 30px rgba(0,0,0,0.1); */
+  }
+
+  .section-comparison table td,
+  .section-comparison table th {
+    padding: 20px 10px;
+    font-size: 1rem;
+  }
+
+  .section-comparison table th {
+    font-size: 1rem;
+  }
+
+  .section-comparison table td {
+    vertical-align: top;
+  }
+
+  .section-comparison table tr td:nth-child(1) {
+    min-width: min-content;
+  }
+
+  .section-comparison table tr td:nth-child(2),
+  .section-comparison table tr td:nth-child(3),
+  .section-comparison table tr td:nth-child(4),
+  .section-comparison table tr td:nth-child(5) {
+    width: 22%;
+    min-width: 200px;
+  }
+
+  .section-comparison table th {
+    background: var(--gurulab-teal);
+    color: white;
+  }
+
+  .section-comparison table tbody tr:not(:last-child) {
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .section-comparison table tbody tr {
+    background: white;
+  }
+
+  .section-comparison table tbody tr:nth-of-type(even) {
+    background: #f2f2f2;
+  }
+
+  .section-comparison table tbody tr:last-child {
+    border-bottom: 3px solid var(--gurulab-teal);
+  }
+
+  .section-comparison table tbody .left-header {
+    font-weight: 600;
+  }
+
+  .section-comparison table tbody .active-col {
+    /* font-weight: 600; */
+    color: white;
+    /* color: var(--gurulab-teal); */
+  }
+
+  .section-comparison table tbody tr:nth-of-type(odd) .active-col {
+    background-color: #6faeb2;
+    /* background-color: #EFF6F6; */
+  }
+
+  .section-comparison table tbody tr:nth-of-type(even) .active-col {
+    background-color: #57a1a5;
+    /* background-color: #DEEDEE; */
+  }
+
+  /* @media only screen and (max-width: 1000px) {
+    .section-comparison table tr td:nth-child(1) {
+      width: 125px;
+    }
+
+    .section-comparison table tr td:nth-child(2),
+    .section-comparison table tr td:nth-child(3),
+    .section-comparison table tr td:nth-child(4),
+    .section-comparison table tr td:nth-child(5) {
+      width: 200px;
+    }
+  } */
+</style>
