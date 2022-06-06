@@ -298,32 +298,32 @@
   packages["EE1"] = {
     name: "English Essentials: 1 Month",
     price: 90,
-    stripeLink: "https://buy.stripe.com/test_eVa9CdfxngTt54A5kr"
+    stripeLink: "https://buy.stripe.com/28ocOi5FxbQjbCg9AC"
   }
   packages["EE3"] = {
     name: "English Essentials: 3 Months",
     price: 240,
-    stripeLink: "https://buy.stripe.com/test_bIY7u51Gx0Uv1SoaEK"
+    stripeLink: "https://buy.stripe.com/5kA6pU1ph9Ib7m05kn"
   }
   packages["EE12"] = {
     name: "English Essentials: 12 Months",
     price: 840,
-    stripeLink: "https://buy.stripe.com/test_cN28y92KBgTt8gM149"
+    stripeLink: "https://buy.stripe.com/6oE3dI0ld6vZfSw5ko"
   }
   packages["WM1"] = {
     name: "Writing Masterclass: 1 Month",
     price: 135,
-    stripeLink: "https://buy.stripe.com/test_00gcOpfxn1Yzcx2fZ2"
+    stripeLink: "https://buy.stripe.com/cN25lQd7Z5rVbCgeUZ"
   }
   packages["WM3"] = {
     name: "Writing Masterclass: 3 Months",
     price: 360,
-    stripeLink: "https://buy.stripe.com/test_7sI4hTetjcDd68EeUX"
+    stripeLink: "https://buy.stripe.com/cN24hMaZRg6zdKo14a"
   }
   packages["WM12"] = {
     name: "Writing Masterclass: 12 Months",
     price: 1200,
-    stripeLink: "https://buy.stripe.com/test_6oE8y95WN32D40wdQS"
+    stripeLink: "https://buy.stripe.com/dR66pU2tlg6zgWA007"
   }
 
   const isRequiredButEmpty = (key, value) => {
@@ -411,7 +411,11 @@
       return null;
     }
 
-    // Gurulab package and additional notes need not be validated
+    // Gurulab package: convert id to name
+    // let selectedClass = formData.get("gurulab-package");
+    // formData.set("gurulab-package", packages[selectedClass].name)
+
+    // Additional notes need not be validated
 
     // Append source
     const urlParams = new URLSearchParams(window.location.search);
