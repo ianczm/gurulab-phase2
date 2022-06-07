@@ -1,0 +1,118 @@
+<div class="section section-languageswitcher">
+  <div class="options">
+    <div class="options-background"></div>
+    <span class="option-item" lang-select="EN">English</span>
+    <span class="option-item" lang-select="BM">Bahasa Melayu</span>
+    <!-- <span class="option-item" lang-select="CN">中文</span> -->
+    <div class="options-highlight"></div>
+  </div>
+</div>
+
+<style>
+  .section-languageswitcher {
+    display: flex;
+    justify-content: center;
+  }
+
+  .section-languageswitcher .options {
+    position: relative;
+  }
+
+  .section-languageswitcher .options .option-item {
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px 15px;
+    margin: -10px -15px;
+    color: white;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .section-languageswitcher .options .option-item.active {
+    color: var(--gurulab-sat-orange);
+    transition: color 0.2s ease;
+  }
+
+  .section-languageswitcher .options > .option-item:not(:last-of-type) {
+    margin-right: 15px;
+  }
+
+  .section-languageswitcher .options .options-highlight {
+    position: absolute;
+    left: -15px;
+    top: -10px;
+    width: 0px;
+    height: 100%;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0 0 30px 0 rgba(255, 175, 126, 0.75);
+  }
+
+  .section-languageswitcher .options .options-background {
+    position: absolute;
+    left: -15px;
+    top: -10px;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.15); */
+    background: var(--gurulab-gradient-orange);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    border-radius: 50px;
+  }
+</style>
+
+<script>
+  const languages = [];
+  languages["EN"] = {
+    link: "/home",
+  };
+  languages["BM"] = {
+    link: "/bm/laman-utama",
+  };
+  // languages["CN"] = {
+  //   link: "/cn/home",
+  // };
+
+  const loadPage = (language) => {
+    let currentPage = window.location.pathname;
+    let link = languages[language].link;
+    console.log(`currentPage = ${currentPage}, language = ${link}`);
+    if (link !== currentPage) {
+      console.log("true");
+      window.location.href = link;
+    }
+  };
+
+  const onOptionActive = (option, highlight) => {
+    highlight.animate(
+      {
+        width: `${option.width()}px`,
+        left: `${option.position().left - 15}px`,
+      },
+      200
+    );
+
+    $(".section-languageswitcher .options .option-item").removeClass("active");
+    option.addClass("active");
+    let language = option.attr("lang-select");
+
+    return language;
+  };
+
+  let highlight = $(".section-languageswitcher .options .options-highlight");
+
+  $(document).ready(function () {
+    onOptionActive(
+      $(".section-languageswitcher .options .option-item[lang-select='BM']"),
+      highlight
+    );
+  });
+
+  $(".section-languageswitcher .options .option-item").click(function () {
+    let language = onOptionActive($(this), highlight);
+    loadPage(language);
+  });
+</script>
