@@ -10,7 +10,7 @@
         <div class="divider"></div>
         <p class="question-content">
           Loading question...
-          <span id="selected-option" class="empty"></span>
+          <span class="selected-option" class="empty"></span>
         </p>
       </div>
       <ul class="options">
@@ -74,7 +74,7 @@
     .form-question
     .form-question-container
     .question-content
-    #selected-option {
+    .selected-option {
     font-weight: 700;
     color: var(--gurulab-orange);
     text-decoration: underline;
@@ -85,7 +85,7 @@
     .form-question
     .form-question-container
     .question-content
-    #selected-option.empty {
+    .selected-option.empty {
     background: var(--gurulab-orange);
     width: 5ch;
     height: 1px;
@@ -202,23 +202,32 @@
       this.options = options;
       this.score = score;
       this.selectedOption = null;
+      this.fieldCount = null;
       // stores the jquery object once created
       this.$formQuestion = null;
     }
+
+    // returns string html for the span: selected-option
+    createField = (fieldId) => {
+      return `<span class="selected-option empty" field-id=${fieldId}></span>`;
+    };
 
     // Populates the fields in #question div
     // Removes existing data if any
     display = () => {
       // there might be multiple of these
-      const selectedOptionField = `<span id="selected-option" class="empty"></span>`;
+      this.fieldCount = this.question.match(/\(\?\)/g).length;
+      console.log(this.fieldCount);
+
       this.$formQuestion = $("#question");
 
       // Update content section
       this.$formQuestion.prop("question-id", this.id);
       this.$formQuestion.find(".question-heading").text(`Question ${this.id}`);
-      this.$formQuestion
-        .find(".question-content")
-        .html(this.question.replace("(?)", selectedOptionField));
+      for (let fieldId = 0; fieldId < this.fieldCount; fieldId++) {
+        this.question = this.question.replace("(?)", this.createField(fieldId));
+      }
+      this.$formQuestion.find(".question-content").html(this.question);
 
       // Clear options
       this.$formQuestion.find(".options").empty();
@@ -261,11 +270,16 @@
         // update #selected-option with text
         let selectedOptionText = this.options.getContent(this.selectedOption);
         if (selectedOptionText === null) {
-          $("#selected-option").addClass("empty");
-          $("#selected-option").html("");
+          $(".selected-option").addClass("empty");
+          $(".selected-option").html("");
         } else {
-          $("#selected-option").removeClass("empty");
-          $("#selected-option").text(selectedOptionText);
+          $(".selected-option").removeClass("empty");
+          let optionArray = selectedOptionText.split(", ");
+          for (let fieldId = 0; fieldId < this.fieldCount; fieldId++) {
+            $(`.selected-option[field-id="${fieldId}"`).text(
+              optionArray[fieldId]
+            );
+          }
         }
 
         // jquery class add
@@ -316,6 +330,7 @@
 
   /**
    * Handles assessment execution and logic.
+   * Should Assessment also export responses for individual questions?
    * @param array of questions
    * @param user user object
    */
@@ -383,10 +398,29 @@
   }
 
   const questions = [];
+
+  // questions[1] = new Question(
+  //   1,
+  //   "I love apples. (?) are sweet.",
+  //   new Options({ A: "It", B: "We", C: "She", D: "They" }, "D")
+  // );
+  // questions[2] = new Question(
+  //   2,
+  //   "Kuala Lumpur is (?) big city.",
+  //   new Options({ A: "a", B: "an", C: "the" }, "A")
+  // );
   questions[1] = new Question(
-    5,
-    "I love apples. (?) are sweet.",
-    new Options({ A: "It", B: "We", C: "She", D: "They" }, "D")
+    28,
+    "The commander (?) his order to attack when he saw the enemy raise the white flag; he was relieved that he could bring an end to the (?).",
+    new Options(
+      {
+        A: "reiterated, hostilities",
+        B: "countermanded, fighting",
+        C: "commandeered, truce",
+        D: "renounced, hiatus",
+      },
+      "B"
+    )
   );
 
   const assessment = new Assessment(
