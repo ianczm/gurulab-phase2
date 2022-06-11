@@ -1,0 +1,398 @@
+<div class="assessment-container">
+  <form action="" id="assessment">
+    <div class="form-page" question-id="0">
+      <div id="personal-details"></div>
+    </div>
+    <div id="question" class="form-page form-question" question-id="1">
+      <!-- These are placeholder content until JS hydrates this area -->
+      <div class="form-question-container">
+        <h3 class="question-heading">Question 1</h3>
+        <div class="divider"></div>
+        <p class="question-content">
+          Loading question...
+          <span id="selected-option" class="empty"></span>
+        </p>
+      </div>
+      <ul class="options">
+        <li class="option active" option-id="A">
+          <h4 class="option-title">Option A</h4>
+          <p class="option-content">It</p>
+        </li>
+        <li class="option" option-id="B">
+          <h4 class="option-title">Option B</h4>
+          <p class="option-content">We</p>
+        </li>
+        <li class="option" option-id="C">
+          <h4 class="option-title">Option C</h4>
+          <p class="option-content">She</p>
+        </li>
+        <li class="option" option-id="D">
+          <h4 class="option-title">Option D</h4>
+          <p class="option-content">They</p>
+        </li>
+      </ul>
+    </div>
+  </form>
+</div>
+
+<style>
+  .assessment-container {
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
+    padding: 40px;
+  }
+
+  .assessment-container .form-question .form-question-container {
+    padding: 30px 20px 40px 20px;
+    margin-bottom: 15px;
+  }
+
+  .assessment-container
+    .form-question
+    .form-question-container
+    .question-heading {
+    color: var(--gurulab-orange);
+  }
+
+  .assessment-container .form-question .form-question-container .divider {
+    width: 100%;
+    height: 1px;
+    background: black;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .assessment-container
+    .form-question
+    .form-question-container
+    .question-content {
+    font-size: 1.25rem;
+  }
+
+  .assessment-container
+    .form-question
+    .form-question-container
+    .question-content
+    #selected-option {
+    font-weight: 700;
+    color: var(--gurulab-orange);
+    text-decoration: underline;
+    display: inline-block;
+  }
+
+  .assessment-container
+    .form-question
+    .form-question-container
+    .question-content
+    #selected-option.empty {
+    background: var(--gurulab-orange);
+    width: 5ch;
+    height: 1px;
+    display: inline-block;
+  }
+
+  .assessment-container .form-question .options .option .option-title {
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    color: var(--gurulab-orange);
+    margin-bottom: 1rem;
+  }
+
+  .assessment-container .form-question .options .option .option-content {
+    font-size: 1.25rem;
+  }
+
+  .assessment-container .form-question .options {
+    display: grid;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .assessment-container .form-question .options .option::before {
+    background: var(--gurulab-gradient-orange);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .assessment-container .form-question .options .option {
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .assessment-container .form-question .options .option > * {
+    margin: 0;
+    padding: 0;
+    transition: color 0.2s ease;
+  }
+
+  .assessment-container .form-question .options .option.active,
+  .assessment-container .form-question .options .option:hover {
+    box-shadow: 0 0 15px 3px rgba(255, 175, 126, 0.75);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .assessment-container .form-question .options .option.active::before,
+  .assessment-container .form-question .options .option:hover::before {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+  }
+
+  .assessment-container .form-question .options .option.active > *,
+  .assessment-container .form-question .options .option:hover > * {
+    color: white;
+    transition: color 0.2s ease;
+  }
+</style>
+
+<script>
+  /**
+   * Stores option logic, should be instantiated in Question constructor
+   * @param options options object containing {Option-ID}: {Option-Content}
+   * @param actualAnswer string {Option-ID}
+   */
+  class Options {
+    constructor(options, actualAnswer) {
+      this.options = options;
+      this.actualAnswer = actualAnswer;
+    }
+
+    getKeys = () => {
+      return Object.keys(this.options);
+    };
+
+    getContent = (optionid) => {
+      if (optionid === null) {
+        return null;
+      } else {
+        return this.options[optionid];
+      }
+    };
+
+    isCorrect = (selectedOption) => {
+      return selectedOption === this.actualAnswer;
+    };
+  }
+  /**
+   * Stores content and defines frontend behaviour for each question.
+   * @param id questionid, same as assessment question index
+   * @param question contains string description
+   * @param options object
+   * @param score int
+   */
+  class Question {
+    constructor(id, question, options, score = 1) {
+      this.id = id;
+      this.question = question;
+      this.options = options;
+      this.score = score;
+      this.selectedOption = null;
+      // stores the jquery object once created
+      this.$formQuestion = null;
+    }
+
+    // Populates the fields in #question div
+    // Removes existing data if any
+    display = () => {
+      // there might be multiple of these
+      const selectedOptionField = `<span id="selected-option" class="empty"></span>`;
+      this.$formQuestion = $("#question");
+
+      // Update content section
+      this.$formQuestion.prop("question-id", this.id);
+      this.$formQuestion.find(".question-heading").text(`Question ${this.id}`);
+      this.$formQuestion
+        .find(".question-content")
+        .html(this.question.replace("(?)", selectedOptionField));
+
+      // Clear options
+      this.$formQuestion.find(".options").empty();
+
+      // Insert new options
+      let optionKeys = this.options.getKeys();
+      optionKeys.forEach((key, index) => {
+        let $option = $("<li/>", { class: "option", "option-id": key });
+
+        // Title
+        $("<h4/>", {
+          class: "option-title",
+          text: `Option ${key}`,
+        }).appendTo($option);
+
+        // Content
+        $("<p/>", {
+          class: "option-content",
+          text: `${this.options.getContent(key)}`,
+        }).appendTo($option);
+
+        $option.appendTo(this.$formQuestion.find(".options"));
+      });
+
+      this.initialise();
+    };
+
+    // enable click events for assignment
+    initialise = () => {
+      // to be passed into mouseclick
+      const onOptionClick = ((selectedOption) => {
+        // check if selectedOption is already selected
+        // this is for the toggle behaviour
+        if (selectedOption === this.selectedOption) {
+          this.selectedOption = null;
+        } else {
+          this.selectedOption = selectedOption;
+        }
+
+        // update #selected-option with text
+        let selectedOptionText = this.options.getContent(this.selectedOption);
+        if (selectedOptionText === null) {
+          $("#selected-option").addClass("empty");
+          $("#selected-option").html("");
+        } else {
+          $("#selected-option").removeClass("empty");
+          $("#selected-option").text(selectedOptionText);
+        }
+
+        // jquery class add
+        this.$formQuestion.find(".option").removeClass("active");
+        if (this.selectedOption !== null) {
+          this.$formQuestion
+            .find(`.option[option-id="${this.selectedOption}"]`)
+            .addClass("active");
+        }
+      }).bind(this);
+
+      // option mouse clicks
+      this.$formQuestion.find(".option").click(function () {
+        let selectedOption = $(this).attr("option-id");
+        onOptionClick(selectedOption);
+      });
+    };
+
+    // returns score for this question
+    evaluate = () => {
+      if (this.options.isCorrect(this.selectedOption)) {
+        console.log("Answer is correct.");
+      }
+      return this.score;
+    };
+  }
+
+  /**
+   * Data class for user details to prevent mixing up with assessment data.
+   * @param form jQuery form object
+   */
+  class AssessmentUser {
+    constructor(form) {
+      this.form = form;
+      // user data
+      this.firstname = null;
+      this.lastname = null;
+      this.email = null;
+      this.country = null;
+      this.phone = null;
+      this.dateOfBirth = null;
+      this.marketingOptIn = null;
+    }
+
+    // validate user fields
+    validate = () => {};
+  }
+
+  /**
+   * Handles assessment execution and logic.
+   * @param array of questions
+   * @param user user object
+   */
+  class Assessment {
+    constructor(questions, user) {
+      // assessment data
+      this.questions = questions;
+      this.user = user;
+      this.score = 0;
+      this.currentQuestionId = 1;
+    }
+
+    // fetch assessment data from elsewhere to overwrite local
+    fetchAssessmentContent = () => {};
+
+    // move to next question
+    goToQuestion = (questionid) => {
+      // update current question score before navigation
+      this.updateScore();
+
+      // allow realtime progress checking to terminate earlier if needed -- but cannot redo a question
+      if (this.terminationCondition()) {
+        // terminate and submit
+        this.terminateAssessment();
+        return;
+      }
+
+      this.currentQuestionId = questionid;
+      this.display();
+    };
+
+    display = () => {
+      this.questions[this.currentQuestionId].display();
+    };
+
+    // upon each question completion, update cumulative score
+    // updated difference can be used for realtime correctness checking
+    updateScore = () => {
+      let evaluation = this.questions[currentPage].evaluate();
+      this.score += evaluation;
+      return evaluation;
+    };
+
+    /**
+     * questions >= 8 && score < 2 -> A1-Level1
+     * questions >= 12 && score < 4 -> A2-Level1
+     * questions >= 16 && score < 8 -> A2+-Level2
+     * questions >= 20 && score < 12 -> B1-Level3
+     * questions >= 24 && score < 16 -> B1+Level4
+     * questions >= 28
+     *   17 <= score <= 20 -> B2-Level5
+     *   21 <= score <= 24 -> B2+-Level6
+     *   25 <= score <= 28 -> B2+-Level6 (In the future: C1-Level7)
+     */
+    terminationCondition = () => {};
+
+    // display the thank you page to users
+    terminateAssessment = () => {
+      this.submitAssessment();
+    };
+
+    // logic to submit to google sheets
+    // submits user data together
+    submitAssessment = () => {};
+  }
+
+  const questions = [];
+  questions[1] = new Question(
+    5,
+    "I love apples. (?) are sweet.",
+    new Options({ A: "It", B: "We", C: "She", D: "They" }, "D")
+  );
+
+  const assessment = new Assessment(
+    questions,
+    new AssessmentUser($("#assessment"))
+  );
+
+  assessment.display();
+</script>

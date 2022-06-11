@@ -867,6 +867,11 @@ a.header-nav-lang-btn-cn {
   background: var(--gurulab-gradient-orange-light);
 }
 
+/* Assessment 62a420b6b185b85168d33c6e */
+.page-section[data-section-id="62a420b6b185b85168d33c6e"] .section-background {
+  background: var(--gurulab-gradient-orange);
+}
+
 /* Gurulab Components */
 
 .gurulab-component-container *.justify-center {
