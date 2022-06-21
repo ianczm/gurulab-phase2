@@ -7,7 +7,45 @@
     </p>
   </div>
   <div class="testimonial-container">
-    <!-- testimonial here -->
+    <div class="testimonial-card">
+      <div class="body">
+        <div class="profile">
+          <img
+            src="https://st3.depositphotos.com/1010683/19125/i/600/depositphotos_191251860-stock-photo-young-asian-woman-smiling.jpg"
+            alt="profile-picture"
+          />
+          <div class="profile-details">
+            <h3 class="name">Lily</h3>
+            <p class="class">Parent</p>
+          </div>
+        </div>
+        <div class="write-up">
+          <h4 class="heading">Testimonial</h4>
+          <h4 class="title"
+            >A in SPM English and Full Government Scholarship to France</h4
+          >
+          <p class="write-up-text"
+            >After 2 years of hard work with the help of his Tutor from GuruLab,
+            my son finally got an A in his SPM English, despite not getting an A
+            in PT3. The best part is he even won a full government scholarship
+            to study in France! He was initially worried that he wouldn’t get it
+            because of his weak speaking skills but his Tutor from GuruLab
+            helped him and he managed to build the confidence to shine during
+            the interviews.</p
+          >
+        </div>
+      </div>
+      <div class="nav">
+        <div class="page"
+          >Page <span id="current-page">1</span> /
+          <span id="max-pages">4</span></div
+        >
+        <div class="nav-buttons">
+          <span>Scroll</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -15,6 +53,8 @@
   .skeptical {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 40px;
   }
 
   .skeptical .text strong {
@@ -23,5 +63,89 @@
 
   .skeptical .text p {
     font-size: 1.2rem;
+  }
+
+  .testimonial-container .testimonial-card {
+    background: white;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .testimonial-container .testimonial-card .body {
+    display: flex;
+    gap: 60px;
+    padding: 40px 60px;
+  }
+
+  .testimonial-container .testimonial-card .body .profile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .testimonial-container .testimonial-card .body .profile img {
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 1;
+    border-radius: 100vmax;
+    min-width: 150px;
+    min-height: 150px;
+  }
+
+  .testimonial-container .testimonial-card .body .profile .profile-details {
+    text-align: center;
+  }
+
+  .testimonial-container .testimonial-card .body .profile .profile-details * {
+    margin: 0;
+  }
+
+  .testimonial-container
+    .testimonial-card
+    .body
+    .profile
+    .profile-details
+    .class {
+    color: var(--gurulab-teal);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .testimonial-container .testimonial-card .body .write-up * {
+    margin: 0;
+  }
+
+  .testimonial-container .testimonial-card .body .write-up .heading {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: var(--gurulab-teal);
+  }
+
+  .testimonial-container .testimonial-card .body .write-up .title {
+    margin-bottom: 1.3rem;
+    font-size: 1.5rem;
+  }
+
+  .testimonial-container .testimonial-card .nav {
+    background: var(--gurulab-teal);
+    padding: 30px 60px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .testimonial-container .testimonial-card .nav .nav-buttons * {
+    display: inline-block;
+  }
+
+  .testimonial-container
+    .testimonial-card
+    .nav
+    .nav-buttons
+    *:not(:last-child) {
+    margin-right: 15px;
   }
 </style>
