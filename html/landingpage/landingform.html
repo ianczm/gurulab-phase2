@@ -150,6 +150,26 @@
     height: 55px;
   }
 
+  .landing-grid .landing-body .showcase {
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landing-grid .landing-body .showcase .showcase-nav-dots {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .landing-grid .landing-body .showcase .showcase-nav-dots .nav-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 100vmax;
+    border: 1px solid white;
+  }
+
   #showcase-video {
     border: none;
     border-radius: 15px;
@@ -181,6 +201,7 @@
 
   .landing-grid .landing-form .form-heading h3 {
     color: var(--gurulab-orange);
+    margin-bottom: 0.5rem;
   }
 
   .landing-grid .landing-form form > *:not(:last-child) {
@@ -213,13 +234,18 @@
   }
 
   .tutor-profile-container {
-    aspect-ratio: 16 / 9;
+    flex-grow: 1;
   }
 
   .tutor-profile-container .tutor-profile {
     background: white;
     padding: 40px;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    box-sizing: border-box;
   }
 
   .tutor-profile-container .tutor-profile * {
@@ -245,12 +271,6 @@
     color: var(--gurulab-teal);
     text-transform: uppercase;
     margin-bottom: 0.5rem;
-  }
-
-  .tutor-profile-container .tutor-profile {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
   }
 
   .tutor-profile-container .tutor-profile .divider {
