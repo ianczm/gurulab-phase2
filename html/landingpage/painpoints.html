@@ -86,4 +86,29 @@
   .painpoints .cards .card-text > *:not(:last-child) {
     margin-bottom: 0.5rem;
   }
+
+  @media only screen and (max-width: 800px) {
+    .painpoints {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .painpoints .text-section {
+      text-align: center;
+    }
+
+    .painpoints .text-section * {
+      margin: 0;
+    }
+
+    .painpoints .text-section *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    .painpoints .cards .card {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      border-radius: 20px;
+    }
+  }
 </style>

@@ -5,8 +5,13 @@
   />
   <div class="text">
     <h2>Ready to start your child’s GuruLab journey?</h2>
-    <div class="gurulab-component-container">
-      <a class="gurulab-button justify-left bg-dark size-verylarge color-orange"
+    <div class="gurulab-component-container" id="cta-button-container">
+      <a
+        class="desktop gurulab-button justify-left bg-dark size-verylarge color-orange"
+        >Sign Up Now</a
+      >
+      <a
+        class="mobile gurulab-button justify-center bg-dark size-verylarge color-orange"
         >Sign Up Now</a
       >
     </div>
@@ -35,5 +40,33 @@
     background: rgba(242, 242, 242, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.5);
     box-sizing: border-box;
+  }
+
+  #cta-button-container .mobile {
+    display: none;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .landing-cta {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .landing-cta img {
+      border-radius: 20px;
+    }
+
+    .landing-cta .text {
+      padding: 0;
+      text-align: center;
+    }
+
+    #cta-button-container .mobile {
+      display: block;
+    }
+
+    #cta-button-container .desktop {
+      display: none;
+    }
   }
 </style>
