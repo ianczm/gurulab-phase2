@@ -880,6 +880,36 @@ a.header-nav-lang-btn-cn {
   background: var(--gurulab-gradient-orange);
 }
 
+/* Landing Page */
+
+/* Landing Hero: 62b14b57cd29ed4712419daa */
+.page-section[data-section-id="62b14b57cd29ed4712419daa"] .section-background {
+  background: var(--gurulab-gradient-orange-light);
+}
+
+/* Pain Points: 62b14b84e32aa13730d52dc2 */
+.page-section[data-section-id="62b14b84e32aa13730d52dc2"] .section-background {
+  background: var(--gurulab-gradient-orange);
+}
+
+/* Want the best: 62b14ba5d519264246231b6c */
+.page-section[data-section-id="62b14ba5d519264246231b6c"] .section-background {
+  background: var(--gurulab-gradient-teal);
+}
+
+/* Want the best: 62b14ba5d519264246231b6c */
+.page-section[data-section-id="62b14ba5d519264246231b6c"] .section-background {
+  background: var(--gurulab-gradient-teal);
+}
+
+/* Skepical: 62b14bd1bd8abe465203df0d */
+/* Need to apply drop shadow here */
+
+/* CTA: 62b14be4690e1618f5647238 */
+.page-section[data-section-id="62b14be4690e1618f5647238"] .section-background {
+  background: var(--gurulab-gradient-orange);
+}
+
 /* Gurulab Components */
 
 .gurulab-component-container *.justify-center {
