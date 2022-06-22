@@ -82,6 +82,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    align-items: center;
   }
 
   .testimonial-container .testimonial-card .body .profile img {
@@ -147,5 +148,38 @@
     .nav-buttons
     *:not(:last-child) {
     margin-right: 15px;
+  }
+
+  @media only screen and (max-width: 1025px) {
+    .testimonial-container .testimonial-card .body {
+      flex-direction: column;
+      padding: 30px;
+      gap: 2rem;
+    }
+
+    .testimonial-container .testimonial-card .body .profile {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .testimonial-container .testimonial-card .body .profile img {
+      min-width: 75px;
+      min-height: 75px;
+      width: 75px;
+      height: 75px;
+    }
+
+    .testimonial-container .testimonial-card .body .profile .profile-details {
+      text-align: left;
+    }
+
+    .testimonial-container .testimonial-card .nav {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .skeptical {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

@@ -95,10 +95,14 @@
         />
       </div>
     </form>
-    <div class="gurulab-component-container">
+    <div class="gurulab-component-container" id="submit-container">
       <a
-        class="gurulab-button justify-center bg-light size-verylarge color-orange"
-        >Sign Up Now</a
+        class="desktop gurulab-button justify-center bg-light size-verylarge color-orange"
+        >Register Interest</a
+      >
+      <a
+        class="mobile gurulab-button justify-center bg-light size-large color-orange"
+        >Register Interest</a
       >
     </div>
   </div>
@@ -291,5 +295,66 @@
     .profile-comments
     > *:not(:last-child) {
     margin-bottom: 0.5rem;
+  }
+
+  #submit-container .mobile {
+    display: none;
+  }
+
+  @media only screen and (max-width: 1025px) {
+    .tutor-profile-container .tutor-profile {
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .tutor-profile-container .tutor-profile .profile-details {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .tutor-profile-container .tutor-profile .profile-comments {
+      text-align: left;
+    }
+
+    .landing-grid {
+      padding: 10px;
+      border-radius: 20px;
+      grid-template-columns: 1fr;
+    }
+
+    .landing-grid .landing-body {
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .landing-grid .landing-body .landing-text img {
+      height: 30px;
+    }
+
+    .landing-grid .landing-body .landing-text p {
+      font-size: 1rem;
+    }
+
+    .landing-grid .landing-form {
+      padding: 20px;
+    }
+
+    .landing-grid .landing-form .form-heading {
+      width: 80%;
+      box-sizing: border-box;
+    }
+
+    .landing-grid .landing-form form .form-element input,
+    .landing-grid .landing-form form .form-element label {
+      font-size: 0.85rem;
+    }
+
+    #submit-container .mobile {
+      display: block;
+    }
+
+    #submit-container .desktop {
+      display: none;
+    }
   }
 </style>
