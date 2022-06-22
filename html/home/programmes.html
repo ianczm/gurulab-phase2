@@ -19,7 +19,7 @@ Data structure needed
 <div class="section section-programmes">
   <div class="accordions">
     <div class="accordion-item">
-      <a id="english-essentials"></a>
+      <a id="english-essentials_hash"></a>
       <div class="accordion-header">
         <div class="desc">
           <h3 class="title">English Essentials</h3>
@@ -145,7 +145,7 @@ Data structure needed
       </div>
     </div>
     <div class="accordion-item">
-      <a id="writing-masterclass"></a>
+      <a id="writing-masterclass_hash"></a>
       <div class="accordion-header">
         <div class="desc">
           <h3 class="title">Writing Masterclass</h3>
@@ -605,22 +605,30 @@ Data structure needed
   // if accordion is clicked
   $(".section-programmes .accordion-item .accordion-header").click(function () {
     $(this).toggleClass("active");
-    $(this).parent().children(".accordion-content").slideToggle(200, "swing");
+    $(this).siblings(".accordion-content").slideToggle(200, "swing");
   });
 
   // if anchor tag contains the id
 
   const hashChanged = () => {
-    const anchor = $(location).attr("hash");
-    $(window).scrollTop($(anchor).offset().top - $("#header").height() - 50);
-    $(anchor).siblings(".accordion-header").click();
+    $hash = $(location).attr("hash");
+    if ($hash !== "") {
+      const anchor = $hash + "_hash";
+      $(anchor).siblings(".accordion-header").click();
+      $(window).scrollTop($(anchor).offset().top - $("#header").height() - 50);
+      setTimeout(() => {
+        $(window).scrollTop(
+          $(anchor).offset().top - $("#header").height() - 50
+        );
+      }, 1000);
+    }
   };
 
   $(document).ready(function () {
     hashChanged();
   });
 
-  window.onhashchange = hashChanged;
+  window.addEventListener("hashchange", hashChanged);
 
   const packageEEitem = document.querySelectorAll(
     ".package-item-container--1 .package-item"
