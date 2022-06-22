@@ -7,7 +7,7 @@
     >
   </div>
   <ul class="cards">
-    <li class="card">
+    <li class="card" nav-idx="1">
       <img
         src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/62b1a12dd519264246297d4b/1655808301273/angry.png"
         alt="card-icon"
@@ -21,7 +21,7 @@
         >
       </div>
     </li>
-    <li class="card">
+    <li class="card" nav-idx="2">
       <img
         src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/62b1a12fd2cb05028561f13e/1655808303525/confused.png"
         alt="card-icon"
@@ -36,6 +36,10 @@
       </div>
     </li>
   </ul>
+  <div class="nav-dots">
+    <div class="nav-dot" nav-idx="1"></div>
+    <div class="nav-dot" nav-idx="2"></div>
+  </div>
 </div>
 
 <style>
@@ -87,6 +91,10 @@
     margin-bottom: 0.5rem;
   }
 
+  .painpoints .nav-dots {
+    display: none;
+  }
+
   @media only screen and (max-width: 1025px) {
     .painpoints {
       grid-template-columns: 1fr;
@@ -105,10 +113,69 @@
       margin-bottom: 1rem;
     }
 
+    .painpoints .cards {
+      grid-auto-columns: 100%;
+      grid-auto-flow: column;
+      overflow-x: scroll;
+      scroll-snap-type: inline mandatory;
+      scrollbar-width: none;
+      box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .painpoints .cards::-webkit-scrollbar {
+      display: none;
+    }
+
     .painpoints .cards .card {
       grid-template-columns: 1fr;
       gap: 20px;
       border-radius: 20px;
+      scroll-snap-align: center;
+    }
+
+    .painpoints .nav-dots {
+      display: grid;
+      gap: 5px;
+      grid-auto-flow: column;
+      justify-content: center;
+    }
+
+    .painpoints .nav-dots .nav-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 100vmax;
+      border: 1px solid white;
+      transition: background-color 0.2s ease;
+    }
+
+    .painpoints .nav-dots .nav-dot.active {
+      background-color: white;
+      transition: background-color 0.2s ease;
     }
   }
 </style>
+
+<script>
+  const painPointCards = document.querySelectorAll(".painpoints .cards .card");
+
+  const paintPointObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let navidx = entry.target.getAttribute("nav-idx");
+          $(".painpoints .nav-dots .nav-dot").removeClass("active");
+          $(`.painpoints .nav-dots .nav-dot[nav-idx=${navidx}]`).addClass(
+            "active"
+          );
+        }
+      });
+    },
+    {
+      threshold: 0.9,
+    }
+  );
+
+  painPointCards.forEach((card) => {
+    paintPointObserver.observe(card);
+  });
+</script>
