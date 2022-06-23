@@ -6,13 +6,13 @@
   <div class="text">
     <h2>Ready to start your child’s GuruLab journey?</h2>
     <div class="gurulab-component-container" id="cta-button-container">
-      <a
+      <button
         class="desktop gurulab-button justify-left bg-dark size-verylarge color-orange"
-        >Sign Up Now</a
+        >Register Interest</button
       >
-      <a
+      <button
         class="mobile gurulab-button justify-center bg-dark size-verylarge color-orange"
-        >Sign Up Now</a
+        >Register Interest</button
       >
     </div>
   </div>
@@ -70,3 +70,9 @@
     }
   }
 </style>
+
+<script>
+  $("#cta-button-container").click(function () {
+    $(window).scrollTop(0);
+  });
+</script>
