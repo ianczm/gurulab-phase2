@@ -26,10 +26,12 @@
   </div>
   <div class="landing-form">
     <div class="form-heading">
-      <h3>Register Your Interest Now</h3>
-      <p>Please provide your details below and we will be in touch!</p>
+      <h3 id="form-heading">Register Your Interest Now</h3>
+      <p id="form-subheading"
+        >Please provide your details below and we will be in touch!</p
+      >
     </div>
-    <form action="">
+    <form id="landing-form">
       <div class="form-element">
         <label for="parent-name">Parent Name *</label>
         <input
@@ -66,19 +68,19 @@
           type="tel"
           name="mobile-number"
           id="mobile-number"
-          placeholder="+60 17-842 8848"
+          placeholder="60178428848"
           required
         />
       </div>
     </form>
     <div class="gurulab-component-container" id="submit-container">
-      <a
+      <button
         class="desktop gurulab-button justify-center bg-light size-verylarge color-orange"
-        >Register Interest</a
+        >Register Interest</button
       >
-      <a
+      <button
         class="mobile gurulab-button justify-center bg-light size-large color-orange"
-        >Register Interest</a
+        >Register Interest</button
       >
     </div>
   </div>
@@ -198,7 +200,7 @@
     margin-bottom: 0.5rem;
   }
 
-  .landing-grid .landing-form form .form-element > * {
+  .landing-grid .landing-form form .form-element > *:not(.error-alert) {
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -393,4 +395,136 @@
   landingTutors.forEach((tutor) => {
     landingTutorsObserver.observe(tutor);
   });
+</script>
+
+<script>
+  // For landing form
+  const emailRegex =
+    /^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z](-?[a-zA-Z0-9])*(\.[a-zA-Z](-?[a-zA-Z0-9])*)+$/;
+
+  const phoneRegex = /^[0-9]{7,20}$/;
+
+  const GSHEET =
+    "https://script.google.com/macros/s/AKfycbz06Sl5VOhlA0Qx5DKCxiF-UG6McbvH4-NoJw1woyWMdvxVvmmc88KGqatNISkr4XhPTA/exec";
+
+  const retrieveFormData = () => {
+    const form = document.getElementById("landing-form");
+    return new FormData(form);
+  };
+
+  const isRequiredButEmpty = (key, value) => {
+    const isRequired = $(`#${key}`).prop("required");
+    return !value && isRequired;
+  };
+
+  const displayFieldError = (fieldid, errorString) => {
+    const inputElement = $(fieldid).siblings().last();
+    if (!inputElement.parent().hasClass("error-parent")) {
+      const errorAlert = $("<div/>", {
+        class: "error-alert",
+        text: errorString,
+      });
+      errorAlert.insertAfter(inputElement);
+      inputElement.parent().addClass("error-parent");
+    }
+  };
+
+  const validateFormData = () => {
+    // retrieve form data
+    const formData = retrieveFormData();
+    let errorFlag = false;
+
+    // reset errors
+    $(".error-alert").remove();
+    $(".error-parent").removeClass("error-parent");
+
+    // Perform overall check for required fields
+    for (let pair of formData.entries()) {
+      if (isRequiredButEmpty(pair[0], pair[1])) {
+        errorFlag = true;
+        displayFieldError(`#${pair[0]}`, "Please fill in this field.");
+      }
+    }
+
+    // Names need not be validated
+
+    // Email
+    if (!emailRegex.test(formData.get("email"))) {
+      errorFlag = true;
+      displayFieldError("#email", "Please input a valid email address.");
+    }
+
+    // Mobile number
+    if (!phoneRegex.test(formData.get("mobile-number"))) {
+      errorFlag = true;
+      displayFieldError(
+        "#mobile-number",
+        "Please input a valid phone number. i.e. 60178428848"
+      );
+    }
+
+    if (errorFlag) {
+      return null;
+    }
+
+    // Append source (null if empty)
+    const urlParams = new URLSearchParams(window.location.search);
+    const source = urlParams.get("SQF_SOURCE");
+    formData.append("source", source);
+
+    // Append date
+    const date = new Date();
+    const dateString = `${date.getFullYear()}-${
+      date.getMonth() + 1
+    }-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    formData.append("time-submitted", dateString);
+
+    return formData;
+  };
+
+  // #submit-container button
+  $("#submit-container button").click(function (e) {
+    e.preventDefault();
+    e.target.disabled = true;
+    console.log("click");
+    $("#submit-container button").text("Processing...");
+
+    const formData = validateFormData();
+
+    if (formData !== null) {
+      fetch(GSHEET, {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          // successful submission
+          onFormSuccess();
+        })
+        .catch((error) => {
+          // error due to bad response
+          onFormError(e);
+        });
+    } else {
+      // error due to empty form data
+      onFormError(e);
+    }
+  });
+
+  const onFormSuccess = () => {
+    $("#submit-container").slideUp(200);
+    $("#landing-form").slideUp(200);
+    $("#form-heading").text("Thank you, your response has been received!");
+    $("#form-subheading").text(
+      "We will contact you within 48 hours for next steps :)"
+    );
+    let totalHeight = $("#form-heading").parent().parent().height();
+    $("#form-heading").parent().css({
+      "margin-bottom": 0,
+    });
+  };
+
+  const onFormError = (e) => {
+    e.target.disabled = false;
+    $("#submit-container button").text("Register Interest");
+  };
 </script>

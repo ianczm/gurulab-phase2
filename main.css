@@ -1050,3 +1050,22 @@ a.header-nav-lang-btn-cn {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+/* Errors */
+
+.form-element .error-alert {
+  padding: 7px 15px 5px 15px;
+  background: var(--gurulab-error);
+  color: white;
+  font-size: 0.85rem;
+  border-radius: 100vmax;
+  display: inline-block;
+}
+
+.form-element.error-parent {
+  color: var(--gurulab-error-text);
+}
+
+.form-element.error-parent > *:last-child {
+  border: 1px solid var(--gurulab-error-light) !important;
+}
