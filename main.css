@@ -980,6 +980,7 @@ a.header-nav-lang-btn-cn {
 .gurulab-component-container .gurulab-button.size-verylarge {
   padding: 25px 35px;
   width: 200px;
+  box-sizing: content-box;
 }
 
 .gurulab-component-container .gurulab-button.font-large {
