@@ -7,7 +7,7 @@
     </p>
   </div>
   <div class="testimonial-container">
-    <div class="testimonials">
+    <div id="testimonials" class="testimonials">
       <div class="testimonial" nav-idx="1">
         <div class="body">
           <div class="profile">
@@ -181,6 +181,10 @@
     font-size: 1.2rem;
   }
 
+  .testimonial-container {
+    position: relative;
+  }
+
   .testimonials {
     display: grid;
     grid-auto-flow: column;
@@ -190,7 +194,6 @@
     scrollbar-width: 0;
     border-radius: 40px;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
-    scroll-snap-type: inline mandatory;
     cursor: grab;
   }
 
@@ -206,10 +209,8 @@
     border-radius: 40px;
     overflow: hidden;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
-    scroll-snap-align: center;
     display: flex;
     flex-direction: column;
-    align-self: stretch;
   }
 
   .testimonials .testimonial .body {
@@ -335,6 +336,14 @@
       padding-right: 30px;
     }
 
+    .testimonials {
+      scroll-snap-type: inline mandatory;
+    }
+
+    .testimonials .testimonial {
+      scroll-snap-align: center;
+    }
+
     .skeptical {
       grid-template-columns: 1fr;
     }
@@ -342,28 +351,98 @@
 </style>
 
 <script>
+  // for updating navidx
+
   const testimonials = document.querySelectorAll(
     ".skeptical .testimonials .testimonial"
   );
+
+  var testimonialNavIdx;
 
   const testimonialsObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          let navidx = entry.target.getAttribute("nav-idx");
+          testimonialNavIdx = entry.target.getAttribute("nav-idx");
           $(".skeptical .nav-dots .nav-dot").removeClass("active");
-          $(`.skeptical .nav-dots .nav-dot[nav-idx=${navidx}]`).addClass(
-            "active"
-          );
+          $(
+            `.skeptical .nav-dots .nav-dot[nav-idx=${testimonialNavIdx}]`
+          ).addClass("active");
         }
       });
     },
     {
-      threshold: 0.9,
+      threshold: 0,
     }
   );
 
   testimonials.forEach((testimonial) => {
     testimonialsObserver.observe(testimonial);
   });
+</script>
+
+<script>
+  // for desktop scrolling
+  const getRelativeMouseX = ($element, event) => {
+    return event.pageX - $element.offset().left;
+  };
+
+  if (window.matchMedia("(min-width: 1025px)").matches) {
+    let $testimonials = $("#testimonials");
+    let mouseX_init;
+    let mouseX_difference;
+    let scroll_init;
+    // let mouseX_previous = null;
+    // let mouseX_velocity = 0;
+    let isMouseDown = false;
+
+    let snapPositions = [];
+
+    $testimonials.children().each(function () {
+      snapPositions.push($(this).position().left);
+    });
+
+    console.log(snapPositions);
+
+    $testimonials.mousedown(function (e) {
+      e.preventDefault();
+      mouseX_init = getRelativeMouseX($testimonials, e);
+      scroll_init = $testimonials.scrollLeft();
+      isMouseDown = true;
+      $testimonials.css({
+        cursor: "grabbing",
+      });
+    });
+
+    $(window).mousemove(function (e) {
+      if (isMouseDown) {
+        let mouseX_current = getRelativeMouseX($testimonials, e);
+        mouseX_difference = mouseX_current - mouseX_init;
+        $testimonials.scrollLeft(scroll_init - 1.5 * mouseX_difference);
+
+        // if (mouseX_previous === null) {
+        //   mouseX_previous = mouseX_current;
+        // } else {
+        //   mouseX_velocity = mouseX_current - mouseX_previous;
+        //   mouseX_previous = mouseX_current;
+        // }
+      }
+    });
+
+    $(window).mouseup(function (e) {
+      e.preventDefault();
+      $testimonials.css({
+        cursor: "grab",
+      });
+      isMouseDown = false;
+      let targetSnapPos = snapPositions[testimonialNavIdx - 1];
+      let distanceLeft = targetSnapPos - $testimonials.scrollLeft();
+      $testimonials.animate(
+        {
+          scrollLeft: targetSnapPos,
+        },
+        200
+      );
+    });
+  }
 </script>
