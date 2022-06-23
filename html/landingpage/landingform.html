@@ -16,12 +16,61 @@
       <!-- tutor cards / video goes here -->
       <!-- <iframe
         id="showcase-video"
-        src="https://drive.google.com/file/d/1Woo2BMs8ISgVIlFTnaskvWGH1a3vE_oQ/preview"
+        src="https://www.youtube.com/embed/TfHwsgl5JFU?&autoplay=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
       ></iframe> -->
       <div class="tutor-profile-container">
-        <div class="tutor-profile">
+        <div class="tutor-profile" nav-idx="1">
           <div class="profile-details">
             <img
+              loading="lazy"
+              src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/62734b0a92e3b14da827f853/1651723018553/tutor-teal-rheena.jpg"
+              alt="tutor-picture"
+            />
+            <div class="profile-text">
+              <p class="name">Rheena Lee</p>
+              <p class="description"
+                >BA English graduate from top UK university, former PT3 English
+                marker.</p
+              >
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="profile-comments">
+            <p>"Tailors lessons and activities to learners’ needs"</p>
+            <p
+              >"Encourages curiosity and equips students to think critically"</p
+            >
+          </div>
+        </div>
+        <div class="tutor-profile" nav-idx="2">
+          <div class="profile-details">
+            <img
+              loading="lazy"
+              src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/62734af7dbd3f31c4de4112b/1651722999643/tutor-orange-jarod.jpg"
+              alt="tutor-picture"
+            />
+            <div class="profile-text">
+              <p class="name">Jarod Yong</p>
+              <p class="description"
+                >12 years teaching experience in the US and Malaysia, with
+                experience marking and building PT3 and SPM papers.</p
+              >
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="profile-comments">
+            <p>"Really helpful classes that I never wanna miss any"</p>
+            <p>"Challenges me to join essay competitions"</p>
+          </div>
+        </div>
+        <div class="tutor-profile" nav-idx="3">
+          <div class="profile-details">
+            <img
+              loading="lazy"
               src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/62734b0633c2bc078ab1115a/1651723014740/tutor-teal-emily.jpg"
               alt="tutor-picture"
             />
@@ -42,9 +91,9 @@
         </div>
       </div>
       <div class="showcase-nav-dots">
-        <div class="nav-dot"></div>
-        <div class="nav-dot"></div>
-        <div class="nav-dot"></div>
+        <div class="nav-dot" nav-idx="1"></div>
+        <div class="nav-dot" nav-idx="2"></div>
+        <div class="nav-dot" nav-idx="3"></div>
       </div>
     </div>
   </div>
@@ -172,6 +221,12 @@
     height: 7px;
     border-radius: 100vmax;
     border: 1px solid white;
+    transition: background 0.2s ease;
+  }
+
+  .landing-grid .landing-body .showcase .showcase-nav-dots .nav-dot.active {
+    background: white;
+    transition: background 0.2s ease;
   }
 
   #showcase-video {
@@ -239,6 +294,25 @@
 
   .tutor-profile-container {
     flex-grow: 1;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    width: 100%;
+    gap: 15px;
+    overflow-x: scroll;
+    scrollbar-width: 0;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    scroll-snap-type: inline mandatory;
+    cursor: grab;
+    box-sizing: border-box;
+  }
+
+  .tutor-profile-container *::selection {
+    background: none;
+  }
+
+  .tutor-profile-container::-webkit-scrollbar {
+    display: none;
   }
 
   .tutor-profile-container .tutor-profile {
@@ -248,8 +322,10 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: 100%;
+    /* height: 100%; */
     box-sizing: border-box;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    scroll-snap-align: center;
   }
 
   .tutor-profile-container .tutor-profile * {
@@ -302,6 +378,10 @@
   }
 
   @media only screen and (max-width: 1025px) {
+    .landing-grid .landing-body .showcase {
+      aspect-ratio: initial;
+    }
+
     .tutor-profile-container .tutor-profile {
       padding: 30px;
       border-radius: 10px;
@@ -358,3 +438,32 @@
     }
   }
 </style>
+
+<script>
+  // For Carousel
+
+  const landingTutors = document.querySelectorAll(
+    ".tutor-profile-container .tutor-profile"
+  );
+
+  const landingTutorsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let navidx = entry.target.getAttribute("nav-idx");
+          $(".showcase-nav-dots .nav-dot").removeClass("active");
+          $(`.showcase-nav-dots .nav-dot[nav-idx=${navidx}]`).addClass(
+            "active"
+          );
+        }
+      });
+    },
+    {
+      threshold: 0.9,
+    }
+  );
+
+  landingTutors.forEach((tutor) => {
+    landingTutorsObserver.observe(tutor);
+  });
+</script>
