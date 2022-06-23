@@ -1,0 +1,396 @@
+<div class="landing-grid">
+  <div class="landing-body">
+    <div class="landing-text">
+      <img
+        src="https://static1.squarespace.com/static/61a4ac42699860277d4bfcf6/t/62b19b527f05731705eef9da/1655806802382/gurulab-logo-white.png"
+        alt="GuruLab Logo"
+      />
+      <h3
+        >Looking For The Best English Class for Upper Primary / Secondary School
+        Students?</h3
+      >
+      <div class="divider"></div>
+      <p>Look no further, GuruLab is the best platform for your child!</p>
+    </div>
+    <div class="showcase">
+      <!-- tutor cards / video goes here -->
+      <iframe
+        id="showcase-video"
+        src="https://www.youtube.com/embed/TfHwsgl5JFU?&autoplay=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+  <div class="landing-form">
+    <div class="form-heading">
+      <h3>Register Your Interest Now</h3>
+      <p>Please provide your details below and we will be in touch!</p>
+    </div>
+    <form action="">
+      <div class="form-element">
+        <label for="parent-name">Parent Name *</label>
+        <input
+          type="text"
+          name="parent-name"
+          id="parent-name"
+          placeholder="Adam Tan"
+          required
+        />
+      </div>
+      <div class="form-element">
+        <label for="student-name">Student Name *</label>
+        <input
+          type="text"
+          name="student-name"
+          id="student-name"
+          placeholder="Joey Tan"
+          required
+        />
+      </div>
+      <div class="form-element">
+        <label for="email">Email *</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          required
+          placeholder="adam.tan@email.com"
+        />
+      </div>
+      <div class="form-element">
+        <label for="mobile-number">Mobile Number *</label>
+        <input
+          type="tel"
+          name="mobile-number"
+          id="mobile-number"
+          placeholder="+60 17-842 8848"
+          required
+        />
+      </div>
+    </form>
+    <div class="gurulab-component-container" id="submit-container">
+      <a
+        class="desktop gurulab-button justify-center bg-light size-verylarge color-orange"
+        >Register Interest</a
+      >
+      <a
+        class="mobile gurulab-button justify-center bg-light size-large color-orange"
+        >Register Interest</a
+      >
+    </div>
+  </div>
+</div>
+
+<style>
+  .landing-grid {
+    background: var(--gurulab-light-grey);
+    border-radius: 40px;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .landing-grid .landing-body {
+    background: var(--gurulab-gradient-orange);
+    padding: 65px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .landing-grid .landing-body * {
+    color: white;
+    margin: 0;
+  }
+
+  .landing-grid .landing-body .landing-text p {
+    font-size: 1.2rem;
+  }
+
+  .landing-grid .landing-body .landing-text .divider {
+    background: white;
+    height: 1px;
+  }
+
+  .landing-grid .landing-body .landing-text > *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .landing-grid .landing-body .landing-text img {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    height: 55px;
+  }
+
+  .landing-grid .landing-body .showcase {
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landing-grid .landing-body .showcase .showcase-nav-dots {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .landing-grid .landing-body .showcase .showcase-nav-dots .nav-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 100vmax;
+    border: 1px solid white;
+    transition: background 0.2s ease;
+  }
+
+  .landing-grid .landing-body .showcase .showcase-nav-dots .nav-dot.active {
+    background: white;
+    transition: background 0.2s ease;
+  }
+
+  #showcase-video {
+    border: none;
+    border-radius: 15px;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+
+  .landing-grid .landing-form {
+    padding: 65px;
+  }
+
+  .landing-grid .landing-form > *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .landing-grid .landing-form .form-heading {
+    text-align: center;
+    width: 270px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .landing-grid .landing-form .form-heading * {
+    margin: 0;
+  }
+
+  .landing-grid .landing-form .form-heading h3 {
+    color: var(--gurulab-orange);
+    margin-bottom: 0.5rem;
+  }
+
+  .landing-grid .landing-form form > *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .landing-grid .landing-form form .form-element > *:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .landing-grid .landing-form form .form-element > * {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .landing-grid .landing-form form .form-element input {
+    padding: 15px 25px;
+    border-radius: 50px;
+    border: 1px solid var(--gurulab-grey-outline);
+    font-size: 0.95rem;
+  }
+
+  .landing-grid .landing-form form .form-element input:focus {
+    border: 1px solid var(--gurulab-orange);
+    outline: none;
+    outline-offset: 0;
+    box-shadow: 0 0 30px rgba(244, 136, 71, 0.15);
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .tutor-profile-container {
+    flex-grow: 1;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    width: 100%;
+    gap: 15px;
+    overflow-x: scroll;
+    scrollbar-width: 0;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    scroll-snap-type: inline mandatory;
+    cursor: grab;
+    box-sizing: border-box;
+  }
+
+  .tutor-profile-container *::selection {
+    background: none;
+  }
+
+  .tutor-profile-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tutor-profile-container .tutor-profile {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* height: 100%; */
+    box-sizing: border-box;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    scroll-snap-align: center;
+  }
+
+  .tutor-profile-container .tutor-profile * {
+    color: black;
+  }
+
+  .tutor-profile-container .tutor-profile .profile-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 600;
+  }
+
+  .tutor-profile-container .tutor-profile .profile-details img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    aspect-ratio: 1;
+    border-radius: 100vmax;
+  }
+
+  .tutor-profile-container .tutor-profile .profile-details .name {
+    color: var(--gurulab-teal);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .tutor-profile-container .tutor-profile .divider {
+    height: 1px;
+    background: var(--gurulab-grey-outline);
+  }
+
+  .tutor-profile-container .tutor-profile .profile-comments {
+    text-align: center;
+  }
+
+  .tutor-profile-container .tutor-profile .profile-comments p {
+    font-style: italic;
+  }
+
+  .tutor-profile-container
+    .tutor-profile
+    .profile-comments
+    > *:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  #submit-container .mobile {
+    display: none;
+  }
+
+  @media only screen and (max-width: 1025px) {
+    .landing-grid .landing-body .showcase {
+      aspect-ratio: initial;
+    }
+
+    .tutor-profile-container .tutor-profile {
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .tutor-profile-container .tutor-profile .profile-details {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .tutor-profile-container .tutor-profile .profile-comments {
+      text-align: left;
+    }
+
+    .landing-grid {
+      padding: 10px;
+      border-radius: 20px;
+      grid-template-columns: 1fr;
+    }
+
+    .landing-grid .landing-body {
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .landing-grid .landing-body .landing-text img {
+      height: 30px;
+    }
+
+    .landing-grid .landing-body .landing-text p {
+      font-size: 1rem;
+    }
+
+    .landing-grid .landing-form {
+      padding: 20px;
+    }
+
+    .landing-grid .landing-form .form-heading {
+      width: 80%;
+      box-sizing: border-box;
+    }
+
+    .landing-grid .landing-form form .form-element input,
+    .landing-grid .landing-form form .form-element label {
+      font-size: 0.85rem;
+    }
+
+    #submit-container .mobile {
+      display: block;
+    }
+
+    #submit-container .desktop {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // For Carousel
+
+  const landingTutors = document.querySelectorAll(
+    ".tutor-profile-container .tutor-profile"
+  );
+
+  const landingTutorsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let navidx = entry.target.getAttribute("nav-idx");
+          $(".showcase-nav-dots .nav-dot").removeClass("active");
+          $(`.showcase-nav-dots .nav-dot[nav-idx=${navidx}]`).addClass(
+            "active"
+          );
+        }
+      });
+    },
+    {
+      threshold: 0.9,
+    }
+  );
+
+  landingTutors.forEach((tutor) => {
+    landingTutorsObserver.observe(tutor);
+  });
+</script>
