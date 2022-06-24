@@ -14,15 +14,15 @@
     </div>
     <div class="showcase">
       <!-- tutor cards / video goes here -->
-      <iframe
+      <!-- <iframe
         id="showcase-video"
         src="https://www.youtube.com/embed/TfHwsgl5JFU?&autoplay=1"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-      ></iframe>
-      <!-- <div class="tutor-profile-container">
+      ></iframe> -->
+      <div id="tutor-grid" class="tutor-profile-container">
         <div class="tutor-profile" nav-idx="1">
           <div class="profile-details">
             <img
@@ -94,7 +94,7 @@
         <div class="nav-dot" nav-idx="1"></div>
         <div class="nav-dot" nav-idx="2"></div>
         <div class="nav-dot" nav-idx="3"></div>
-      </div> -->
+      </div>
     </div>
   </div>
   <div class="landing-form">
@@ -157,6 +157,7 @@
       >
     </div>
   </div>
+  <div class="mobile-showcase"></div>
 </div>
 
 <style>
@@ -177,6 +178,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 40px;
+    min-width: 0;
   }
 
   .landing-grid .landing-body * {
@@ -199,7 +201,7 @@
 
   .landing-grid .landing-body .landing-text img {
     display: block;
-    width: fit-content;
+    width: auto;
     margin-left: auto;
     margin-right: auto;
     height: 55px;
@@ -209,16 +211,17 @@
     aspect-ratio: 16 / 9;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
 
-  .landing-grid .landing-body .showcase .showcase-nav-dots {
+  .showcase-nav-dots {
     display: flex;
     gap: 5px;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 15px !important;
   }
 
-  .landing-grid .landing-body .showcase .showcase-nav-dots .nav-dot {
+  .showcase-nav-dots .nav-dot {
     width: 7px;
     height: 7px;
     border-radius: 100vmax;
@@ -226,7 +229,7 @@
     transition: background 0.2s ease;
   }
 
-  .landing-grid .landing-body .showcase .showcase-nav-dots .nav-dot.active {
+  .showcase-nav-dots .nav-dot.active {
     background: white;
     transition: background 0.2s ease;
   }
@@ -304,7 +307,6 @@
     overflow-x: scroll;
     scrollbar-width: 0;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
-    scroll-snap-type: inline mandatory;
     cursor: grab;
     box-sizing: border-box;
   }
@@ -324,10 +326,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* height: 100%; */
     box-sizing: border-box;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
-    scroll-snap-align: center;
   }
 
   .tutor-profile-container .tutor-profile * {
@@ -384,9 +384,14 @@
       aspect-ratio: initial;
     }
 
+    .tutor-profile-container {
+      scroll-snap-type: inline mandatory;
+    }
+
     .tutor-profile-container .tutor-profile {
       padding: 30px;
       border-radius: 10px;
+      scroll-snap-align: center;
     }
 
     .tutor-profile-container .tutor-profile .profile-details {
@@ -438,6 +443,17 @@
     #submit-container .desktop {
       display: none;
     }
+
+    .landing-grid .mobile-showcase {
+      padding: 10px;
+      border-radius: 15px;
+      background: var(--gurulab-gradient-orange);
+      min-width: 0;
+    }
+
+    .landing-grid .mobile-showcase * {
+      margin: 0;
+    }
   }
 </style>
 
@@ -448,26 +464,107 @@
     ".tutor-profile-container .tutor-profile"
   );
 
+  var landingTutorNavIdx;
+
   const landingTutorsObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          let navidx = entry.target.getAttribute("nav-idx");
+          landingTutorNavIdx = entry.target.getAttribute("nav-idx");
           $(".showcase-nav-dots .nav-dot").removeClass("active");
-          $(`.showcase-nav-dots .nav-dot[nav-idx=${navidx}]`).addClass(
-            "active"
-          );
+          $(
+            `.showcase-nav-dots .nav-dot[nav-idx=${landingTutorNavIdx}]`
+          ).addClass("active");
+          console.log(landingTutorNavIdx);
         }
       });
     },
     {
-      threshold: 0.9,
+      threshold: 0,
     }
   );
 
   landingTutors.forEach((tutor) => {
     landingTutorsObserver.observe(tutor);
   });
+</script>
+
+<script>
+  // for mobile repositioning
+  if (window.matchMedia("(max-width: 1025px)").matches) {
+    let $showcase = $(".landing-grid .landing-body .showcase").detach();
+    $showcase.appendTo(".landing-grid .mobile-showcase");
+  }
+</script>
+
+<script>
+  // for desktop scrolling
+  const getRelativeMouseX_landing = ($element, event) => {
+    return event.pageX - $element.offset().left;
+  };
+
+  if (window.matchMedia("(min-width: 1025px)").matches) {
+    let $tutorGrid = $("#tutor-grid");
+    let mouseX_init_landing;
+    let mouseX_difference_landing;
+    let scroll_init_landing;
+    // let mouseX_previous = null;
+    // let mouseX_velocity = 0;
+    let isMouseDown_landing = false;
+
+    let snapPositions_landing = [];
+
+    $tutorGrid.children().each(function () {
+      snapPositions_landing.push($(this).position().left);
+    });
+
+    console.log(snapPositions_landing);
+
+    $tutorGrid.mousedown(function (e) {
+      e.preventDefault();
+      mouseX_init_landing = getRelativeMouseX_landing($tutorGrid, e);
+      scroll_init_landing = $tutorGrid.scrollLeft();
+      isMouseDown_landing = true;
+      $tutorGrid.css({
+        cursor: "grabbing",
+      });
+    });
+
+    $(window).mousemove(function (e) {
+      if (isMouseDown_landing) {
+        let mouseX_current_landing = getRelativeMouseX_landing($tutorGrid, e);
+        mouseX_difference_landing =
+          mouseX_current_landing - mouseX_init_landing;
+        $tutorGrid.scrollLeft(
+          scroll_init_landing - 1.5 * mouseX_difference_landing
+        );
+
+        // if (mouseX_previous === null) {
+        //   mouseX_previous = mouseX_current_landing;
+        // } else {
+        //   mouseX_velocity = mouseX_current_landing - mouseX_previous;
+        //   mouseX_previous = mouseX_current_landing;
+        // }
+      }
+    });
+
+    $(window).mouseup(function (e) {
+      e.preventDefault();
+      $tutorGrid.css({
+        cursor: "grab",
+      });
+      isMouseDown_landing = false;
+      let targetSnapPos_landing = snapPositions_landing[landingTutorNavIdx - 1];
+      console.log(targetSnapPos_landing);
+      console.log(landingTutorNavIdx);
+      $tutorGrid.animate(
+        {
+          scrollLeft: targetSnapPos_landing,
+        },
+        200
+      );
+    });
+  }
 </script>
 
 <script>
