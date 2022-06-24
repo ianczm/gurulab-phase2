@@ -73,6 +73,7 @@
 
 <script>
   $("#cta-button-container").click(function () {
-    $(window).scrollTop(0);
+    let scrollTarget = $(".landing-form").offset().top;
+    $(window).scrollTop(scrollTarget - 50);
   });
 </script>
