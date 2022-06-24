@@ -901,22 +901,20 @@ a.header-nav-lang-btn-cn {
 /* Landing Page */
 
 /* Landing Hero: 62b14b57cd29ed4712419daa */
-.page-section[data-section-id="62b14b57cd29ed4712419daa"] .section-background {
+.page-section[data-section-id="62b14b57cd29ed4712419daa"] .section-background,
+.page-section[data-section-id="62b4e9da53cf5f7ce92782b5"] .section-background {
   background: var(--gurulab-gradient-orange-light);
 }
 
 /* Pain Points: 62b14b84e32aa13730d52dc2 */
-.page-section[data-section-id="62b14b84e32aa13730d52dc2"] .section-background {
+.page-section[data-section-id="62b14b84e32aa13730d52dc2"] .section-background,
+.page-section[data-section-id="62b4e9da53cf5f7ce92782b7"] .section-background {
   background: var(--gurulab-gradient-orange);
 }
 
 /* Want the best: 62b14ba5d519264246231b6c */
-.page-section[data-section-id="62b14ba5d519264246231b6c"] .section-background {
-  background: var(--gurulab-gradient-teal);
-}
-
-/* Want the best: 62b14ba5d519264246231b6c */
-.page-section[data-section-id="62b14ba5d519264246231b6c"] .section-background {
+.page-section[data-section-id="62b14ba5d519264246231b6c"] .section-background,
+.page-section[data-section-id="62b4e9da53cf5f7ce92782b9"] .section-background {
   background: var(--gurulab-gradient-teal);
 }
 
@@ -924,8 +922,14 @@ a.header-nav-lang-btn-cn {
 /* Need to apply drop shadow here */
 
 /* CTA: 62b14be4690e1618f5647238 */
-.page-section[data-section-id="62b14be4690e1618f5647238"] .section-background {
+.page-section[data-section-id="62b14be4690e1618f5647238"] .section-background,
+.page-section[data-section-id="62b4e9da53cf5f7ce92782bd"] .section-background {
   background: var(--gurulab-gradient-orange);
+}
+
+/* Thank you Page 6221f898b6bcec08e85e8df6 */
+.page-section[data-section-id="6221f898b6bcec08e85e8df6"] .section-background {
+  background: var(--gurulab-gradient-orange-light);
 }
 
 /* Gurulab Components */
